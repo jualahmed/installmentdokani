@@ -92,10 +92,10 @@
 						  <td>Category</td>
 						  <td>engineno</td>
 						  <td>chassisno</td>
+						  <td>batteryno</td>
 						  <td>color</td>
 						  <td title="Purchase Quantity">Quantity</td>
 						  <td>BP</td>
-						  <td>batteryno</td>
 						  <td>Edit</td>
 						</tr>
 						<tr v-for="(a,index) in alldata">
@@ -107,10 +107,10 @@
 						  <td>{{ a.catagory_name }}</td>
 						  <td>{{ a.engineno }} </td>
 						  <td>{{ a.chassisno }} </td>
+						  <td>{{ a.batteryno }} </td>
 						  <td>{{ a.color }} </td>
 						  <td title="Purchase Quantity">1</td>
 						  <td>{{ a.purchase_price }}</td>
-						  <td>{{ a.batteryno }} </td>
 						  <td><a href="" data-toggle="modal" @click="editthisproduct(a.ip_id)" data-target="#EditModel" class="sdfsdfsdf btn btn-sm btn-success" >Edit</a></td>
 						</tr>
 						<tr>

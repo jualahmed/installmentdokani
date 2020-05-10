@@ -45,7 +45,7 @@ class Customer extends MY_Controller {
 	      array(
 	        'field' => 'customer_contact_no',
 	        'label' => 'customer_contact_no',
-	        'rules' => 'required|integer|min_length[11]|max_length[11]|'
+	        'rules' => 'required'
 	      ),
 	      array(
 	        'field' => 'customer_email',

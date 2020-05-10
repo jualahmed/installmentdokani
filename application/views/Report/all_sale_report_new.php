@@ -82,13 +82,13 @@
 						<th>Product Name</th>
 						<th>Engine No</th>
 						<th>Chassis No</th>
+						<th>Battery No</th>
 						<th>Color</th>
 						<th>Customer Name</th>
 						<th>Mobile No</th>
 						<th>Total</th>
 						<th>Due</th>
 						<th>Seller</th>
-						<th>Battery No</th>
 						<th>Print</th>
 					</tr>
 				</thead>
@@ -101,13 +101,13 @@
 						<td>{{ i.product_name }}</td>
 						<td>{{ i.engineno }}</td>
 						<td>{{ i.chassisno }}</td>
+						<td>{{ i.batteryno }}</td>	
 						<td>{{ i.color }}</td>
 						<td>{{ i.customer_name }}</td>
 						<td>{{ i.customer_contact_no }}</td>
 						<td>{{ parseInt(i.price)+parseInt(i.installmentfee)+parseInt(i.totalinterastlog) }}</td>
 						<td>{{ parseInt(i.totaldue)+parseInt(i.totalinterest) }}</td>
 						<td>{{ i.username }}</td>
-						<td>{{ i.batteryno }}</td>	
 						<td><a :href="base_url+'sale/invoiceprint/'+i.sid" target="_blank" class="btn btn-secondary">Print</a></td>
 					</tr>
 					<tr>
