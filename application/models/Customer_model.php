@@ -53,7 +53,6 @@ class Customer_model extends CI_Model {
 	public function querywithsale($query='')
 	{	
 		$this->db->join('sells_log', 'sells_log.customar_id = customer_info.customer_id');
-		$this->db->group_by('customer_info.customer_id');
 		$this->db->like('customer_name', $query, 'BOTH');
 		$this->db->or_like('customer_contact_no', $query, 'BOTH');
 		return $this->db->get('customer_info')->result();
