@@ -73,12 +73,16 @@ class admin extends MY_controller{
 				$this->db->set('permonthpay',$value->permonthpay);
 				$this->db->set('seconddate',$value->date);
 				$this->db->set('alldate',json_encode([$value->date]));
+				$this->db->where('id', $value->id);
 				$this->db->update('sells_log');
+
+				$this->db->where('id', $value->id);
+				$dddddd = $this->db->get('sells_log')->row();
 
 				$dd= array(
 					'sells_log_id' => $value->id,
-					'date' => $value->date,
-					'amount' => $value->totaldue,
+					'date' => $dddddd->seconddate,
+					'amount' => $dddddd->totaldue,
 					'status' => 1,
 				);
 				$this->db->insert('all_installment', $dd);
