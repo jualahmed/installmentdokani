@@ -60,4 +60,29 @@ class admin extends MY_controller{
 		$d= $this->db->get('all_installment')->result();
 		echo json_encode($d);
 	}
+
+	public function updateinstall()
+	{
+		$data = $this->db->get('sells_log')->result();
+
+		foreach ($data as $key => $value) {
+			if($value->totaldue>1 && $value->totalkisti==0){
+				$this->db->set('gap',1);
+				$this->db->set('month',1);
+				$this->db->set('totalkisti',1);
+				$this->db->set('permonthpay',$value->permonthpay);
+				$this->db->set('seconddate',$value->date);
+				$this->db->set('alldate',json_encode([$value->date]));
+				$this->db->update('sells_log');
+
+				$dd= array(
+					'sells_log_id' => $value->id,
+					'date' => $value->date,
+					'amount' => $value->totaldue,
+					'status' => 1,
+				);
+				$this->db->insert('all_installment', $dd);
+			}
+		}
+	}
 }

@@ -421,17 +421,19 @@ class Sale_model extends CI_Model {
     			$this->db->where('transaction_purpose', 'totalinterest');
     			$this->db->where('common_id', $id);
     			$d=$this->db->get('transaction_info')->row();
-    			if(count($d)>0){
+    			if(is_array($d) && count($d)>0){
     				$this->db->set('amount',$totalinterest);
     				$this->db->set('creator',$creator);
     				$this->db->where('transaction_id', $d->transaction_id);
     				$this->db->update('transaction_info');
     			}
     		}
+
     		$oldpermontinterst=$data->totalinterastlog/$data->month;
     		$notpaidyetinterst=$totalinterest-($oldpermontinterst*($data->month-$data->totalkisti));
     		$gap=$nm;
     		$permonthpay=($data->totaldue+$notpaidyetinterst)/$nm;
+    		// return $permonthpay;
 			$months=$month;
 			$totalkisti=$nm;
 		}
