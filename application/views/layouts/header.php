@@ -281,6 +281,9 @@
             <li class="<?php echo active_link_function('Report','installment_report'); ?>">
               <a href="<?php echo base_url();?>Report/installment_report"><i class="fa fa-search-plus"></i>Installment Report</a>
             </li>
+            <li class="<?php echo active_link_function('Report','printinstallment'); ?>">
+              <a href="<?php echo base_url();?>Report/printinstallment"><i class="fa fa-search-plus"></i>Print Installment</a>
+            </li>
             <li class="<?php echo active_link_function('Report','delivery_charge_report'); ?>">
               <a href="<?php echo base_url();?>Report/delivery_charge_report"><i class="fa fa-search-plus"></i>Delivery Charge Report</a>
             </li>

@@ -1856,15 +1856,17 @@ class Product_model extends CI_model{
 											AND shop_id = '".$this -> shop_id."'");
 			return $query;
 		 }
-		 function getLastInserted() 
-		 {
+
+		function getLastInserted() 
+		{
 			$this->db->select_max('product_id');
 			$result= $this->db->get('product_info')->row_array();
 			return $result;
 			
-		 }
-		 function getLastInserted2() 
-		 {
+		}
+
+		function getLastInserted2() 
+		{
 			$this->db->select('product_id');
 			$this->db->from('product_info');
 			$this->db->order_by('product_id','DESC');
@@ -1873,8 +1875,9 @@ class Product_model extends CI_model{
 			$field = $result->row();
 			return $field->product_id;
 			
-		 }
-		 public function get_product($key, $field_name){
+		}
+
+		public function get_product($key, $field_name){
 
             $data = $this->db
                             ->select('product_name, company_name, catagory_name, product_info.product_id, bulk_unit_sale_price, bulk_unit_buy_price, stock_amount, barcode, group_name, product_specification')

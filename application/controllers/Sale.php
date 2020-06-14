@@ -113,6 +113,13 @@ class Sale extends MY_Controller {
 		$this->load->view('Prints/saleinvoice1', $data);
     }
 
+    public function singleinstallmentprint($d='')
+    {
+    	$id=$d;
+    	$data['all']=$this->sale_model->find($id);
+		$this->load->view('Prints/saleinvoice1', $data);
+    }
+
     public function insinvoiceprint($d)
     {	
     	$id=$d;

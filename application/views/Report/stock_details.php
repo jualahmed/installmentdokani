@@ -38,33 +38,31 @@
     		    <th style="text-align: center;">No</th>
             <th style="text-align: center;">Challan No</th>
     		    <th style="text-align: center;">Date</th>
+            <th style="text-align: center;">Product</th>
             <th title="Purchase Quantity">Quantity</th>
     		    <th style="text-align: center;">engineno</th>
     		    <th style="text-align: center;">chassisno</th>
     		    <th style="text-align: center;">color</th>
+            <th style="text-align: center;">batteryno</th>
     		    <th style="text-align: right">BP</th>
     		    <th style="text-align: right">SP</th>
             <th style="text-align: center;">Company</th>
             <th style="text-align: center;">Category</th>
-    		    <th style="text-align: center;">batteryno</th>
-            <th style="text-align: center;">Product</th>
     		</tr>
   			<tr v-for="(p,index) in alldata" style="text-align: center;">
-  				<td>{{ index+1 }}</td>
+  				  <td>{{ index+1 }}</td>
             <td>{{ p.challan_no }}</td>
   			    <td>{{ p.purchase_date }}</td>
-  			   
+            <td>{{ p.product_name }}</td>
             <td title="Purchase Quantity">1</td>
             <td>{{ p.engineno }}</td>
             <td>{{ p.chassisno }}</td>
             <td>{{ p.color }}</td>
+            <td>{{ p.batteryno }}</td>
             <td style="text-align: right">{{ p.purchase_price }}</td>
             <td style="text-align: right">{{ p.sale_price }}</td>
-
   			    <td>{{ p.company_name }}</td>
   			    <td>{{ p.catagory_name }}</td>
-  			    <td>{{ p.batteryno }}</td>
-            <td>{{ p.product_name }}</td>
   			</tr>
   			<tr>
   				<td colspan="3"><b></b></td>

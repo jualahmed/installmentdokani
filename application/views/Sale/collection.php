@@ -61,13 +61,12 @@
 						<table class="table table-primary">
 							<tr>
 								<td>No</td>
-								<td>Invoice No</td>
 								<td>Product</td>
 								<td>Challan No</td>
-								<td>Engine No</td>
-								<td>Battery No</td>
-								<td>Color</td>
 								<td>Chassis No</td>
+								<td>Engine No</td>
+								<td>Color</td>
+								<td>Battery No</td>
 								<td>Price</td>
 								<td>Due</td>
 								<td>Installment Date</td>
@@ -75,13 +74,12 @@
 							</tr>
 							<tr v-for="(i,index) in allsale">
 								<td>{{ index+1 }}</td>
-								<td>{{ i.id }}</td>
 								<td>{{ i.product_name }}</td>
 								<td>{{ i.challan_no }}</td>
-								<td>{{ i.engineno }}</td>
-								<td>{{ i.batteryno }}</td>
-								<td>{{ i.color }}</td>
 								<td>{{ i.chassisno }}</td>
+								<td>{{ i.engineno }}</td>
+								<td>{{ i.color }}</td>
+								<td>{{ i.batteryno }}</td>
 								<td>{{ parseInt(i.price)+parseInt(i.installmentfee)+parseInt(i.totalinterastlog) }}</td>
 								<td>{{ i.totaldue }}</td>
 								<td>{{ i.seconddate }}</td>

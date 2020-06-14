@@ -13,7 +13,11 @@ class Report extends MY_controller
 		$this->load->model('company_model');
 		$this->load->model('distributor_model');
 		$this->load->model('purchase_model');
+		$this->load->library('bangla_ntw');
 		$this->load->model('customer_model');
+		$this->load->model('sale_model');
+		$this->load->model('config_model');
+		$this->load->model('bankcard_model');
 		$this->shop_id = $this->tank_auth->get_shop_id();
 	}
 
@@ -243,6 +247,19 @@ class Report extends MY_controller
 			$this->__renderview('Report/installment_report', $data);
 		}
 		else redirect('Product/product/noaccess');
+	}
+
+	public function printinstallment($id='')
+	{
+		$data['sale_status'] = '';
+		$data['user_type'] = $this->tank_auth->get_usertype();
+		$data['user_name'] = $this->tank_auth->get_username();
+		$data['alarming_level'] = FALSE;
+		if($this->input->get('invoice_id')){
+			$this->db->where('sells_log_id', $this->input->get('invoice_id'));
+			$data['installment'] = $this->db->get('all_installment')->result();
+		}
+		$this->__renderview('Report/printinstallment', $data);
 	}
 
 	public function installment_report_response()
