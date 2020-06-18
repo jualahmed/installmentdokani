@@ -116,8 +116,8 @@ class Sale extends MY_Controller {
     public function singleinstallmentprint($d='')
     {
     	$id=$d;
-    	$data['all']=$this->sale_model->find($id);
-		$this->load->view('Prints/saleinvoice1', $data);
+    	$data['all']=$this->sale_model->findinstallmentsinvoice($id);
+		$this->load->view('Prints/moneyrecept', $data);
     }
 
     public function insinvoiceprint($d)

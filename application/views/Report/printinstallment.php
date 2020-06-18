@@ -33,10 +33,8 @@
 							<td><?php echo $key+1 ?></td>
 							<td><?php echo $value->date ?></td>
 							<td><?php echo $value->amount ?></td>
-							<td>
-								<?php if ($value->status==0): ?>
-									<a href="<?php echo base_url().'/Sale/singleinstallmentprint/'.$value->sells_log_id; ?>" target="_blank" class="btn btn-success">Print</a>
-								<?php endif ?>	
+							<td> 
+								<a href="<?php echo base_url().'/Sale/singleinstallmentprint/'.$value->sells_log_id; ?>" target="_blank" class="btn btn-success">Print</a>
 							</td>
 						</tr>
 					<?php endforeach ?>
