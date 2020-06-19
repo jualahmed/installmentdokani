@@ -29,9 +29,18 @@ foreach ($dd as $key => $value) {
 }
 
 $totalpain=0;
-$dd=$this->db->query("SELECT * FROM transaction_info WHERE common_id='$all->sid' AND (transaction_purpose='collection' OR transaction_purpose='interestcollection' OR transaction_purpose='latefeecollection')")->result();
+$totalinterastpaidpain=0;
+
+$ddin=$this->db->query("SELECT * FROM transaction_info WHERE common_id='$all->sid' AND (transaction_purpose='interestcollection' OR transaction_purpose='latefeecollection')")->result();
+
+$dd=$this->db->query("SELECT * FROM transaction_info WHERE common_id='$all->sid' AND (transaction_purpose='collection')")->result();
+
 foreach ($dd as $key => $value) {
 	$totalpain=$totalpain+$value->amount;
+}
+
+foreach ($ddin as $key => $value) {
+	$totalinterastpaidpain=$totalinterastpaidpain+$value->amount;
 }
 ?>
 <!-- onload="window.print()" -->
@@ -133,11 +142,13 @@ foreach ($dd as $key => $value) {
 										<td align="left">
 											<p><b>বিক্রয় মূল্য :</b> </p>
 											<p style="font-size: 15px;"><b>জমা :</b> </p>
+											<p style="font-size: 15px;"><b>ইন্টারেস্টের জমা :</b> </p>
 											<p style="font-size: 15px;"><b>বকেয়া :</b></p>
 										</td>
 										<td align="right">
 											<b><p><?php echo $this->bangla_ntw->engToBn(sprintf('%0.2f',($all->price+$all->totalinterastlog+$all->installmentfee)-($all->discount+$all->screchcard))); ?></p>
 											<p><?php echo $this->bangla_ntw->engToBn(sprintf('%0.2f',($totalpain))); ?></p>
+											<p><?php echo $this->bangla_ntw->engToBn(sprintf('%0.2f',($totalinterastpaidpain))); ?></p>
 											<p><?php echo $this->bangla_ntw->engToBn(sprintf('%0.2f',$all->totaldue+$all->totalinterest)); ?></p>
 											</b>
 										</td>

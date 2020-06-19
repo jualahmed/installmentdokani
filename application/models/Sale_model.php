@@ -440,6 +440,17 @@ class Sale_model extends CI_Model {
 
 		// insert and update all installment table
 		if($month>$data->month){
+
+			$data1udpate=array(
+				'sells_log_id'=>$id,
+				'date'=>$alddddddddd[$i],
+				'amount'=>$permonthpay,
+			);
+
+			$this->db->where('sells_log_id', $id);
+			$this->db->where('status', 1);
+			$this->db->update('all_installment', $data1udpate);
+
 			for($i=0;$i<$month;$i++) {
 				if($data->month>$i){
 					continue;
