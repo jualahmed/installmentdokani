@@ -142,15 +142,15 @@ foreach ($ddin as $key => $value) {
 										<td align="left">
 											<p><b>বিক্রয় মূল্য :</b> </p>
 											<p style="font-size: 15px;"><b>ইন্টারেস্টের :</b> </p>
-											<p style="font-size: 15px;"><b>জমা :</b> </p>
 											<p style="font-size: 15px;"><b>মোট :</b> </p>
+											<p style="font-size: 15px;"><b>জমা :</b> </p>
 											<p style="font-size: 15px;"><b>বকেয়া :</b></p>
 										</td>
 										<td align="right">
 											<b><p><?php echo $this->bangla_ntw->engToBn(sprintf('%0.2f',($all->price+$all->totalinterastlog+$all->installmentfee)-($all->discount+$all->screchcard))); ?></p>
 											<p><?php echo $this->bangla_ntw->engToBn(sprintf('%0.2f',($totalinterastpaidpain))); ?></p>
-											<p><?php echo $this->bangla_ntw->engToBn(sprintf('%0.2f',($totalpain))); ?></p>
 											<p><?php echo $this->bangla_ntw->engToBn(sprintf('%0.2f',($totalpain+$totalinterastpaidpain))); ?></p>
+											<p><?php echo $this->bangla_ntw->engToBn(sprintf('%0.2f',($totalpain))); ?></p>
 											<p><?php echo $this->bangla_ntw->engToBn(sprintf('%0.2f',$all->totaldue+$all->totalinterest)); ?></p>
 											</b>
 										</td>

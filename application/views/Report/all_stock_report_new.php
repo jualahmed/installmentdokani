@@ -55,11 +55,11 @@
 										<?php 
 											echo form_input('product_amount','','class ="form-control seven" id="lock77" style="font-family:Helvetica Neue,Helvetica,Arial,sans-serif;" placeholder="Stock Amount" title="Stock Amount" autocomplete="off"');
 										?>
-								  </div>
+								  </div> {{ type }}
 								<div class="col-sm-4 mt-2">
 									<button type="submit" class="btn btn-success btn-sm" @click.prevent="stockreport" name="search_random"><i class="fa fa-fw fa-search"></i> Search</button>
 									<button type="reset" id="reset_btn" class="btn btn-warning btn-sm"><i class="fa fa-fw fa-refresh"></i> Reset</button>
-									<a :href="base_url+'Report/stock_report_print/'+catagory_id+'/'+product_id+'/'+company_id+'/'+type" id="down" target="_blank" class="btn btn-primary btn-sm" style="text-decoration:none;"><i class="fa fa-download"></i> Download</a>
+									<a :href="base_url+'Report/stock_report_print/'+catagory_id+'/'+product_id+'/'+company_id+'/'+type_wise" id="down" target="_blank" class="btn btn-primary btn-sm" style="text-decoration:none;"><i class="fa fa-download"></i> Download</a>
 								</div>
 							</div>
 						</form>
@@ -74,24 +74,24 @@
 
   	<table class="table table-secondary" v-if="alldata.length>0">
   		<tr>
-        <th>No</th>
-        <th>Product</th>
-        <th title="Purchase Quantity">Quantity</th>
-  			<th>BP.</th>
-  			<th>SP.</th>
+	        <th>No</th>
+	        <th>Product</th>
+	        <th title="Purchase Quantity" align="center">Quantity</th>
+  			<th align="right">BP.</th>
+  			<th align="right">SP.</th>
   		</tr>
   		<tr v-for="(d,index) in alldata">
   			<td>{{ index+1 }}</td> 
         <td>{{ d.product_name }}</td>
-  			<td>{{ d.stock_amount }}</td>
-  			<td>{{ d.bulk_unit_buy_price }}</td>
-  			<td>{{ d.general_unit_sale_price }}</td>
+  			<td align="center">{{ d.stock_amount }}</td>
+  			<td align="right">{{ d.bulk_unit_buy_price }}</td>
+  			<td align="right">{{ d.general_unit_sale_price }}</td>
   		</tr>
   		<tr>
-  			<td colspan="2"><b></b></td>
-  			<td colspan="1"><b>Total Quantity: {{ stockqty }}</b> </td>
-  			<td colspan="1"><b>Total Stock Amount: {{ amount }}</b></td>
-  			<td colspan="1"><b>Total Sale Amount: {{ samount }}</b></td>
+  			<td colspan="2"><b>Total</b></td>
+  			<td colspan="1" align="center"><b>{{ stockqty }}</b> </td>
+  			<td colspan="1" align="right"><b>{{ amount }}</b></td>
+  			<td colspan="1" align="right"><b>{{ samount }}</b></td>
   		</tr>
   	</table>
   	<h2 class="text-danger text-center" v-else>Result is Empty</h2>

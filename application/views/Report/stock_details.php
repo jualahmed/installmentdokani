@@ -39,7 +39,6 @@
             <th style="text-align: center;">Challan No</th>
     		    <th style="text-align: center;">Date</th>
             <th style="text-align: center;">Product</th>
-            <th title="Purchase Quantity">Quantity</th>
     		    <th style="text-align: center;">engineno</th>
     		    <th style="text-align: center;">chassisno</th>
     		    <th style="text-align: center;">color</th>
@@ -54,7 +53,6 @@
             <td>{{ p.challan_no }}</td>
   			    <td>{{ p.purchase_date }}</td>
             <td>{{ p.product_name }}</td>
-            <td title="Purchase Quantity">1</td>
             <td>{{ p.engineno }}</td>
             <td>{{ p.chassisno }}</td>
             <td>{{ p.color }}</td>
@@ -65,11 +63,9 @@
   			    <td>{{ p.catagory_name }}</td>
   			</tr>
   			<tr>
-  				<td colspan="3"><b></b></td>
-  				<td colspan="1"><b>Total Quantity: {{ stockqty }}</b></td>
-          <td colspan="3"><b></b></td>
-  				<td colspan="1"><b>Total Amount: {{ samount }}</b></td>
-  				<td colspan="1"><b>Total Sale Amount: {{ amount }}</b></td>
+  				<td colspan="8" align="right"><b>Total</b></td>
+  				<td colspan="1" align="right"><b>{{ samount }}</b></td>
+  				<td colspan="1" align="right"><b>{{ amount }}</b></td>
   			</tr>
   	  </table>
   	</div>

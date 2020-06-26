@@ -75,11 +75,11 @@ class Report extends MY_controller
 		 $category_id='';
 		 $product_id='';
 		 $company_id='';
-		 $type='';
 		 $category_id = $this->uri->segment(3);
 		 $product_id = $this->uri->segment(4);
 		 $company_id = $this->uri->segment(5);
 		 $type = $this->uri->segment(6);
+		
 		 $product_amount='';
 		 $data['temp'] = $this->report_model->get_stock_info_by_multi($category_id,$product_id,$company_id,$type,$product_amount);
 		 $this->__renderviewprint('Prints/report/stock_report', $data);

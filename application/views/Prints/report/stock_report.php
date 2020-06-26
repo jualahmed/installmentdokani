@@ -13,7 +13,7 @@
 	  <tr>
 	    <td>
 	      <div class="page" style="line-height: 3;">
-	       	<?php if(count($temp->result())>0){ ?><table class="table table-secondary table-bordered" >
+	       	<?php if(!is_null($temp) && count($temp->result())>0){ ?><table class="table table-secondary table-bordered" >
 			<tr>
 				<th>No.</th>
 				<th>Product.</th>
