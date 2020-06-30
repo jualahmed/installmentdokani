@@ -76,22 +76,22 @@
   		<tr>
 	        <th>No</th>
 	        <th>Product</th>
-	        <th title="Purchase Quantity" align="center">Quantity</th>
-  			<th align="right">BP.</th>
-  			<th align="right">SP.</th>
+	        <th title="Purchase Quantity" style="text-align:center">Quantity</th>
+  			<th style="text-align:center">BP.</th>
+  			<th style="text-align:center">SP.</th>
   		</tr>
   		<tr v-for="(d,index) in alldata">
   			<td>{{ index+1 }}</td> 
         <td>{{ d.product_name }}</td>
-  			<td align="center">{{ d.stock_amount }}</td>
-  			<td align="right">{{ d.bulk_unit_buy_price }}</td>
-  			<td align="right">{{ d.general_unit_sale_price }}</td>
+  			<td style="text-align:center">{{ d.stock_amount }}</td>
+  			<td style="text-align:right">{{ parseFloat(d.bulk_unit_buy_price).toFixed(2) }}</td>
+  			<td style="text-align:right">{{ parseFloat(d.general_unit_sale_price).toFixed(2) }}</td>
   		</tr>
   		<tr>
   			<td colspan="2"><b>Total</b></td>
-  			<td colspan="1" align="center"><b>{{ stockqty }}</b> </td>
-  			<td colspan="1" align="right"><b>{{ amount }}</b></td>
-  			<td colspan="1" align="right"><b>{{ samount }}</b></td>
+  			<td colspan="1" style="text-align:center"><b>{{ stockqty }}</b> </td>
+  			<td colspan="1" style="text-align:right"><b>{{ parseFloat(amount).toFixed(2) }}</b></td>
+  			<td colspan="1" style="text-align:right"><b>{{ parseFloat(samount).toFixed(2) }}</b></td>
   		</tr>
   	</table>
   	<h2 class="text-danger text-center" v-else>Result is Empty</h2>

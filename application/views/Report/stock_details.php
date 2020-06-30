@@ -4,7 +4,7 @@
       <div class="col-md-12">
         <div class="box">
           <div class="box-header with-border">
-            <h3 class="box-title">Motorcycle Stock Report</h3>
+            <h3 class="box-title">Motorcycle Stock Details</h3>
             <h3 class="box-title"> ( Total Stock Amount: <?php echo sprintf("%.2f",$total_stock_price);?> )</h3>
             <h3 class="box-title"> ( Stock Quantity: <?php echo $total_stock_quantity;?> )</h3>
           </div>
@@ -35,16 +35,16 @@
   	<div class="table-responsive">
   		<table class="table table-secondary">
     		<tr>
-    		    <th style="text-align: center;">No</th>
-            <th style="text-align: center;">Challan No</th>
+    		    <th style="text-align: center;">SL.</th>
+            <th style="text-align: center;">Challan No.</th>
     		    <th style="text-align: center;">Date</th>
             <th style="text-align: center;">Product</th>
-    		    <th style="text-align: center;">engineno</th>
-    		    <th style="text-align: center;">chassisno</th>
-    		    <th style="text-align: center;">color</th>
-            <th style="text-align: center;">batteryno</th>
-    		    <th style="text-align: right">BP</th>
-    		    <th style="text-align: right">SP</th>
+    		    <th style="text-align: center;">Engine No.</th>
+    		    <th style="text-align: center;">Chassis No.</th>
+    		    <th style="text-align: center;">Color</th>
+            <th style="text-align: center;">Battery No.</th>
+    		    <th style="text-align: center">BP</th>
+    		    <th style="text-align: center">SP</th>
             <th style="text-align: center;">Company</th>
             <th style="text-align: center;">Category</th>
     		</tr>
@@ -57,15 +57,15 @@
             <td>{{ p.chassisno }}</td>
             <td>{{ p.color }}</td>
             <td>{{ p.batteryno }}</td>
-            <td style="text-align: right">{{ p.purchase_price }}</td>
-            <td style="text-align: right">{{ p.sale_price }}</td>
+            <td style="text-align: right">{{ parseFloat(p.purchase_price).toFixed(2) }}</td>
+            <td style="text-align: right">{{ parseFloat(p.sale_price).toFixed(2) }}</td>
   			    <td>{{ p.company_name }}</td>
   			    <td>{{ p.catagory_name }}</td>
   			</tr>
   			<tr>
   				<td colspan="8" align="right"><b>Total</b></td>
-  				<td colspan="1" align="right"><b>{{ samount }}</b></td>
-  				<td colspan="1" align="right"><b>{{ amount }}</b></td>
+  				<td colspan="1" align="right"><b>{{ parseFloat(samount).toFixed(2) }}</b></td>
+  				<td colspan="1" align="right"><b>{{ parseFloat(amount).toFixed(2) }}</b></td>
   			</tr>
   	  </table>
   	</div>
