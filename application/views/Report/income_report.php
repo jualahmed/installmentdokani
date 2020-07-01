@@ -18,7 +18,16 @@
 								<div class="col-sm-2">
 									<input type="text" name="end_date" class="form-control" id="datepicker" placeholder="<?php echo $bd_date ?>">
 								</div>
-								<div class="col-sm-6 mt-2">
+								<label for="inputEmail3" class="col-sm-1 control-label">Income Type</label>
+								<div class="col-sm-2">
+									<select class="form-control" id="type" name="type">
+										<option value="">Select A Type</option>
+										<option value="collection">Collection</option>
+										<option value="interestcollection">Interest Collection</option>
+										<option value="latefeecollection">Iatefee Collection</option>
+									</select>
+								</div>
+								<div class="col-sm-3 mt-2">
 									<button @click.prevent="result" type="submit" class="btn btn-success btn-sm" name="search_random" style="width:100px;"><i class="fa fa-fw fa-search"></i> Search</button>
 									<button type="reset" id="reset_btn" class="btn btn-warning btn-sm" style="width:100px;"><i class="fa fa-fw fa-refresh"></i> Reset</button>
 								</div>

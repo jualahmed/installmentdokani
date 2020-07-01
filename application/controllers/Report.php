@@ -350,7 +350,8 @@ class Report extends MY_controller
   {
 	$start_date=$this->input->post('start_date');
 	$end_date=$this->input->post('end_date');
-	$temp2 = $this->report_model->income_report_response($start_date,$end_date);
+	$type=$this->input->post('type');
+	$temp2 = $this->report_model->income_report_response($start_date,$end_date,$type);
 	echo json_encode($temp2);
   }
 

@@ -5,6 +5,7 @@ new Vue({
     alldata:[],
     startdate:'',
     enddate:'',
+    type:'',
     loding:false,
     amount:0,
   },
@@ -12,6 +13,7 @@ new Vue({
     result(){
       this.startdate=($("#datepickerrr").val());
       this.enddate=($("#datepicker").val());
+      this.type=($("#type").val());
       var self=this;
       self.loding=!self.loding;
       alldata:[];

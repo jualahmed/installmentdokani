@@ -156,20 +156,19 @@ class Report_model extends CI_model{
 	    return $this->db->get('all_installment')->result();
   	}
 
-	public function income_report_response($startdate='',$enddate='')
+	public function income_report_response($startdate='',$enddate='',$type='')
 	{
 	    $start=$startdate;
 	    $end=$enddate;
-	    $query1 = $this->db->select('sells_log.*,cash_book.*,cash_book.date as dddddd,transaction_info.*,customer_info.*')
-	               -> where('cash_book.transaction_type = "in"')
-	               -> where('cash_book.date >= "'.$start.'"')
-	               -> where('cash_book.date <= "'.$end.'"')
-	               ->join('transaction_info', 'transaction_info.transaction_id = cash_book.transaction_id')
-	               ->join('sells_log', 'sells_log.id = transaction_info.common_id')
-	               ->join('customer_info', 'customer_info.customer_id = sells_log.customar_id')
-	               ->order_by('cash_book.date', 'desc')
-	               ->get('cash_book')->result();
-	    return $query1;
+	    $this->db->select('sells_log.*,cash_book.*,cash_book.date as dddddd,transaction_info.*,customer_info.*');
+     	$this->db->where('cash_book.transaction_type = "in"');
+     	$this->db->where('cash_book.date >= "'.$start.'"');
+     	$this->db->where('cash_book.date <= "'.$end.'"');
+      	if($type!='') $this->db->where('transaction_info.transaction_purpose = "'.$type.'"');
+     	$this->db->join('transaction_info', 'transaction_info.transaction_id = cash_book.transaction_id');
+      	$this->db->join('sells_log', 'sells_log.id = transaction_info.common_id');
+       	$this->db->join('customer_info', 'customer_info.customer_id = sells_log.customar_id');
+       	return $this->db->get('cash_book')->result();
 	}
 
 
