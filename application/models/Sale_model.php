@@ -92,7 +92,7 @@ class Sale_model extends CI_Model {
 			   'cb_id'         						=> '',
 			   'transaction_id'                     => $insert_id,
 			   'transaction_type'                	=> 'in',
-			   'amount'                 			=> $$data['installmentfee'],
+			   'amount'                 			=> $data['installmentfee'],
 			   'date'         						=> $bd_date,
 			   'status'    	 						=> 'active',
 			   'creator'                   			=> $data['creator'],
