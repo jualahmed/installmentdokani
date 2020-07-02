@@ -38,6 +38,7 @@ new Vue({
         referencename:null,
         referenccontact:null,
         id:null,
+        issuccess:false,
         key:null,
       };
     },
@@ -63,6 +64,7 @@ new Vue({
 	    		data: {id:this.id,key:this.key,referencename:this.referencename,referenccontact:this.referenccontact,installmentdate:this.installmentdate,remarks:this.remarks,installmentfee:this.installmentfee,product_id: this.selectedCountries.product_id,w_product_id: this.selectedCountries.ip_id,price:this.price,discount:this.discount,screchcard:this.screchcard,advancepay:this.advancepay,finalamount:this.finalamount,month:this.month,totaldue:this.finalamount,totalinterest:this.totalintrast,permonthpay:this.parmanthpay,date:this.formatDate(this.data),customar_id:this.selectedcustomar.customer_id},
 	    	})
 	    	.done(function(re) {
+                self.issuccess=true;
 	    		var re = jQuery.parseJSON(re);
 	    		if(re){
 	    			self.selectedCountries=[];

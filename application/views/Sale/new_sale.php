@@ -247,7 +247,7 @@
 		            <div class="box-footer">
 	      			<div class="selebutton" style="display: flex;justify-content: center;">
 	      				<div>
-							<button  v-if="selectedCountries && selectedCountries.product_id && month==installmentdate.length && selectedCountries && selectedcustomar.customer_id && !id " type="button" @click="submit" class="btn btn-success" name="search_random" id="submit"><i class="fa fa-fw fa-save"></i> Sale</button>
+							<button  v-if="selectedCountries && selectedCountries.product_id && month==installmentdate.length && selectedCountries && selectedcustomar.customer_id && !issuccess " type="button" @click="submit" class="btn btn-success" name="search_random" id="submit"><i class="fa fa-fw fa-save"></i> Sale</button>
 
 							<button v-else type="button" @click="submit" class="btn btn-success" name="search_random" id="submit"  disabled><i class="fa fa-fw fa-save"></i> Sale</button>
 
