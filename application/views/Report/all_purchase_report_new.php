@@ -101,7 +101,7 @@
 						<tr v-for="(a,index) in alldata">
 						  <td>{{index+1}}</td>
 						  <td>{{ a.challan_no }} </td>
-						  <td>{{formatDate(a.doc)}}</td>
+						  <td>{{formatDate(a.dom)}}</td>
 						  <td>{{ a.product_name }}</td>
 						  <td>{{ a.company_name }}</td>
 						  <td>{{ a.catagory_name }}</td>
