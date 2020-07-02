@@ -145,12 +145,39 @@
 							<div>
 								<div class="col-md-6">
 								
-									
+									<div>
+										<label for="">Price</label>
+					              		<input style="text-align: right;" type="number" class="form-control custom_form_control price" v-model="price" id="price" name="" placeholder="Price" autocomplete="off" required disabled>
+					              		<br>
+									</div>
+
+								</div>
+
+								<div class="col-md-6">
 									<div>
 										<label for="">Installment Fee</label>
 				              			<input style="text-align: right;" type="number" class="form-control custom_form_control installmentfee" v-model="installmentfee" id="installmentfee" @blur="changefinalamountaextrafee" placeholder="Installment Fee" autocomplete="off" required>
 									</div>
+
+									<div>
+										<label for="">Discount</label>
+					              		<input style="text-align: right;" type="number" class="form-control custom_form_control discount" v-model="discount" @blur="changefinalamount" id="discount" name="" placeholder="Discount" autocomplete="off" required>
+					              		<br>
+									</div>
+
+									<div>
+										<label for="">Screch card</label>
+					              		<input style="text-align: right;" type="number" class="form-control custom_form_control screchcard" v-model="screchcard" @blur="changefinalamounts" id="screchcard" name="" placeholder="Screch Card" autocomplete="off" required>
+					              		<br>
+									</div>
 									
+									<div>
+										<label for="">Advance pay</label>
+					              		<input style="text-align: right;" type="number" class="form-control custom_form_control advancepay" v-model="advancepay" @blur="changefinalamounta" id="advancepay" name="" placeholder="Advance pay" autocomplete="off" required>
+					              		<br>
+									</div>
+
+
 									<div style="display: flex;">
 										<div>
 											<label for="">Month</label>
@@ -173,33 +200,7 @@
 						             		</table>
 						              	</div>
 				              		</div>
-
-								</div>
-
-								<div class="col-md-6">
-									<div>
-										<label for="">Price</label>
-					              		<input style="text-align: right;" type="number" class="form-control custom_form_control price" v-model="price" id="price" name="" placeholder="Price" autocomplete="off" required disabled>
-					              		<br>
-									</div>
-
-									<div>
-										<label for="">Discount</label>
-					              		<input style="text-align: right;" type="number" class="form-control custom_form_control discount" v-model="discount" @blur="changefinalamount" id="discount" name="" placeholder="Discount" autocomplete="off" required>
-					              		<br>
-									</div>
-
-									<div>
-										<label for="">Screch card</label>
-					              		<input style="text-align: right;" type="number" class="form-control custom_form_control screchcard" v-model="screchcard" @blur="changefinalamounts" id="screchcard" name="" placeholder="Screch Card" autocomplete="off" required>
-					              		<br>
-									</div>
-									
-									<div>
-										<label for="">Advance pay</label>
-					              		<input style="text-align: right;" type="number" class="form-control custom_form_control advancepay" v-model="advancepay" @blur="changefinalamounta" id="advancepay" name="" placeholder="Advance pay" autocomplete="off" required>
-					              		<br>
-									</div>
+				              		
 
 									<div>
 										<label for="">Final Amount</label>
