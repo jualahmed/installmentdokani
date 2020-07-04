@@ -11,7 +11,4 @@
     <div>
         <img style="width: 698px;" src="<?php echo base_url();?>images/common.jpg" height="100px">
     </div>
-  	<h4 class="text-center"> 
-  		<b><?php echo $this->tank_auth->get_shopname().' ( '. $this->tank_auth->get_shopaddress().' ) '; ?></b>
-  	</h4>
   </div>
