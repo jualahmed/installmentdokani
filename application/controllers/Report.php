@@ -350,9 +350,18 @@ class Report extends MY_controller
   {
 	$start_date=$this->input->post('start_date');
 	$end_date=$this->input->post('end_date');
-	$type=$this->input->post('type');
-	$temp2 = $this->report_model->income_report_response($start_date,$end_date,$type);
+	$temp2 = $this->report_model->income_report_response($start_date,$end_date);
 	echo json_encode($temp2);
+  }
+
+  public function income_report_response_print()
+  {
+  		
+  	$start_date= $this->uri->segment(3);
+	$end_date= $this->uri->segment(4);
+	$data['income'] = $this->report_model->income_report_response($start_date,$end_date);
+	$this->__renderviewprint('Prints/report/income_report',$data); 
+
   }
 
 	

@@ -106,7 +106,7 @@ class Report_model extends CI_model{
 		if($seller_id!=0){$this->db->where('sells_log.creator',$seller_id);}
 		if($start_date!=0){$this->db->where('sells_log.date >="'.$start_date.'"');}
 		if($end_date!=0){$this->db->where('sells_log.date <= "'.$end_date.'"');}
-		$this->db->order_by('sells_log.id','asc'); 
+		$this->db->order_by('sells_log.date','asc'); 
 		$query = $this->db->get('sells_log')->result();
 		return $query;
 	}
@@ -157,7 +157,7 @@ class Report_model extends CI_model{
 	    return $this->db->get('all_installment')->result();
   	}
 
-	public function income_report_response($startdate='',$enddate='',$type='')
+	public function income_report_response($startdate='',$enddate='')
 	{
 	    $start=$startdate;
 	    $end=$enddate;
@@ -165,7 +165,6 @@ class Report_model extends CI_model{
      	$this->db->where('cash_book.transaction_type = "in"');
      	$this->db->where('cash_book.date >= "'.$start.'"');
      	$this->db->where('cash_book.date <= "'.$end.'"');
-      	if($type!='') $this->db->where('transaction_info.transaction_purpose = "'.$type.'"');
      	$this->db->join('transaction_info', 'transaction_info.transaction_id = cash_book.transaction_id');
       	$this->db->join('sells_log', 'sells_log.id = transaction_info.common_id');
        	$this->db->join('customer_info', 'customer_info.customer_id = sells_log.customar_id');

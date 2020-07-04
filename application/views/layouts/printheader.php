@@ -9,7 +9,7 @@
 <body class="text-center"> 
   <div class="page-header" style="text-align: center">
     <div>
-        <img style="width:90px;" src="<?php echo base_url();?>images/top_logo.png"/>
+        <img style="width: 698px;" src="<?php echo base_url();?>images/common.jpg" height="100px">
     </div>
   	<h4 class="text-center"> 
   		<b><?php echo $this->tank_auth->get_shopname().' ( '. $this->tank_auth->get_shopaddress().' ) '; ?></b>

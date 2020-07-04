@@ -26,7 +26,7 @@ new Vue({
         self.loding=!self.loding;
         self.alldata=result;
           result.forEach( function(element, index) {
-             self.amount=parseInt(element.amount)+parseInt(element.amount);
+             self.amount=parseInt(self.amount)+parseInt(element.amount);
           });
       }
     });

@@ -18,18 +18,10 @@
 								<div class="col-sm-2">
 									<input type="text" name="end_date" class="form-control" id="datepicker" placeholder="<?php echo $bd_date ?>">
 								</div>
-								<label for="inputEmail3" class="col-sm-1 control-label">Income Type</label>
-								<div class="col-sm-2">
-									<select class="form-control" id="type" name="type">
-										<option value="">Select A Type</option>
-										<option value="collection">Collection</option>
-										<option value="interestcollection">Interest Collection</option>
-										<option value="latefeecollection">Iatefee Collection</option>
-									</select>
-								</div>
 								<div class="col-sm-3 mt-2">
 									<button @click.prevent="result" type="submit" class="btn btn-success btn-sm" name="search_random" style="width:100px;"><i class="fa fa-fw fa-search"></i> Search</button>
 									<button type="reset" id="reset_btn" class="btn btn-warning btn-sm" style="width:100px;"><i class="fa fa-fw fa-refresh"></i> Reset</button>
+									<a :href="base_url+'Report/income_report_response_print/'+startdate+'/'+enddate" id="down" target="_blank" class="btn btn-primary btn-sm"><i class="fa fa-download"></i> Download</a>
 								</div>
 							</div>
 							<br>
@@ -64,11 +56,11 @@
 						<td align="center">{{ i.customer_id }}</td>
 						<td>{{ i.customer_name }}</td>
 						<th>{{ i.transaction_purpose }}</th>
-						<th style="text-align: right;">{{ i.amount }}</th>
+						<th style="text-align: right;">{{ parseFloat(i.amount).toFixed(2) }}</th>
 					</tr>
 					<tr>
 						<td colspan="5"></td>
-						<td style="text-align: right;"><b>Total: {{ amount }}</b></td>
+						<td style="text-align: right;"><b>Total: {{ parseFloat(amount).toFixed(2) }}</b></td>
 					</tr>
 				</tbody>
 			</table>
