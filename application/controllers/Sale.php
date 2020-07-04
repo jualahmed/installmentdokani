@@ -240,7 +240,9 @@ class Sale extends MY_Controller {
     }
 
     public function add($date_str, $months)
-	{
+	{	
+		
+
 	    $date = new DateTime($date_str);
 	    // We extract the day of the month as $start_day
 	    $start_day = $date->format('j');

@@ -78,7 +78,7 @@ class Report_model extends CI_model{
 		$this->db->join('warranty_product_list','warranty_product_list.product_id = product_info.product_id');
 		$this->db->join('purchase_receipt_info','purchase_receipt_info.receipt_id = warranty_product_list.purchase_receipt_id');
 		$this->db->join('distributor_info','distributor_info.distributor_id = purchase_receipt_info.distributor_id');
-		$this->db->order_by('warranty_product_list.ip_id', 'desc');
+		$this->db->order_by('warranty_product_list.ip_id', 'asc');
 		if($receipt_id!=0){$this->db->where('purchase_receipt_info.receipt_id',$receipt_id);} 
 		if($product_id!=0){$this->db->where('product_info.product_id',$product_id);}
 		if($category1!=0){$this->db->where('product_info.catagory_id',$category1);}
