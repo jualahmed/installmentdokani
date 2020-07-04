@@ -203,6 +203,7 @@ new Vue({
 	    	})
 	    	.done(function(re) {
   				self.installmentdate=[];
+  				console.log(re)
 	    		var re=jQuery.parseJSON(re);
 	    		for (var i = 0; i< re.length; i++) {
 	    			self.installmentdate.push(re[i]);
