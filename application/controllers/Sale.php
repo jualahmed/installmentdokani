@@ -77,15 +77,24 @@ class Sale extends MY_Controller {
 			'product_id'=>$this->input->post('product_id'),
 			'creator' => $creator,
 		);
-		$this->sale_model->updatestock($data['product_id']);
 
-		$this->db->set('status',1);
-		$this->db->where('ip_id', $w_product_id);
-		$this->db->update('warranty_product_list');
+		$this->db->where('id', $this->input->post('id'));
+		$countresult = $this->db->get('sells_log')->num_rows();
 
-		$id=$this->sale_model->create($data);
-		$d=array('id'=>$id,'data'=>$data);
-		echo json_encode($d);
+
+		if($countresult>0){
+			echo 1;
+		}else{
+			$this->sale_model->updatestock($data['product_id']);
+
+			$this->db->set('status',1);
+			$this->db->where('ip_id', $w_product_id);
+			$this->db->update('warranty_product_list');
+
+			$id=$this->sale_model->create($data);
+			$d=array('id'=>$id,'data'=>$data);
+			echo json_encode($d);
+		}
 	}
 
 	public function collection($value='')

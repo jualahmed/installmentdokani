@@ -264,6 +264,8 @@
 							<button type="button" class="btn btn-primary btn_for_sale style2" @click="printmoneyrecopt" id="credit_sale" v-if="id">Print Money Recipt</button>
 						</div>
 					</div>
+
+					<div v-if="messa"><h2 class="text-center">{{  messa }} </h2></div>
 	  			</div>
 		        </div>
 		              	</form>

@@ -40,6 +40,7 @@ new Vue({
         referenccontact:null,
         id:null,
         key:null,
+        messa:"0"
       };
     },
     components:{
@@ -65,17 +66,22 @@ new Vue({
 	    	})
 	    	.done(function(re) {
                 self.issuccess=true;
-	    		var re = jQuery.parseJSON(re);
-	    		if(re){
-	    			self.selectedCountries=[];
-		    		self.id=re.id;
-		    		self.selldata.push(re.data);
-	    		    swal({
-                        title: "Good job!",
-                        text: "Sale Created successfully!",
-                        icon: "success",
-                    });
-	            }
+                if(re==1){
+                	self.messa="Sale Id ALready Exit. Please Change it"
+                }
+                else{
+	    			var re = jQuery.parseJSON(re);
+		    		if(re){
+		    			self.selectedCountries=[];
+			    		self.id=re.id;
+			    		self.selldata.push(re.data);
+		    		    swal({
+	                        title: "Good job!",
+	                        text: "Sale Created successfully!",
+	                        icon: "success",
+	                    });
+		            }
+		        }
 	    	})
 	    	.always(function() {
 	    		console.log("complete");
