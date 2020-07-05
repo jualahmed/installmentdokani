@@ -196,6 +196,7 @@ new Vue({
   	watch:{
   		data:function(data){
   			this.installmentdate=[];
+  			console.log(this.installmentdate)
 	    	var self=this;
 	    	$.ajax({
 	    		url: base_url+'/sale/insdate/'+this.month,
@@ -203,7 +204,6 @@ new Vue({
 	    	})
 	    	.done(function(re) {
   				self.installmentdate=[];
-  				console.log(re)
 	    		var re=jQuery.parseJSON(re);
 	    		for (var i = 0; i< re.length; i++) {
 	    			self.installmentdate.push(re[i]);

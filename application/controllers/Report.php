@@ -114,14 +114,14 @@ class Report extends MY_controller
 		else redirect('Product/product/noaccess');
 	}
 
-  public function stock_details_json()
-  {
-	$catagory_id= $this->input->post('catagory_id');
-	$product_id= $this->input->post('product_id');
-	$company_id=$this->input->post('company_id');
-	$reportdata=$this->report_model->stock_details($catagory_id,$product_id,$company_id);
-	echo json_encode($reportdata);
-  }
+  	public function stock_details_json()
+  	{
+		$catagory_id= $this->input->post('catagory_id');
+		$product_id= $this->input->post('product_id');
+		$company_id=$this->input->post('company_id');
+		$reportdata=$this->report_model->stock_details($catagory_id,$product_id,$company_id);
+		echo json_encode($reportdata);
+  	}
 
 	public function stock_details_print()
 	{

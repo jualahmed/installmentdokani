@@ -112,7 +112,7 @@
 						  <td>{{ a.color }} </td>
 						  <td title="Purchase Quantity">1</td>
 						  <td>{{ a.purchase_price }}</td>
-						  <td>{{ a.general_unit_sale_price }}</td>
+						  <td>{{ a.sale_price }}</td>
 						  <td><a href="" data-toggle="modal" @click="editthisproduct(a.ip_id)" data-target="#EditModel" class="sdfsdfsdf btn btn-sm btn-success" >Edit</a></td>
 						</tr>
 						<tr>
