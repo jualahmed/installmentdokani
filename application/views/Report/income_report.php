@@ -18,7 +18,7 @@
 								<div class="col-sm-2">
 									<input type="text" name="end_date" class="form-control" id="datepicker" placeholder="<?php echo $bd_date ?>">
 								</div>
-								<div class="col-sm-3 mt-2">
+								<div class="col-sm-4 mt-2">
 									<button @click.prevent="result" type="submit" class="btn btn-success btn-sm" name="search_random" style="width:100px;"><i class="fa fa-fw fa-search"></i> Search</button>
 									<button type="reset" id="reset_btn" class="btn btn-warning btn-sm" style="width:100px;"><i class="fa fa-fw fa-refresh"></i> Reset</button>
 									<a :href="base_url+'Report/income_report_response_print/'+startdate+'/'+enddate" id="down" target="_blank" class="btn btn-primary btn-sm"><i class="fa fa-download"></i> Download</a>

@@ -119,13 +119,13 @@ class Report extends MY_controller
 		$catagory_id= $this->input->post('catagory_id');
 		$product_id= $this->input->post('product_id');
 		$company_id=$this->input->post('company_id');
-		$reportdata=$this->report_model->stock_details($catagory_id,$product_id,$company_id);
+		$reportdata=$this->report_model->stock_details($product_id);
 		echo json_encode($reportdata);
   	}
 
-	public function stock_details_print()
+	public function stock_details_print($id)
 	{
-		$data['reportdata']=$this->report_model->stock_details();
+		$data['reportdata']=$this->report_model->stock_details($id);
 		$this->__renderviewprint('Prints/report/stock_details', $data);
 	}
 

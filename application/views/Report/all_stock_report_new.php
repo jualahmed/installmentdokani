@@ -55,7 +55,7 @@
 										<?php 
 											echo form_input('product_amount','','class ="form-control seven" id="lock77" style="font-family:Helvetica Neue,Helvetica,Arial,sans-serif;" placeholder="Stock Amount" title="Stock Amount" autocomplete="off"');
 										?>
-								  </div> {{ type }}
+								  </div>
 								<div class="col-sm-4 mt-2">
 									<button type="submit" class="btn btn-success btn-sm" @click.prevent="stockreport" name="search_random"><i class="fa fa-fw fa-search"></i> Search</button>
 									<button type="reset" id="reset_btn" class="btn btn-warning btn-sm"><i class="fa fa-fw fa-refresh"></i> Reset</button>

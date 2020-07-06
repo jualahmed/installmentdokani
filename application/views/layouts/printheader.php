@@ -9,6 +9,6 @@
 <body class="text-center"> 
   <div class="page-header" style="text-align: center">
     <div>
-        <img style="width: 698px;" src="<?php echo base_url();?>images/common.jpg" height="100px">
+        <img style="width: 698px;" src="<?php echo base_url();?>images/common.jpg" height="90px">
     </div>
   </div>

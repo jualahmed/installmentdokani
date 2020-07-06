@@ -26,15 +26,15 @@
 					<td><?php echo $key+1 ?></td> 
 					<td><?php echo $var->product_name ?></td>
 					<td><?php echo $var->stock_amount ?></td>
-					<td><?php echo $var->bulk_unit_buy_price ?></td>
-					<td><?php echo $var->general_unit_sale_price ?></td>
+					<td align="right"><?php echo sprintf('%0.2f',$var->bulk_unit_buy_price) ?></td>
+					<td align="right"><?php echo  sprintf('%0.2f',$var->general_unit_sale_price) ?></td>
 				</tr>
 			<?php endforeach ?>
 			<tr>
-				<td colspan="2"><b></b></td>
-				<td colspan="1"><b>Total Quantity: <?php echo $stockqty ?></b> </td>
-				<td colspan="1"><b>Total Stock Amount: <?php echo $amount ?></b></td>
-				<td colspan="1"><b>Total Sale Amount: <?php echo $samount ?></b></td>
+				<td colspan="2"><b>Total:</b></td>
+				<td colspan="1"><b><?php echo $stockqty ?></b> </td>
+				<td colspan="1" align="right"><b><?php echo sprintf('%0.2f',$amount) ?></b></td>
+				<td colspan="1" align="right"><b><?php echo sprintf('%0.2f',$samount) ?></b></td>
 			</tr>
 		</table>
 		<?php } else{?>

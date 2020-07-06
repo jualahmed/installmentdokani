@@ -110,15 +110,16 @@
 						  <td>{{ a.chassisno }} </td>
 						  <td>{{ a.batteryno }} </td>
 						  <td>{{ a.color }} </td>
-						  <td title="Purchase Quantity">1</td>
-						  <td>{{ a.purchase_price }}</td>
-						  <td>{{ a.sale_price }}</td>
+						  <td align="center">1</td>
+						  <td align="right">{{ a.purchase_price }}</td>
+						  <td align="right">{{ a.sale_price }}</td>
 						  <td><a href="" data-toggle="modal" @click="editthisproduct(a.ip_id)" data-target="#EditModel" class="sdfsdfsdf btn btn-sm btn-success" >Edit</a></td>
 						</tr>
 						<tr>
-							<td colspan="10"><b></b></td>
-							<td colspan="1"><b>Total Quantity: {{ stockqty }}</b> </td>
-							<td colspan="1"><b>Total Stock Amount: {{ samount }}</b></td>
+							<td colspan="10">Total:<b></b></td>
+							<td colspan="1"><b>{{ stockqty }}</b> </td>
+							<td colspan="1" align="right"><b>{{ samount }}</b></td>
+							<td colspan="1" align="right"><b>{{ amount }}</b></td>
 						</tr>
 					</table>
 				</div>
