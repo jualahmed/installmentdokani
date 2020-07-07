@@ -105,15 +105,15 @@
 						<td>{{ i.color }}</td>
 						<td>{{ i.customer_name }}</td>
 						<td>{{ i.customer_contact_no }}</td>
-						<td>{{ parseInt(i.price)+parseInt(i.installmentfee)+parseInt(i.totalinterastlog) }}</td>
-						<td>{{ parseInt(i.totaldue)+parseInt(i.totalinterest) }}</td>
+						<td>{{ parseFloat(i.price)+parseFloat(i.installmentfee)+parseFloat(i.totalinterastlog) }}</td>
+						<td>{{ parseFloat(i.totaldue)+parseFloat(i.totalinterest) }}</td>
 						<td>{{ i.username }}</td>
 						<td><a :href="base_url+'sale/invoiceprint/'+i.sid" target="_blank" class="btn btn-secondary">Print</a></td>
 					</tr>
 					<tr>
-						<td colspan="11"></td>
-						<td><b>Total: {{ amount }}</b></td>
-						<td><b>Total Due:{{ samount }}</b></td>
+						<td colspan="11">Total</td>
+						<td><b>{{ parseFloat(amount).toFixed(2) }}</b></td>
+						<td><b>{{ parseFloat(samount).toFixed(2) }}</b></td>
 					</tr>
 				</tbody>
 			</table>

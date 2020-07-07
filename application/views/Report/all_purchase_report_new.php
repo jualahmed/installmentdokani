@@ -111,15 +111,15 @@
 						  <td>{{ a.batteryno }} </td>
 						  <td>{{ a.color }} </td>
 						  <td align="center">1</td>
-						  <td align="right">{{ a.purchase_price }}</td>
-						  <td align="right">{{ a.sale_price }}</td>
+						  <td align="right">{{ parseFloat(a.purchase_price).toFixed(2) }}</td>
+						  <td align="right">{{ parseFloat(a.sale_price).toFixed(2) }}</td>
 						  <td><a href="" data-toggle="modal" @click="editthisproduct(a.ip_id)" data-target="#EditModel" class="sdfsdfsdf btn btn-sm btn-success" >Edit</a></td>
 						</tr>
 						<tr>
 							<td colspan="10">Total:<b></b></td>
 							<td colspan="1"><b>{{ stockqty }}</b> </td>
-							<td colspan="1" align="right"><b>{{ samount }}</b></td>
-							<td colspan="1" align="right"><b>{{ amount }}</b></td>
+							<td colspan="1" align="right"><b>{{ parseFloat(samount).toFixed(2) }}</b></td>
+							<td colspan="1" align="right"><b>{{ parseFloat(amount).toFixed(2) }}</b></td>
 						</tr>
 					</table>
 				</div>

@@ -31,7 +31,7 @@
 					   <td>SP</td>
 					 
 					</tr>
-					<?php $i=0;$stockqty=0;$amount=0;$samount=0;foreach ($purchase_data->result() as $var):$i++; $stockqty++;$amount=$amount+$var->general_unit_sale_price; $samount=$samount+$var->purchase_price;?>
+					<?php $i=0;$stockqty=0;$amount=0;$samount=0;foreach ($purchase_data->result() as $var):$i++; $stockqty++;$amount=$amount+$var->purchase_price; $samount=$samount+$var->sale_price;?>
 						<tr v-for="(a,index) in alldata">
 						  <td><?php echo $i ?></td>
 						  <td><?php echo $var->challan_no ?></td>
@@ -50,9 +50,9 @@
 						</tr>
 					<?php endforeach ?>
 					<tr>
-						<td colspan="9">Total:<b></b></td>
+						<td colspan="10">Total:<b></b></td>
 						<td colspan="1"><b><?php echo $stockqty ?></b> </td>
-						<td colspan="1"><b><?php echo sprintf('%0.2f',$samount) ?></b></td>
+						<td colspan="1"><b><?php echo sprintf('%0.2f',$amount) ?></b></td>
 						<td colspan="1"><b><?php echo sprintf('%0.2f',$samount) ?></b></td>
 					</tr>
 				</table>
