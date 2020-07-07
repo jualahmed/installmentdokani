@@ -101,7 +101,7 @@ class Account_model extends CI_model{
 
 		$this->db->select('transaction_info.transaction_id,transaction_info.transaction_purpose,transaction_info.amount,transaction_info.date,transaction_info.remarks,customer_info.customer_name');
 		$this->db->from('transaction_info,customer_info');
-		$this->db->where('transaction_info.ledger_id=customer_info.customer_id AND (transaction_info.transaction_purpose="collection" OR transaction_info.transaction_purpose="interestcollection")');
+		$this->db->where('transaction_info.ledger_id=customer_info.customer_id AND (transaction_info.transaction_purpose="collection" OR transaction_info.transaction_purpose="duecollection" OR transaction_info.transaction_purpose="interestcollection")');
 		if($start_date!=''){$this -> db -> where('transaction_info.date >= "'.$start_date.'"');}
 		if($end_date!=''){$this -> db -> where('transaction_info.date <= "'.$end_date.'"');}
 		else if($start_date!=''){$this -> db -> where('transaction_info.date <= "'.$start_date.'"');}
@@ -135,7 +135,7 @@ class Account_model extends CI_model{
 		$this->db->select('transaction_info.transaction_id,transaction_info.transaction_purpose,transaction_info.amount,transaction_info.date,transaction_info.remarks,customer_info.customer_name');
 		$this->db->from('transaction_info,customer_info');
 		$this->db->where('transaction_info.ledger_id=customer_info.customer_id');
-		$this->db->where('transaction_info.transaction_purpose="credit_collection"');
+		$this->db->where('transaction_info.transaction_purpose="duecollection"');
 
 		if($start_date!=''){$this -> db -> where('transaction_info.date >= "'.$start_date.'"');}
 		if($end_date!=''){$this -> db -> where('transaction_info.date <= "'.$end_date.'"');}
@@ -316,7 +316,7 @@ class Account_model extends CI_model{
 		$this->db->select('transaction_info.transaction_id,transaction_info.transaction_purpose,transaction_info.amount,transaction_info.date,transaction_info.remarks,customer_info.customer_name');
 		$this->db->from('transaction_info,customer_info');
 		$this->db->where('transaction_info.ledger_id=customer_info.customer_id');
-		$this->db->where('transaction_info.transaction_purpose="credit_collection"');
+		$this->db->where('transaction_info.transaction_purpose="duecollection"');
 
 		if($start_date!='' && $start_date!='null'){$this -> db -> where('transaction_info.date >= "'.$start_date.'"');}
 		if($end_date!='' && $end_date!='null'){$this -> db -> where('transaction_info.date <= "'.$end_date.'"');}

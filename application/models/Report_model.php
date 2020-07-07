@@ -161,15 +161,35 @@ class Report_model extends CI_model{
 	{
 	    $start=$startdate;
 	    $end=$enddate;
-	    $this->db->select('sells_log.*,cash_book.*,cash_book.date as dddddd,transaction_info.*,customer_info.*');
+	    $this->db->select('sells_log.*,cash_book.*,cash_book.date as dddddd,transaction_info.*,customer_info.*,SUM(transaction_info.amount) AS amount');
      	$this->db->where('cash_book.transaction_type = "in"');
      	$this->db->where('cash_book.date >= "'.$start.'"');
      	$this->db->where('cash_book.date <= "'.$end.'"');
+     	$this->db->where('transaction_info.transaction_purpose != "collection"');
      	$this->db->join('transaction_info', 'transaction_info.transaction_id = cash_book.transaction_id');
       	$this->db->join('sells_log', 'sells_log.id = transaction_info.common_id');
+      	$this->db->group_by("transaction_info.common_id");
        	$this->db->join('customer_info', 'customer_info.customer_id = sells_log.customar_id');
        	return $this->db->get('cash_book')->result();
 	}
+
+
+	public function income_report_responsecollection($startdate='',$enddate='')
+	{
+	    $start=$startdate;
+	    $end=$enddate;
+	    $this->db->select('sells_log.*,cash_book.*,cash_book.date as dddddd,transaction_info.*,customer_info.*,SUM(transaction_info.amount) AS amount');
+     	$this->db->where('cash_book.transaction_type = "in"');
+     	$this->db->where('cash_book.date >= "'.$start.'"');
+     	$this->db->where('cash_book.date <= "'.$end.'"');
+     	$this->db->where('transaction_info.transaction_purpose = "collection"');
+     	$this->db->join('transaction_info', 'transaction_info.transaction_id = cash_book.transaction_id');
+      	$this->db->join('sells_log', 'sells_log.id = transaction_info.common_id');
+      	$this->db->group_by("transaction_info.common_id");
+       	$this->db->join('customer_info', 'customer_info.customer_id = sells_log.customar_id');
+       	return $this->db->get('cash_book')->result();
+	}
+
 
 
 

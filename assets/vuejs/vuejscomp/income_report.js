@@ -3,6 +3,7 @@ new Vue({
   data:{
     base_url:base_url,
     alldata:[],
+    alldata1:[],
     startdate:'',
     enddate:'',
     type:'',
@@ -24,8 +25,13 @@ new Vue({
       data: $('#salereport').serialize(),
       success: function(result) {
         self.loding=!self.loding;
-        self.alldata=result;
-          result.forEach( function(element, index) {
+        self.alldata=result.duecollection;
+        self.alldata1=result.collection;
+          result.duecollection.forEach( function(element, index) {
+             self.amount=parseInt(self.amount)+parseInt(element.amount);
+          });
+
+          result.collection.forEach( function(element, index) {
              self.amount=parseInt(self.amount)+parseInt(element.amount);
           });
       }

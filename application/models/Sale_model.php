@@ -87,17 +87,6 @@ class Sale_model extends CI_Model {
 			   'creator'        					=> $data['creator'],
 			);
 			$this->db->insert('transaction_info', $installmentfee);
-
-			$cash_book = array(
-			   'cb_id'         						=> '',
-			   'transaction_id'                     => $insert_id,
-			   'transaction_type'                	=> 'in',
-			   'amount'                 			=> $data['installmentfee'],
-			   'date'         						=> $bd_date,
-			   'status'    	 						=> 'active',
-			   'creator'                   			=> $data['creator'],
-			);
-			$this->db->insert('cash_book', $cash_book);
 		}
 		if($data['price']>0){
 			$sale = array
@@ -254,7 +243,7 @@ class Sale_model extends CI_Model {
 		// Transaction info
 		$payment_info = array
 		(
-		   'transaction_purpose'                => 'collection',
+		   'transaction_purpose'                => 'duecollection',
 		   'transaction_mode'                 	=> 'cash',
 		   'ledger_id'         					=> $data1->customar_id,
 		   'common_id'         					=> $data1->id,

@@ -37,7 +37,7 @@
 	</div>
 
 	<section class="content">
-		<div class="table-responsive" v-if="alldata.length">          
+		<div class="table-responsive" v-if="alldata.length || alldata1.length">          
 			<table class="table">
 				<thead>
 					<tr>
@@ -55,7 +55,15 @@
 						<td align="center">{{ formatDate(i.dddddd) }}</td>
 						<td align="center">{{ i.customer_id }}</td>
 						<td>{{ i.customer_name }}</td>
-						<th>{{ i.transaction_purpose }}</th>
+						<th>Due Collection</th>
+						<th style="text-align: right;">{{ parseFloat(i.amount).toFixed(2) }}</th>
+					</tr>
+					<tr v-for="(i,index) in alldata1">
+						<td align="center">{{ index+1 }}</td>
+						<td align="center">{{ formatDate(i.dddddd) }}</td>
+						<td align="center">{{ i.customer_id }}</td>
+						<td>{{ i.customer_name }}</td>
+						<th>Collection</th>
 						<th style="text-align: right;">{{ parseFloat(i.amount).toFixed(2) }}</th>
 					</tr>
 					<tr>

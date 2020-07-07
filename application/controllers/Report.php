@@ -114,14 +114,14 @@ class Report extends MY_controller
 		else redirect('Product/product/noaccess');
 	}
 
-  	public function stock_details_json()
-  	{
+	public function stock_details_json()
+	{
 		$catagory_id= $this->input->post('catagory_id');
 		$product_id= $this->input->post('product_id');
 		$company_id=$this->input->post('company_id');
 		$reportdata=$this->report_model->stock_details($product_id);
 		echo json_encode($reportdata);
-  	}
+	}
 
 	public function stock_details_print($id)
 	{
@@ -321,10 +321,10 @@ class Report extends MY_controller
 
   public function customer_reportinstallment($id='')
   {	
-  	$this->db->where('sells_log_id', $id);
-  	$this->db->order_by('all_installment_id', 'desc');
-  	$date = $this->db->get('all_installment')->result();
-  	echo json_encode($date);
+	$this->db->where('sells_log_id', $id);
+	$this->db->order_by('all_installment_id', 'desc');
+	$date = $this->db->get('all_installment')->result();
+	echo json_encode($date);
   }
 
   public function income_report()
@@ -350,14 +350,15 @@ class Report extends MY_controller
   {
 	$start_date=$this->input->post('start_date');
 	$end_date=$this->input->post('end_date');
-	$temp2 = $this->report_model->income_report_response($start_date,$end_date);
-	echo json_encode($temp2);
+	$duecollection = $this->report_model->income_report_response($start_date,$end_date);
+	$collection = $this->report_model->income_report_responsecollection($start_date,$end_date);
+	echo json_encode(array('collection' =>$collection ,'duecollection'=>$duecollection ));
   }
 
   public function income_report_response_print()
   {
-  		
-  	$start_date= $this->uri->segment(3);
+		
+	$start_date= $this->uri->segment(3);
 	$end_date= $this->uri->segment(4);
 	$data['income'] = $this->report_model->income_report_response($start_date,$end_date);
 	$this->__renderviewprint('Prints/report/income_report',$data); 

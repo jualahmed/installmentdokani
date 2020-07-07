@@ -33,7 +33,7 @@ $totalinterastpaidpain=0;
 
 $ddin=$this->db->query("SELECT * FROM transaction_info WHERE common_id='$all->sid' AND (transaction_purpose='interestcollection' OR transaction_purpose='latefeecollection')")->result();
 
-$dd=$this->db->query("SELECT * FROM transaction_info WHERE common_id='$all->sid' AND (transaction_purpose='collection')")->result();
+$dd=$this->db->query("SELECT * FROM transaction_info WHERE common_id='$all->sid' AND (transaction_purpose='collection' OR transaction_purpose='duecollection')")->result();
 
 foreach ($dd as $key => $value) {
 	$totalpain=$totalpain+$value->amount;

@@ -265,7 +265,7 @@
 						</div>
 					</div>
 
-					<div v-if="messa"><h2 class="text-center">{{  messa }} </h2></div>
+					<div v-if="messa!=0"><h2 class="text-center">{{  messa }} </h2></div>
 	  			</div>
 		        </div>
 		              	</form>
