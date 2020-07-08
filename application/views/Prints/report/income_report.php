@@ -12,7 +12,7 @@
     <tr>
       <td>
         <div class="page" style="line-height: 3;">
-         	<?php if(count($income)>0){ ?>
+         	<?php if(count($duecollection)>0 || count($collection)>0){ ?>
 <div class="table-responsive">     
 	<div class="table-responsive">     
 		<table class="table table-bordered table-secondary">
@@ -27,13 +27,23 @@
 				</tr>
 			</thead>
 			<tbody>
-				<?php $i=0;$amount=0;foreach ($income as $key => $var): $i++;$amount=$amount+$var->amount ?>
+				<?php $i=0;$amount=0;foreach ($duecollection as $key => $var): $i++;$amount=$amount+$var->amount ?>
 					<tr>
 						<th style="text-align: center;"><?php echo $i ?></th>
 						<th style="text-align: center;"><?php echo $var->dddddd ?></th>
 						<th style="text-align: center;"><?php echo $var->customer_id ?></th>
 						<th><?php echo $var->customer_name ?></th>
-						<th><?php echo $var->transaction_purpose ?></th>
+						<th><?php echo "Due Collection" ?></th>
+						<th style="text-align: right;"><?php echo sprintf('%0.2f',$var->amount) ?></th>
+					</tr>
+				<?php endforeach ?>
+				<?php $i=0;$amount=0;foreach ($collection as $key => $var): $i++;$amount=$amount+$var->amount ?>
+					<tr>
+						<th style="text-align: center;"><?php echo $i ?></th>
+						<th style="text-align: center;"><?php echo $var->dddddd ?></th>
+						<th style="text-align: center;"><?php echo $var->customer_id ?></th>
+						<th><?php echo $var->customer_name ?></th>
+						<th><?php echo "Collection" ?></th>
 						<th style="text-align: right;"><?php echo sprintf('%0.2f',$var->amount) ?></th>
 					</tr>
 				<?php endforeach ?>

@@ -312,58 +312,80 @@ class Report extends MY_controller
 	}
   }
 
-  public function customer_report_response()
-  {
-	$customer_id=$this->input->post('customer_id');
-	$temp2 = $this->report_model->customer_report_response($customer_id);
-	echo json_encode($temp2);
-  }
+  	public function customer_report_response()
+  	{
+		$customer_id=$this->input->post('customer_id');
+		$temp2 = $this->report_model->customer_report_response($customer_id);
+		echo json_encode($temp2);
+  	}
 
-  public function customer_reportinstallment($id='')
-  {	
-	$this->db->where('sells_log_id', $id);
-	$this->db->order_by('all_installment_id', 'desc');
-	$date = $this->db->get('all_installment')->result();
-	echo json_encode($date);
-  }
+  	public function customer_reportinstallment($id='')
+  	{	
+		$this->db->where('sells_log_id', $id);
+		$this->db->order_by('all_installment_id', 'desc');
+		$date = $this->db->get('all_installment')->result();
+		echo json_encode($date);
+  	}
 
-  public function income_report()
-  {
-	$data['user_type'] = $this->tank_auth->get_usertype();
-	if($this->access_control_model->my_access($data['user_type'], 'Product', 'product_entry'))
-	{
-	  $bd_date = date('Y-m-d');
-	  $data['bd_date'] = $bd_date;
-	  $data['sale_status'] = '';
-	  $data['alarming_level'] = FALSE;
-	  $data['last_id'] = $this->product_model->getLastInserted();
-	  $data['user_name'] = $this->tank_auth->get_username();
-	  $data['status'] = '';
-	  $data['product_specification'] = $this->product_model->product_specification();
-	  $data['vuejscomp'] = 'income_report.js';
-	  $this->__renderview('Report/income_report', $data);
-	}
-	else redirect('Product/product/noaccess');
-  }
+  	public function income_report()
+  	{
+		$data['user_type'] = $this->tank_auth->get_usertype();
+		if($this->access_control_model->my_access($data['user_type'], 'Product', 'product_entry'))
+		{
+		  $bd_date = date('Y-m-d');
+		  $data['bd_date'] = $bd_date;
+		  $data['sale_status'] = '';
+		  $data['alarming_level'] = FALSE;
+		  $data['last_id'] = $this->product_model->getLastInserted();
+		  $data['user_name'] = $this->tank_auth->get_username();
+		  $data['status'] = '';
+		  $data['product_specification'] = $this->product_model->product_specification();
+		  $data['vuejscomp'] = 'income_report.js';
+		  $this->__renderview('Report/income_report', $data);
+		}
+		else redirect('Product/product/noaccess');
+  	}
 
-  public function income_report_response()
-  {
-	$start_date=$this->input->post('start_date');
-	$end_date=$this->input->post('end_date');
-	$duecollection = $this->report_model->income_report_response($start_date,$end_date);
-	$collection = $this->report_model->income_report_responsecollection($start_date,$end_date);
-	echo json_encode(array('collection' =>$collection ,'duecollection'=>$duecollection ));
-  }
+  	public function income_report_response()
+  	{
+		$start_date=$this->input->post('start_date');
+		$end_date=$this->input->post('end_date');
+		$type=$this->input->post('type');
 
-  public function income_report_response_print()
-  {
-		
-	$start_date= $this->uri->segment(3);
-	$end_date= $this->uri->segment(4);
-	$data['income'] = $this->report_model->income_report_response($start_date,$end_date);
-	$this->__renderviewprint('Prints/report/income_report',$data); 
+		$duecollection=[];
+		$collection=[];
 
-  }
+		if($type=='duecollection'){
+			$duecollection = $this->report_model->income_report_response($start_date,$end_date);
+		}else if($type=='collection'){
+			$collection = $this->report_model->income_report_responsecollection($start_date,$end_date);
+		}else{
+			$duecollection = $this->report_model->income_report_response($start_date,$end_date);
+			$collection = $this->report_model->income_report_responsecollection($start_date,$end_date);
+		}
+		echo json_encode(array('collection' =>$collection ,'duecollection'=>$duecollection ));
+  	}
+
+  	public function income_report_response_print()
+  	{
+		$start_date= $this->uri->segment(3);
+		$end_date= $this->uri->segment(4);
+		$type= $this->uri->segment(5);
+
+		$data['duecollection']=[];
+		$data['collection']=[];
+
+		if($type=='duecollection'){
+			$data['duecollection'] = $this->report_model->income_report_response($start_date,$end_date);
+		}else if($type=='collection'){
+			$data['collection']= $this->report_model->income_report_responsecollection($start_date,$end_date);
+		}else{
+			$data['duecollection'] = $this->report_model->income_report_response($start_date,$end_date);
+			$data['collection']= $this->report_model->income_report_responsecollection($start_date,$end_date);
+		}
+
+		$this->__renderviewprint('Prints/report/income_report',$data); 
+  	}
 
 	
 

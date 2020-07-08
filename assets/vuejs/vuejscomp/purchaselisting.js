@@ -170,7 +170,7 @@ const vm = new Vue({
 	      success : function(re)
 		  {	
 		  	console.log(re)
-		  	for (var i = re.length - 1; i >= 0; i--) {
+		  	for (var i = 0 ; i < re.length; i++) {
 		  		self.purchase_receipt_info.push(re[i]);
 		  	}
 	      }

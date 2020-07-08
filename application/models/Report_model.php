@@ -169,6 +169,7 @@ class Report_model extends CI_model{
      	$this->db->join('transaction_info', 'transaction_info.transaction_id = cash_book.transaction_id');
       	$this->db->join('sells_log', 'sells_log.id = transaction_info.common_id');
       	$this->db->group_by("transaction_info.common_id");
+      	$this->db->order_by("cash_book.date",'asc');
        	$this->db->join('customer_info', 'customer_info.customer_id = sells_log.customar_id');
        	return $this->db->get('cash_book')->result();
 	}
@@ -186,6 +187,7 @@ class Report_model extends CI_model{
      	$this->db->join('transaction_info', 'transaction_info.transaction_id = cash_book.transaction_id');
       	$this->db->join('sells_log', 'sells_log.id = transaction_info.common_id');
       	$this->db->group_by("transaction_info.common_id");
+      	$this->db->order_by("cash_book.date",'asc');
        	$this->db->join('customer_info', 'customer_info.customer_id = sells_log.customar_id');
        	return $this->db->get('cash_book')->result();
 	}
