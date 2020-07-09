@@ -53,7 +53,7 @@
 								  <label for="inputEmail3" class="col-sm-1 control-label">Amount</label>
 								  <div class="col-sm-2">
 										<?php 
-											echo form_input('product_amount','','class ="form-control seven" id="lock77" style="font-family:Helvetica Neue,Helvetica,Arial,sans-serif;" placeholder="Stock Amount" title="Stock Amount" autocomplete="off"');
+											echo form_input('product_amount','','class ="form-control seven" id="lock77" style="font-family:Helvetica Neue,Helvetica,Arial,sans-serif;" placeholder="Stock Amount"  autocomplete="off"');
 										?>
 								  </div>
 								<div class="col-sm-4 mt-2">
