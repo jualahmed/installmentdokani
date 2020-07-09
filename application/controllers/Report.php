@@ -147,6 +147,7 @@ class Report extends MY_controller
 			$data['product_type'] = $this->product_model->product_type();
 			$data['receipt_status'] = $this->product_model->receipt_status();
 			$data['purchase_receipt'] = $this->purchase_model->all();
+			$data['product_info'] = $this->product_model->all();
 			$data['unit_name'] = $this->product_model->unit_name();
 			$data['vuejscomp'] = 'all_purchase_report_new.js';
 			$this->__renderview('Report/all_purchase_report_new', $data);

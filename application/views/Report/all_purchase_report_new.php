@@ -20,8 +20,12 @@
 								</div>
 								<label for="inputEmail3" class="col-sm-1 control-label">Product</label>
 								<div class="col-sm-2">
-									<input type="text" class="form-control" v-model="product" name="product_name" id="lock22" placeholder="Product Name">
-									<input type="hidden" name="product_id" id="pro_id">
+									<select name="" class="form-control" v-model="product">
+										<option value="0">Select a Product</option>
+										<?php foreach ($product_info as $value): ?>
+											<option value="<?php echo $value->product_id ?>"><?php echo $value->product_name ?></option>
+										<?php endforeach ?>
+									</select>
 								</div>
 								<label for="inputEmail3" class="col-sm-1 control-label">Catagory</label>
 								<div class="col-sm-2">
