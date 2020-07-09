@@ -12,6 +12,8 @@ class Account extends MY_controller{
 		$this->load->model('bankcard_model');
 		$this->load->model('customer_model');
 		$this->load->model('distributor_model');
+		$this->load->model('employee_model');
+		$this->load->model('expense_model');
 	}
 	
 	public function transactionreport()
@@ -228,18 +230,55 @@ class Account extends MY_controller{
 	{
 		$data['user_name'] = $this->tank_auth->get_username();
 		$data['user_type'] = $this->tank_auth->get_usertype();
-		$data['distributor_info'] = $this->distributor_model->all();				
-		$data['customer_info'] = $this->customer_model->all();							
+    	$data['distributor_info'] = $this->distributor_model->all();     
+    	$data['employee_info'] = $this->employee_model->all();        
+		$data['expense_type'] = $this->expense_model->typeall();				
+		$data['customer'] = $this->customer_model->all();							
 		$data['service_provider_info'] = $this->account_model->service_provider_info();							
 		$data['owner_info'] = $this->account_model->owner_info();
-		$data['expense_type'] = $this->my_variables_model->fatch_expense_type();
-		$data['employee_info'] = $this->my_variables_model->employee_info();			
 		$data['status'] = '';
 		$data['vuejscomp'] = 'ledgers.js';
 		$this->__renderview('Account/ledgers', $data);
 	}
 
 	public function all_ledger_report_find()
+	{
+		$start =$this->input->post('start_date');
+		$end = $this->input->post('end_date');
+
+		if(!isset($start))$start = date("Y-m-d");
+		if(!isset($end))$end = date("Y-m-d");
+
+		$customer_id =$this->input->post('customer_id');
+		$distributor_id =$this->input->post('distributor_id');
+		$data['user_name'] = $this->tank_auth->get_username();
+		$data['user_type'] = $this->tank_auth->get_usertype();
+		$data['distributor_info'] = $this->distributor_model->all();       
+    	$data['employee_info'] = $this->employee_model->all();        
+		$data['expense_type'] = $this->expense_model->typeall();				
+		$data['customer'] = $this->customer_model->all();							
+		$data['service_provider_info'] = $this->account_model->service_provider_info();							
+		$data['owner_info'] = $this->account_model->owner_info();
+
+		if(isset($customer_id)){
+			$data['ledgerdata']=Transactionm::where(function ($query) {
+								    		$query->where('transaction_purpose', '=', 'sale')
+								         	 ->orWhere('transaction_purpose', '=', 'collection');
+										})->where('ledger_id',$customer_id)->whereBetween('date',[$start, $end])->get();
+		}
+
+		if(isset($distributor_id)){
+					$data['ledgerdata']=Transactionm::where(function ($query) {
+								    		$query->where('transaction_purpose', '=', 'purchase')
+								         	 ->orWhere('transaction_purpose', '=', 'payment');
+										})->where('ledger_id',$distributor_id)->whereBetween('date',[$start, $end])->get();
+		}
+
+		$data['vuejscomp'] = 'ledgers.js';
+		$this->__renderview('Account/ledgers', $data);
+	}
+
+	public function all_ledger_report_find1()
 	{
 		$bd_date = date('Y-m-d');
 		$cur_bd_date = $bd_date;
