@@ -24,6 +24,7 @@ new Vue({
 			dataType: 'json',
 			data: $('#salereport').serialize(),
 			success: function(result) {
+				self.amount=0;
 				self.loding=!self.loding;
 				self.alldata=result.duecollection;
 				self.alldata1=result.collection;
