@@ -352,6 +352,7 @@ class Report extends MY_controller
 		$end_date=$this->input->post('end_date');
 		$type=$this->input->post('type');
 
+
 		$duecollection=[];
 		$collection=[];
 
@@ -371,6 +372,9 @@ class Report extends MY_controller
 		$start_date= $this->uri->segment(3);
 		$end_date= $this->uri->segment(4);
 		$type= $this->uri->segment(5);
+
+			echo $start_date;
+		echo $end_date;
 
 		$data['duecollection']=[];
 		$data['collection']=[];

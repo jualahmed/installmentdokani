@@ -37,7 +37,7 @@
 						<th style="text-align: right;"><?php echo sprintf('%0.2f',$var->amount) ?></th>
 					</tr>
 				<?php endforeach ?>
-				<?php $i=0;$amount=0;foreach ($collection as $key => $var): $i++;$amount=$amount+$var->amount ?>
+				<?php $i=0;foreach ($collection as $key => $var): $i++;$amount=$amount+$var->amount ?>
 					<tr>
 						<th style="text-align: center;"><?php echo $i ?></th>
 						<th style="text-align: center;"><?php echo $var->dddddd ?></th>
