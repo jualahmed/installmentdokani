@@ -264,14 +264,14 @@ class Account extends MY_controller{
 			$data['ledgerdata']=Transactionm::where(function ($query) {
 								    		$query->where('transaction_purpose', '=', 'sale')
 								         	 ->orWhere('transaction_purpose', '=', 'collection');
-										})->where('ledger_id',$customer_id)->whereBetween('date',[$start, $end])->get();
+										})->where('ledger_id',$customer_id)->get();
 		}
 
 		if(isset($distributor_id)){
 					$data['ledgerdata']=Transactionm::where(function ($query) {
 								    		$query->where('transaction_purpose', '=', 'purchase')
 								         	 ->orWhere('transaction_purpose', '=', 'payment');
-										})->where('ledger_id',$distributor_id)->whereBetween('date',[$start, $end])->get();
+										})->where('ledger_id',$distributor_id)->get();
 		}
 
 		$data['vuejscomp'] = 'ledgers.js';
