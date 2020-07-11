@@ -29,11 +29,11 @@ new Vue({
 				self.alldata=result.duecollection;
 				self.alldata1=result.collection;
 					result.duecollection.forEach( function(element, index) {
-						 self.amount=parseInt(self.amount)+parseInt(element.amount);
+						 self.amount=parseFloat(self.amount)+parseFloat(element.amount);
 					});
 
 					result.collection.forEach( function(element, index) {
-						 self.amount=parseInt(self.amount)+parseInt(element.amount);
+						 self.amount=parseFloat(self.amount)+parseFloat(element.amount);
 					});
 			}
 		});
