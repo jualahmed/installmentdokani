@@ -341,6 +341,101 @@ class Account extends MY_controller{
 		$this->__renderview('Account/all_cash_book_report_new', $data);
 	}
 
+	public function  all_cash_book_report_find()
+	{
+		$data = array();
+		$data = $this->account_model->get_cash_book();
+		echo json_encode(array($data));
+	}
+
+	public function download_cash_book()
+	{
+		date_default_timezone_set("Asia/Dhaka");
+		$bd_date = date('Y-m-d',time());
+					
+		$credit = array();
+		$debit = array();
+		$credit = $this->account_model->get_cash_book_in_print();
+		$this->data['credit'] = $credit->result_array();
+		$debit 	= $this->account_model->get_cash_book_out_print();
+		$this->data['debit']  = $debit->result_array();
+
+
+		$html=$this->load->view('Download/download_cash_book',$this->data, true); 
+
+		$this->load->library('m_pdf');
+		ob_start();
+		$this->m_pdf->pdf 	= new mPDF('utf-8', 'A4');
+		$this->m_pdf->pdf->SetProtection(array('print'));
+		$this->m_pdf->pdf->SetTitle("Cash Book Report");
+		$this->m_pdf->pdf->SetAuthor("Dokani");
+		$this->m_pdf->pdf->SetDisplayMode('fullpage');
+		
+		$this->m_pdf->pdf->AddPageByArray(array(
+		'orientation' => '',
+		'mgl' => '10','mgr' => '10','mgt' => '35','mgb' => '20','mgh' => '10','mgf' => '5',
+		//margin left,margin right,margin top,margin bottom,margin header,margin footer
+		));
+		//$this->m_pdf->pdf->SetColumns(2);
+		$this->m_pdf->pdf->WriteHTML($html);
+		ob_clean();
+		$this->m_pdf->pdf->Output();
+		ob_end_flush();
+		exit;
+	}
+
+	public function bank_book_report()
+	{
+		$data['user_type'] = $this->tank_auth->get_usertype();
+		$bd_date = date('Y-m-d');
+		$data['bd_date'] = $bd_date;
+		$data['user_name'] = $this->tank_auth->get_username();
+		$data['vuejscomp'] = 'bank_book_report.js';
+		$this->__renderview('Account/all_bank_book_report_new', $data);
+	}
+
+	public function  all_bank_book_report_find()
+	{
+		$data = $this->account_model->get_bank_book();
+		echo json_encode($data);
+	}
+
+	public function download_bank_book()
+	{
+		date_default_timezone_set("Asia/Dhaka");
+		$bd_date = date('Y-m-d',time());
+					
+		$credit = array();
+		$debit = array();
+		$credit = $this->account_model->get_bank_book_in_print();
+		$this->data['credit'] = $credit->result_array();
+		$debit 	= $this->account_model->get_bank_book_out_print();
+		$this->data['debit']  = $debit->result_array();
+
+
+		$html=$this->load->view('Download/download_bank_book',$this->data, true); 
+
+		$this->load->library('m_pdf');
+		ob_start();
+		$this->m_pdf->pdf 	= new mPDF('utf-8', 'A4');
+		$this->m_pdf->pdf->SetProtection(array('print'));
+		$this->m_pdf->pdf->SetTitle("Bank Book Report");
+		$this->m_pdf->pdf->SetAuthor("Dokani");
+		$this->m_pdf->pdf->SetDisplayMode('fullpage');
+		
+		$this->m_pdf->pdf->AddPageByArray(array(
+		'orientation' => '',
+		'mgl' => '10','mgr' => '10','mgt' => '35','mgb' => '20','mgh' => '10','mgf' => '5',
+		//margin left,margin right,margin top,margin bottom,margin header,margin footer
+		));
+		//$this->m_pdf->pdf->SetColumns(2);
+		$this->m_pdf->pdf->WriteHTML($html);
+		ob_clean();
+		$this->m_pdf->pdf->Output();
+		ob_end_flush();
+		exit;
+	}
+
 	public function cheque_status_report()
 	{
 		$data['user_type'] = $this->tank_auth->get_usertype();
@@ -731,88 +826,7 @@ class Account extends MY_controller{
 		$query = $this->db->get();
 		echo json_encode ($query->result());
 	}
-		
-	public function  all_cash_book_report_find()
-	{
-		$credit = array();
-		$debit = array();
-		$credit = $this->account_model->get_cash_book_in();
-		$credit = $credit->result_array();
-		$debit 	= $this->account_model->get_cash_book_out();
-		$debit 	= $debit->result_array();
 
-		echo json_encode(array('credit'=>$credit,'debit'=>$debit));
-	}
-
-	function download_cash_book()
-	{
-		date_default_timezone_set("Asia/Dhaka");
-		$bd_date = date('Y-m-d',time());
-					
-		$credit = array();
-		$debit = array();
-		$credit = $this->account_model->get_cash_book_in_print();
-		$this->data['credit'] = $credit->result_array();
-		$debit 	= $this->account_model->get_cash_book_out_print();
-		$this->data['debit']  = $debit->result_array();
-		$this->__renderviewprint('Prints/accountreport/cash_book',$this->data); 
-	}
-
-	function bank_book_report()
-	{
-		$data['user_type'] = $this->tank_auth->get_usertype();
-		$bd_date = date('Y-m-d');
-		$data['bd_date'] = $bd_date;
-		$data['user_name'] = $this->tank_auth->get_username();
-		$this -> load -> view('Account/all_bank_book_report_new', $data);
-	}
-	function  all_bank_book_report_find()
-	{
-		$credit = array();
-		$debit = array();
-		$credit = $this->account_model->get_bank_book_in();
-		$credit = $credit->result_array();
-		$debit 	= $this->account_model->get_bank_book_out();
-		$debit 	= $debit->result_array();
-
-		echo json_encode(array('credit'=>$credit,'debit'=>$debit));
-	}
-
-	function download_bank_book()
-	{
-		date_default_timezone_set("Asia/Dhaka");
-		$bd_date = date('Y-m-d',time());
-					
-		$credit = array();
-		$debit = array();
-		$credit = $this->account_model->get_bank_book_in_print();
-		$this->data['credit'] = $credit->result_array();
-		$debit 	= $this->account_model->get_bank_book_out_print();
-		$this->data['debit']  = $debit->result_array();
-
-
-		$html=$this->load->view('Download/download_bank_book',$this->data, true); 
-
-		$this->load->library('m_pdf');
-		ob_start();
-		$this->m_pdf->pdf 	= new mPDF('utf-8', 'A4');
-		$this->m_pdf->pdf->SetProtection(array('print'));
-		$this->m_pdf->pdf->SetTitle("Bank Book Report");
-		$this->m_pdf->pdf->SetAuthor("Dokani");
-		$this->m_pdf->pdf->SetDisplayMode('fullpage');
-		
-		$this->m_pdf->pdf->AddPageByArray(array(
-		'orientation' => '',
-		'mgl' => '10','mgr' => '10','mgt' => '35','mgb' => '20','mgh' => '10','mgf' => '5',
-		//margin left,margin right,margin top,margin bottom,margin header,margin footer
-		));
-		//$this->m_pdf->pdf->SetColumns(2);
-		$this->m_pdf->pdf->WriteHTML($html);
-		ob_clean();
-		$this->m_pdf->pdf->Output();
-		ob_end_flush();
-		exit;
-	}
 	function investment_report()
 	{
 		$data['user_type'] = $this->tank_auth->get_usertype();

@@ -198,6 +198,9 @@
 				<li class="<?php echo active_link_function('account','cash_book_report') ?>">
 					<a href="<?php echo base_url();?>account/cash_book_report"><i class="fa fa-bank"></i>Cash Book Report</a>
 				</li>
+				<li class="<?php echo active_link_function('account','bank_book_report') ?>">
+					<a href="<?php echo base_url();?>account/bank_book_report"><i class="fa fa-bank"></i>Bank Book Report</a>
+				</li>
 				<li class="<?php echo active_link_function('account','cheque_status_report') ?>">
 					<a href="<?php echo base_url();?>account/cheque_status_report"><i class="fa fa-bank"></i>Cheque Status Report</a>
 				</li>

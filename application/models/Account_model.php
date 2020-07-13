@@ -55,21 +55,29 @@ class Account_model extends CI_model{
 		
 	}
 
-	public function get_cash_book_in()
+	public function get_cash_book()
 	{
 		$start_date=$this->input->post('start_date');
 		$end_date=$this->input->post('end_date');
-		$this->db->select('cash_book.*,transaction_info.transaction_purpose');
-		$this->db->from('cash_book,transaction_info');
-		$this->db->where('cash_book.transaction_id=transaction_info.transaction_id');
-		$this->db->where('cash_book.transaction_type="in"');
 
-		if($start_date!=''){$this->db->where('cash_book.date >= "'.$start_date.'"');}
-		if($end_date!=''){$this->db->where('cash_book.date <= "'.$end_date.'"');}
-		else if($start_date!=''){$this->db->where('cash_book.date <= "'.$start_date.'"');}
-		$this->db->order_by('cash_book.cb_id','desc'); 
-		$this->db->order_by('cash_book.date','desc'); 
-		$query = $this->db->get();
+		$this->db->join('transaction_info', 'transaction_info.transaction_id  = cash_book.transaction_id', 'left');
+		if($start_date!=''){$this -> db -> where('cash_book.date >= "'.$start_date.'"');}
+		if($end_date!=''){$this -> db -> where('cash_book.date <= "'.$end_date.'"');}
+		$this->db->order_by('cash_book.date','asc'); 
+		$query = $this->db->get('cash_book')->result();
+		return $query;	
+	} 	
+
+	public function get_bank_book()
+	{
+		$start_date=$this->input->post('start_date');
+		$end_date=$this->input->post('end_date');
+
+		$this->db->join('transaction_info', 'transaction_info.transaction_id  = bank_book.transaction_id', 'left');
+		if($start_date!=''){$this -> db -> where('bank_book.date >= "'.$start_date.'"');}
+		if($end_date!=''){$this -> db -> where('bank_book.date <= "'.$end_date.'"');}
+		$this->db->order_by('bank_book.date','asc'); 
+		$query = $this->db->get('bank_book')->result();
 		return $query;	
 	} 	
 

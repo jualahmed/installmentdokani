@@ -20,6 +20,7 @@ $(document).ready(function() {
 			},
 			success: function(result) {	
 				$(".modal").hide();
+				console.log(result)
 				var all = `<table class="table"><tr>
 							  	<td style="width:4%;">Date</td>
 							  	<td style="width:4%;">Particular</td>
@@ -29,7 +30,7 @@ $(document).ready(function() {
 							</tr>`
 				total_amount1 = 0.00;
 				var balance=0;
-				result[0].forEach(i=>{
+				result.forEach(i=>{
 					
 					if(i.transaction_type=='in')balance+=parseFloat(i.amount)
 					if(i.transaction_type=='out')balance-=parseFloat(i.amount)

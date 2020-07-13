@@ -38,59 +38,17 @@
 </div>
 <input type="hidden" id="start">
 <input type="hidden" id="end">
-<section class="content-3" id="infomsg" style="display:none;">
+<section class="content-3" id="infomsg">
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 			<div class="box">	 
 				<div class="box-body">
 					<div class="wrap">
-						<div class="box-header with-border" style="background: #0f77ab;width: 98%;">
-							<center><h3 class="box-title" style="color:white;font-family:Helvetica Neue,Helvetica,Arial,sans-serif;">Debit / Inword</h3></center>
+						<div id="displaydata">
+							
 						</div>
-						<table class="head">
-							<tr>
-							  <td style="width:4%;">Date</td>
-							  <td style="width:4%;">Particular</td>
-							  <td style="width: 4%;text-align:right;">Amount</td>
-							</tr>
-						</table>
-						<div class="inner_table" id="search_data">
-						</div>
-						<table class="head">
-							<tr>
-							  <td style="width:4%;"></td>
-							  <td style="width:4%;">Total</td>
-							  <td style="width: 4%;text-align:right;"><span id="total_debit"></span></td>
-							</tr>
-						</table>
 					</div>
-					<div class="wrap-11">
-						<div class="box-header with-border" style="background: #0f77ab;width: 100%;">
-							<center><h3 class="box-title" style="color:white;font-family:Helvetica Neue,Helvetica,Arial,sans-serif;">Credit / Outword</h3></center>
-						</div>
-						<table class="head">
-							<tr>
-							  <td style="width:4%;">Date</td>
-							  <td style="width:4%;">Particular</td>
-							  <td style="width: 4%;text-align:right;">Amount</td>
-							</tr>
-						</table>
-						<div class="inner_table" id="search_data2">
-						</div>
-						<table class="head">
-							<tr>
-							  <td style="width:4%;"></td>
-							  <td style="width:4%;">Total</td>
-							  <td style="width: 4%;text-align:right;"><span id="total_credit"></span></td>
-							</tr>
-						</table>
-					</div>
-					
-					
 				</div>
-				<div class="box-header with-border" style="background: #0f77ab;">
-						<center><h3 class="box-title" style="color:white;font-family:Helvetica Neue,Helvetica,Arial,sans-serif;">Balance : <span id="balance"></span></h3></center>
-					</div>
 			</div>
 		</div>
 	</div>	
