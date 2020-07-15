@@ -22,7 +22,9 @@
 				<td>{{ r.freemonth }}</td>
 				<td>{{ r.pardayrate }}</td>
 				<td>
-					<a data-toggle="modal" :id="r.id" data-target="#EditModel" class="btn edit btn-sm btn-success" ><i class="fa fa-edit"></i> Edit</a>
+					<?php if($user_type=='superadmin'){ ?>
+						<a data-toggle="modal" :id="r.id" data-target="#EditModel" class="btn edit btn-sm btn-success" ><i class="fa fa-edit"></i> Edit</a>
+					<?php } ?>
 				</td>
 			</tr>
 		</table>

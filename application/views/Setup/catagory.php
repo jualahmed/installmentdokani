@@ -24,10 +24,12 @@
 				<td>{{ r.catagory_name }}</td>
 				<td>{{ r.catagory_description }}</td>
 				<td>
-					<a data-toggle="modal" :catagory_id="r.catagory_id" data-target="#EditModel" class="btn edit btn-sm btn-success" ><i class="fa fa-edit"></i> Edit</a>
-					<a onclick="return confirm('Are you sure your want to delete?')" :href="base_url+'category/destroy/'+r.catagory_id" class="btn btn-sm btn-danger" >
-						<i class="fa fa-trash"></i> Delete
-					</a>
+					<?php if($user_type=='superadmin'){ ?>
+						<a data-toggle="modal" :catagory_id="r.catagory_id" data-target="#EditModel" class="btn edit btn-sm btn-success" ><i class="fa fa-edit"></i> Edit</a>
+						<a onclick="return confirm('Are you sure your want to delete?')" :href="base_url+'category/destroy/'+r.catagory_id" class="btn btn-sm btn-danger" >
+							<i class="fa fa-trash"></i> Delete
+						</a>
+					<?php } ?>
 				</td>
 			</tr>
 		</table>

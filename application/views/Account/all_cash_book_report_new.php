@@ -11,13 +11,15 @@
 					<div class="box-body">
 						<form action ="<?php echo base_url();?>account/all_cash_book_report_find" method="post" class="form-horizontal" autocomplete="off" enctype="multipart/form-data" id="form_6">
 							<div class="form-group">
-								<label for="inputEmail3" class="col-sm-1 control-label">Start</label>
+								<label for="inputEmail3" class="col-sm-1 control-label">Date</label>
 								<div class="col-sm-3">
 									<?php echo form_input(array('type' => 'text','placeholder' => $bd_date , 'name' => "start_date",'class' => "form-control",'id' => "datepickerrr",'value' => $bd_date, 'tabindex' => 3, 'title' => "Start Date" ));?>
 								</div>
-								<label for="inputEmail3" class="col-sm-1 control-label">End</label>
+								<div style="display: none;">
+									<label for="inputEmail3" class="col-sm-1 control-label">End</label>
 								<div class="col-sm-3">
 									<?php echo form_input(array('type' => 'text','placeholder' => $bd_date , 'name' => "end_date",'class' => "form-control",'id' => "datepickerr", 'value' => $bd_date, 'tabindex' => 3, 'title' => "End Date" ));?>
+								</div>
 								</div>
 								<div class="col-sm-4">
 									<button type="submit" class="btn btn-success btn-sm" name="search_random" style="width:100px;"><i class="fa fa-fw fa-search"></i> Search</button>

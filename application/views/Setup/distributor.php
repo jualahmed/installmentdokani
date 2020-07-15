@@ -32,10 +32,12 @@
 				<td>{{ r.int_balance }}</td>
 				<td>{{ r.distributor_email }}</td>
 				<td>
-					<a data-toggle="modal" :distributor_id="r.distributor_id" data-target="#EditModel" class="btn edit btn-sm btn-success" ><i class="fa fa-edit"></i> Edit</a>
-					<a onclick="return confirm('Are you sure your want to delete?')" :href="base_url+'distributor/destroy/'+r.distributor_id" class="btn btn-sm btn-danger" >
-						<i class="fa fa-trash"></i> Delete
-					</a>
+					<?php if($user_type=='superadmin'){ ?>
+						<a data-toggle="modal" :distributor_id="r.distributor_id" data-target="#EditModel" class="btn edit btn-sm btn-success" ><i class="fa fa-edit"></i> Edit</a>
+						<a onclick="return confirm('Are you sure your want to delete?')" :href="base_url+'distributor/destroy/'+r.distributor_id" class="btn btn-sm btn-danger" >
+							<i class="fa fa-trash"></i> Delete
+						</a>
+					<?php } ?>
 				</td>
 			</tr>
 		</table>

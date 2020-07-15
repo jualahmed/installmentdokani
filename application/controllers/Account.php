@@ -233,7 +233,7 @@ class Account extends MY_controller{
     	$data['distributor_info'] = $this->distributor_model->all();     
     	$data['employee_info'] = $this->employee_model->all();        
 		$data['expense_type'] = $this->expense_model->typeall();				
-		$data['customer'] = $this->customer_model->all();							
+		$data['customer'] = Customerm::all();							
 		$data['service_provider_info'] = $this->account_model->service_provider_info();							
 		$data['owner_info'] = $this->account_model->owner_info();
 		$data['status'] = '';
@@ -244,7 +244,7 @@ class Account extends MY_controller{
 	public function all_ledger_report_find()
 	{
 		$start =$this->input->post('start_date');
-		$end = $this->input->post('end_date');
+		$end = date("Y-m-d");
 
 		if(!isset($start))$start = date("Y-m-d");
 		if(!isset($end))$end = date("Y-m-d");
@@ -256,22 +256,50 @@ class Account extends MY_controller{
 		$data['distributor_info'] = $this->distributor_model->all();       
     	$data['employee_info'] = $this->employee_model->all();        
 		$data['expense_type'] = $this->expense_model->typeall();				
-		$data['customer'] = $this->customer_model->all();							
+		$data['customer'] = Customerm::all();							
 		$data['service_provider_info'] = $this->account_model->service_provider_info();							
 		$data['owner_info'] = $this->account_model->owner_info();
+		$data['customer'] = Customerm::all();
+		$data['start'] = $start;
 
-		if(isset($customer_id)){
+
+		if(isset($customer_id) && $customer_id!='' ){
+		    $data['ledgerType']="Purchase Ledger";
+		    $data['info'] = Customerm::find($customer_id)->customer_name;
 			$data['ledgerdata']=Transactionm::where(function ($query) {
 								    		$query->where('transaction_purpose', '=', 'sale')
 								         	 ->orWhere('transaction_purpose', '=', 'collection');
-										})->where('ledger_id',$customer_id)->get();
+										})->where('ledger_id',$customer_id)->whereBetween('date',[$start, $end])->get();
+										
+		    $in=Transactionm::where(function ($query) {
+								    		$query->where('transaction_purpose', '=', 'collection');
+										})->where('ledger_id',$customer_id)->whereBetween('date',["1997-07-08", $start])->sum('amount');
+										
+			$out=Transactionm::where(function ($query) {
+								    		$query->where('transaction_purpose', '=', 'sale');
+										})->where('ledger_id',$customer_id)->whereBetween('date',["1997-07-08", $start])->sum('amount');
+										
+			$data['balance']=$in-$out;							
 		}
 
-		if(isset($distributor_id)){
+
+		if(isset($distributor_id) && $distributor_id!=''){
+		            $data['ledgerType']="Purchase Ledger";
+		            $data['info'] = Distributorm::find($distributor_id)->distributor_name;
 					$data['ledgerdata']=Transactionm::where(function ($query) {
 								    		$query->where('transaction_purpose', '=', 'purchase')
 								         	 ->orWhere('transaction_purpose', '=', 'payment');
-										})->where('ledger_id',$distributor_id)->get();
+										})->where('ledger_id',$distributor_id)->whereBetween('date',[$start, $end])->get();
+										
+		    $in=Transactionm::where(function ($query) {
+								    		$query->where('transaction_purpose', '=', 'purchase');
+										})->where('ledger_id',$distributor_id)->whereBetween('date',["1997-07-08", $start])->sum('amount');
+										
+			$out=Transactionm::where(function ($query) {
+								    		$query->where('transaction_purpose', '=', 'payment');
+										})->where('ledger_id',$distributor_id)->whereBetween('date',["1997-07-08", $start])->sum('amount');
+			$data['balance']=$in-$out;
+
 		}
 
 		$data['vuejscomp'] = 'ledgers.js';
@@ -344,7 +372,11 @@ class Account extends MY_controller{
 	public function  all_cash_book_report_find()
 	{
 		$data = array();
-		$data = $this->account_model->get_cash_book();
+		$data['alldata'] = $this->account_model->get_cash_book();
+		$start=$this->input->post('start_date');
+		$in=Cashbookm::where('transaction_type','in')->whereBetween('date',["1997-07-08", $start])->sum('amount');
+		$out=Cashbookm::where('transaction_type','out')->whereBetween('date',["1997-07-08", $start])->sum('amount');
+		$data['balance']=$in-$out;	
 		echo json_encode(array($data));
 	}
 
@@ -396,10 +428,14 @@ class Account extends MY_controller{
 
 	public function  all_bank_book_report_find()
 	{
-		$data = $this->account_model->get_bank_book();
+		$data['alldata'] = $this->account_model->get_bank_book();
+		$start=$this->input->post('start_date');
+		$in=Bankbookm::where('transaction_type','in')->whereBetween('date',["1997-07-08", $start])->sum('amount');
+		$out=Bankbookm::where('transaction_type','out')->whereBetween('date',["1997-07-08", $start])->sum('amount');
+		$data['balance']=$in-$out;	
 		echo json_encode($data);
 	}
-
+	
 	public function download_bank_book()
 	{
 		date_default_timezone_set("Asia/Dhaka");

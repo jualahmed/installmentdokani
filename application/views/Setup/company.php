@@ -29,10 +29,12 @@
 				<td>{{ r.company_contact_no }}</td>
 				<td>{{ r.company_email }}</td>
 				<td>
-					<a data-toggle="modal" :company_id="r.company_id" data-target="#EditModel" class="btn edit btn-sm btn-success" ><i class="fa fa-edit"></i> Edit</a>
-					<a onclick="return confirm('Are you sure your want to delete?')" :href="base_url+'Company/destroy/'+r.company_id" class="btn btn-sm btn-danger" >
-						<i class="fa fa-trash"></i> Delete
-					</a>
+					<?php if($user_type=='superadmin'){ ?>
+						<a data-toggle="modal" :company_id="r.company_id" data-target="#EditModel" class="btn edit btn-sm btn-success" ><i class="fa fa-edit"></i> Edit</a>
+						<a onclick="return confirm('Are you sure your want to delete?')" :href="base_url+'Company/destroy/'+r.company_id" class="btn btn-sm btn-danger" >
+							<i class="fa fa-trash"></i> Delete
+						</a>
+					<?php } ?>
 				</td>
 			</tr>
 		</table>

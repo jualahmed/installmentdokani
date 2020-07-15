@@ -22,15 +22,18 @@ $(document).ready(function() {
 				$(".modal").hide();
 				console.log(result)
 				var all = `<table class="table"><tr>
-							  	<td style="width:4%;">Date</td>
-							  	<td style="width:4%;">Particular</td>
-							  	<td style="width: 4%;text-align:right;">In</td>
-							  	<td style="width: 4%;text-align:right;">Out</td>
-							  	<td style="width: 4%;text-align:right;">Balance</td>
+							  	<th style="width:4%;">Date</th>
+							  	<th style="width:4%;">Particular</th>
+							  	<th style="width: 4%;text-align:right;">In</th>
+							  	<th style="width: 4%;text-align:right;">Out</th>
+							  	<th style="width: 4%;text-align:right;">Balance</th>
+							</tr><tr>
+							  	<th style="width:4%;" colspan="4">Opening Balance</th>
+							  	<th style="width: 4%;text-align:right;">${ result.balance }</th>
 							</tr>`
 				total_amount1 = 0.00;
-				var balance=0;
-				result.forEach(i=>{
+				var balance=result.balance;
+				result.alldata.forEach(i=>{
 					
 					if(i.transaction_type=='in')balance+=parseFloat(i.amount)
 					if(i.transaction_type=='out')balance-=parseFloat(i.amount)

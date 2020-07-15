@@ -22,10 +22,12 @@
 				<td>{{ index+1 }}</td>
 				<td>{{ r.unit_name }}</td>
 				<td>
-					<a data-toggle="modal" :unit_id="r.unit_id" data-target="#EditModel" class="btn edit btn-sm btn-success" ><i class="fa fa-edit"></i> Edit</a>
-					<a onclick="return confirm('Are you sure your want to delete?')" :href="base_url+'unit/destroy/'+r.unit_id" class="btn btn-sm btn-danger" >
-						<i class="fa fa-trash"></i> Delete
-					</a>
+					<?php if($user_type=='superadmin'){ ?>
+						<a data-toggle="modal" :unit_id="r.unit_id" data-target="#EditModel" class="btn edit btn-sm btn-success" ><i class="fa fa-edit"></i> Edit</a>
+						<a onclick="return confirm('Are you sure your want to delete?')" :href="base_url+'unit/destroy/'+r.unit_id" class="btn btn-sm btn-danger" >
+							<i class="fa fa-trash"></i> Delete
+						</a>
+					<?php } ?>
 				</td>
 			</tr>
 		</table>

@@ -121,10 +121,12 @@
 				<td>{{ r.police_station }}</td>
 				<td>{{ r.district }}</td>
 				<td>
-					<a data-toggle="modal" :customer_id="r.customer_id" data-target="#EditModel" class="btn edit btn-sm btn-success" ><i class="fa fa-edit"></i> Edit</a>
-					<a onclick="return confirm('Are you sure your want to delete?')" :href="base_url+'customer/destroy/'+r.customer_id" class="btn btn-sm btn-danger" >
-						<i class="fa fa-trash"></i> Delete
-					</a>
+					<?php if($user_type=='superadmin'){ ?>
+						<a data-toggle="modal" :customer_id="r.customer_id" data-target="#EditModel" class="btn edit btn-sm btn-success" ><i class="fa fa-edit"></i> Edit</a>
+						<a onclick="return confirm('Are you sure your want to delete?')" :href="base_url+'customer/destroy/'+r.customer_id" class="btn btn-sm btn-danger" >
+							<i class="fa fa-trash"></i> Delete
+						</a>
+					<?php } ?>
 				</td>
 			</tr>
 			<tr><td colspan="9" style="text-align: left;"><b>{{ rowperpage }}  Out Of {{ total }}</b></td></tr>
