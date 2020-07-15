@@ -243,14 +243,16 @@
 									:id="p.product_id"
 									:purchase_id="p.purchase_id"
 								></i>
-								<i
-									class="fa fa-fw fa-remove css_for_cursor"
-									style="color: red; "
-									:id="p.product_id"
-									:purchase_id="p.purchase_id"
-									name="remove"
-									title="Remove"
-								></i>
+								<?php if($user_type=='superadmin'){ ?>
+									<i
+										class="fa fa-fw fa-remove css_for_cursor"
+										style="color: red; "
+										:id="p.product_id"
+										:purchase_id="p.purchase_id"
+										name="remove"
+										title="Remove"
+									></i>
+								<?php } ?>
 							</td>
 					</tr>
 				</table>
