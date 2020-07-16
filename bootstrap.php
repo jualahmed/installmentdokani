@@ -13,9 +13,11 @@ $capsule->addConnection([
    "driver" => "mysql",
 
    "host" =>"127.0.0.1",
-   "username" => "root",
-   "password" => "",
-   "database" => "moto",
+   "username" => "dok4niso_main",
+   "password" => "o^PSWu;na;zi",
+   "database" => "dok4niso_moto",
+   'charset'   => 'utf8',
+    'collation' => 'utf8_unicode_ci',
 
 ]);
 
