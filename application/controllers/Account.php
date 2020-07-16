@@ -264,7 +264,7 @@ class Account extends MY_controller{
 
 
 		if(isset($customer_id) && $customer_id!='' ){
-		    $data['ledgerType']="Purchase Ledger";
+		    $data['ledgerType']="Customer Ledger";
 		    $data['info'] = Customerm::find($customer_id)->customer_name;
 			$data['ledgerdata']=Transactionm::where(function ($query) {
 								    		$query->where('transaction_purpose', '=', 'sale')
@@ -272,7 +272,9 @@ class Account extends MY_controller{
 										})->where('ledger_id',$customer_id)->whereBetween('date',[$start, $end])->get();
 										
 		    $in=Transactionm::where(function ($query) {
-								    		$query->where('transaction_purpose', '=', 'collection');
+								    		$query->where('transaction_purpose', '=', 'collection')
+								    		->where('transaction_purpose', '=', 'duecollection')
+								    		->orWhere('transaction_purpose', '=', 'latefeecollection');
 										})->where('ledger_id',$customer_id)->whereBetween('date',["1997-07-08", $start])->sum('amount');
 										
 			$out=Transactionm::where(function ($query) {

@@ -107,7 +107,7 @@
 						    <h5 class="text-center"><?php echo $info ?></h5>
 						    <h6 class="text-center"><?php echo $start .' - '.  date('Y-m-d') ?></h6>
 							<div class="wrap">
-								<table class="table">
+								<table class="table capitalize">
 									<tr>
 										<th>SL.</th>
 										<th>Date</th>
