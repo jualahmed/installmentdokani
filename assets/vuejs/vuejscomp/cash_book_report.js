@@ -35,8 +35,8 @@ $(document).ready(function() {
 				var balance=result[0].balance;
 				result[0].alldata.forEach(i=>{
 					
-					if(i.transaction_type=='in')balance+=parseFloat(i.amount)
-					if(i.transaction_type=='out')balance-=parseFloat(i.amount)
+					if(i.transaction_type=='in' && isNaN(i.amount))balance+=parseFloat(i.amount)
+					if(i.transaction_type=='out' && isNaN(i.amount))balance-=parseFloat(i.amount)
 
 					all+=`<tr>
 							  	<td style="width:4%;">${ i.date }</td>

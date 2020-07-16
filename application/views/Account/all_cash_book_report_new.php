@@ -13,7 +13,7 @@
 							<div class="form-group">
 								<label for="inputEmail3" class="col-sm-1 control-label">Date</label>
 								<div class="col-sm-3">
-									<?php echo form_input(array('type' => 'text','placeholder' => $bd_date , 'name' => "start_date",'class' => "form-control",'id' => "datepickerrr",'value' => $bd_date, 'tabindex' => 3, 'title' => "Start Date" ));?>
+									<?php echo form_input(array('type' => 'text','placeholder' => $bd_date , 'name' => "start_date",'class' => "form-control",'id' => "datepickerrr",'value' => $bd_date, 'tabindex' => 3));?>
 								</div>
 								<div style="display: none;">
 									<label for="inputEmail3" class="col-sm-1 control-label">End</label>

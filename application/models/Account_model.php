@@ -59,7 +59,6 @@ class Account_model extends CI_model{
 	{
 		$start_date=$this->input->post('start_date');
 		$end_date=$this->input->post('end_date');
-
 		$this->db->join('transaction_info', 'transaction_info.transaction_id  = cash_book.transaction_id', 'left');
 		if($start_date!=''){$this -> db -> where('cash_book.date >= "'.$start_date.'"');}
 		if($end_date!=''){$this -> db -> where('cash_book.date <= "'.$end_date.'"');}
