@@ -28,8 +28,9 @@ new Vue({
         self.alldata=result;
         result.forEach( function(element, index) {
          self.stockqty=parseInt(self.stockqty)+1;
-         self.amount=parseFloat(self.amount)+parseFloat((element.bulk_unit_buy_price));
-         self.samount=parseFloat(self.samount)+parseFloat((element.general_unit_sale_price));
+         console.log(element)
+         self.amount=parseFloat(self.amount)+parseFloat((element.purchase_price));
+         self.samount=parseFloat(self.samount)+parseFloat((element.sale_price));
         });
       }
     });
