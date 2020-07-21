@@ -16,6 +16,7 @@ class Report_model extends CI_model{
 		$this->db->join('purchase_receipt_info', 'warranty_product_list.purchase_receipt_id = purchase_receipt_info.receipt_id');
 		$this->db->join(' users', 'sells_log.creator = users.id');
 		$this->db->order_by('sells_log.customar_id', 'desc');
+		$this->db->where('sells_log.totaldue > ',0);
 		if($invoice_id!=0){$this->db->where('sells_log.id',$invoice_id);} 
 		if($customer_id!=0){$this->db->where('sells_log.customar_id',$customer_id);} 
 		$this->db->order_by('sells_log.date','asc'); 

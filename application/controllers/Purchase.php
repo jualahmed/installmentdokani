@@ -8,7 +8,7 @@ class Purchase extends MY_Controller
 		$this->shop_id = $this->tank_auth->get_shop_id();
 		$this->is_logged_in();
 		$this->load->model('purchase_model');
-    $this->load->model('distributor_model');
+    	$this->load->model('distributor_model');
 		$this->load->model('purchaselisting_model');
 	}
 
@@ -183,9 +183,9 @@ class Purchase extends MY_Controller
 			else{
 				$oldquantity=$alddata['0']->stock_amount;
 				$totalquantity=$quantity+$oldquantity;
-				// $unit_buy_price_purchase1=($alddata['0']->bulk_unit_buy_price+$unit_buy_price_purchase)/2;
-				// $exclusive_sale_price1=($alddata['0']->bulk_unit_sale_price+$exclusive_sale_price)/2;
-				// $general_unit_sale_price1=($alddata['0']->general_unit_sale_price+$general_sale_price)/2;
+				$unit_buy_price_purchase1=($alddata['0']->bulk_unit_buy_price+$unit_buy_price_purchase)/2;
+				$exclusive_sale_price1=($alddata['0']->bulk_unit_sale_price+$exclusive_sale_price)/2;
+				$general_unit_sale_price1=($alddata['0']->general_unit_sale_price+$general_sale_price)/2;
 				$object=[
 					'stock_amount'=>$totalquantity,
 					'bulk_unit_buy_price'=>$unit_buy_price_purchase1,
