@@ -38,5 +38,11 @@
   <script src="<?php echo base_url();?>assets/vuejs/vuejs-datepicker.min.js"></script>
   <script src="<?php echo base_url();?>assets/vuejs/vuejscomp/<?php echo $vuejscomp ?>"></script>
 <?php } ?>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('.select2').select2();
+  });
+</script>
 </body>
 </html>

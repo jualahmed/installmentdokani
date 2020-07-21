@@ -124,7 +124,7 @@
 										<tr>
 											<td><?php echo $key+1 ?></td>
 											<td><?php echo $var->date ?></td>
-											<td><?php echo $var->remarks ?></td>
+											<td class="text-capitalize"><?php echo $var->transaction_purpose ?></td>
 											<td align="right"><?php if($var->transaction_purpose=='sale' ||  $var->transaction_purpose=='purchase') { echo number_format($var->amount,2); $camount+=$var->amount; } ?></td>
 											<td align="right"><?php if($var->transaction_purpose=='collection' || $var->transaction_purpose=='payment') { echo number_format($var->amount,2);  $damount+=$var->amount;} ?></td>
 											<td align="right"><?php echo number_format($camount-$damount,2) ?></td>

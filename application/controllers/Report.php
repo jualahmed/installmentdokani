@@ -29,6 +29,31 @@ class Report extends MY_controller
 		}
 	}
 	
+	public function due_report()
+	{
+	  	$data['user_type'] = $this->tank_auth->get_usertype();
+		$data['user_name'] = $this->tank_auth->get_username();
+		$data['customer_name'] = $this->customer_model->all();
+		$invoice_id= $this->input->post('invoice_id');
+		$customer_id= $this->input->post('customer_id');
+		$data['invoice_id']=$invoice_id ? $invoice_id : 0;
+		$data['customer_id']=$customer_id ? $customer_id : 0;
+		$data['allsale'] = $this->report_model->due_report($invoice_id,$customer_id);
+		$this->__renderview('Report/due_report', $data);
+	}
+
+
+	public function due_report_down()
+	{
+	  	$data['user_type'] = $this->tank_auth->get_usertype();
+		$data['user_name'] = $this->tank_auth->get_username();
+		$data['customer_name'] = $this->customer_model->all();
+		$invoice_id=  $this->uri->segment(3);
+		$customer_id= $this->uri->segment(4);
+		$data['allsale'] = $this->report_model->due_report($invoice_id,$customer_id);
+		$this->__renderviewprint('Prints/report/due_report_down', $data);
+	}
+
 	public function stock_report()
 	{
 	  $data['user_type'] = $this->tank_auth->get_usertype();

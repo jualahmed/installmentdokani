@@ -40,7 +40,7 @@ $(document).ready(function() {
 
 					all+=`<tr>
 							  	<td style="width:4%;">${ i.date }</td>
-							  	<td style="width:4%;">${ i.transaction_purpose }</td>
+							  	<td style="width:4%;" class="text-capitalize">${ i.transaction_purpose }</td>
 							  	<td style="width: 4%;text-align:right;">${ i.transaction_type=='in' ? parseFloat(i.amount).toFixed(2) : '' }</td>
 							  	<td style="width: 4%;text-align:right;">${ i.transaction_type=='out' ? parseFloat(i.amount).toFixed(2) : '' }</td>
 							  	<td style="width: 4%;text-align:right;">${ parseFloat(balance).toFixed(2) }</td>

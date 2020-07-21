@@ -7,6 +7,24 @@ class Report_model extends CI_model{
 		$this->shop_id = $this->tank_auth->get_shop_id();
 	}
 
+	public function due_report($invoice_id='',$customer_id='')
+	{
+		$this->db->select('customer_info.*,product_info.*,warranty_product_list.*,purchase_receipt_info.*,users.*,sells_log.*, sells_log.id as sid');
+		$this->db->join('customer_info', 'sells_log.customar_id = customer_info.customer_id');
+		$this->db->join('product_info', 'sells_log.product_id = product_info.product_id');
+		$this->db->join('warranty_product_list', 'sells_log.w_product_id = warranty_product_list.ip_id');
+		$this->db->join('purchase_receipt_info', 'warranty_product_list.purchase_receipt_id = purchase_receipt_info.receipt_id');
+		$this->db->join(' users', 'sells_log.creator = users.id');
+		$this->db->order_by('sells_log.customar_id', 'desc');
+		if($invoice_id!=0){$this->db->where('sells_log.id',$invoice_id);} 
+		if($customer_id!=0){$this->db->where('sells_log.customar_id',$customer_id);} 
+		$this->db->order_by('sells_log.date','asc'); 
+		$query = $this->db->get('sells_log')->result();
+
+		return $query;
+	}
+		
+
 	public function get_stock_info_by_multi($category1='',$product_id='',$company1='',$type_wise='',$product_amount='')
 	{
 		if(isset($type_wise))
