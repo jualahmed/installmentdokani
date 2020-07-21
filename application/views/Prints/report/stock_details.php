@@ -32,7 +32,7 @@
 		    <th>SP</th>
 		    <th>batteryno</th>
 		</tr>
-		<?php $i=0;$sp=0;$bp=0; foreach ($reportdata as $key => $var): $i++;$sp=$sp+$var->general_unit_sale_price; $bp=$bp+$var->bulk_unit_buy_price; ?>
+		<?php $i=0;$sp=0;$bp=0; foreach ($reportdata as $key => $var): $i++;$sp=$sp+$var->purchase_price; $bp=$bp+$var->sale_price; ?>
 			<tr>
 				<td><?php echo $i ?></td>
 			    <td><?php echo $var->challan_no ?></td>
@@ -43,8 +43,8 @@
 			    <td><?php echo $var->chassisno ?></td>
 			    <td><?php echo $var->color ?></td>
 			    <td title="Purchase Quantity">1</td>
-			    <td><?php echo sprintf('%0.2f',$var->bulk_unit_buy_price) ?></td>
-			    <td><?php echo sprintf('%0.2f',$var->general_unit_sale_price) ?></td>
+			    <td><?php echo sprintf('%0.2f',$var->purchase_price) ?></td>
+			    <td><?php echo sprintf('%0.2f',$var->sale_price) ?></td>
 			    <td><?php echo $var->batteryno ?></td>
 			</tr>
 		<?php endforeach ?>
