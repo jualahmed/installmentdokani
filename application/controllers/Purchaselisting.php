@@ -89,12 +89,12 @@ class Purchaselisting extends MY_Controller {
         echo json_encode($data);
 	}
 
-  public function find()
-  {
-    $Purchaselisting_id=$this->input->post('purchaselisting_id');
-    $data=$this->purchaselisting_model->findl($Purchaselisting_id);
-    echo json_encode($data);
-  }
+  	public function find()
+  	{
+	    $Purchaselisting_id=$this->input->post('purchaselisting_id');
+	    $data=$this->purchaselisting_model->findl($Purchaselisting_id);
+	    echo json_encode($data);
+  	}
 
 	public function update()
 	{
@@ -157,15 +157,15 @@ class Purchaselisting extends MY_Controller {
 	    echo json_encode($jsonData);
 	}
 
-  public function editPruchaseProduct()
-  {
-    $purchase_id      = $this->input->post('purchase_id');
-    $qnty           = $this->input->post('qty');
-    $unit_buy_price     = $this->input->post('u_b_p');
-    $bulk_unit_sale_price     = $this->input->post('g_b_p');
-    $general_unit_sale_price    = $this->input->post('e_b_p');
-    echo $this->purchaselisting_model->editPruchaseProduct($purchase_id, $qnty, $unit_buy_price,$bulk_unit_sale_price,$general_unit_sale_price);
-  }
+	public function editPruchaseProduct()
+	{
+	    $purchase_id      = $this->input->post('purchase_id');
+	    $qnty           = $this->input->post('qty');
+	    $unit_buy_price     = $this->input->post('u_b_p');
+	    $bulk_unit_sale_price     = $this->input->post('g_b_p');
+	    $general_unit_sale_price    = $this->input->post('e_b_p');
+	    echo $this->purchaselisting_model->editPruchaseProduct($purchase_id, $qnty, $unit_buy_price,$bulk_unit_sale_price,$general_unit_sale_price);
+	}
 
 
 	public function destroy($id)
