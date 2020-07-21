@@ -71,29 +71,31 @@
     <div class="text-center" v-if="loding">
         <img src="<?php echo base_url();?>assets/img/LoaderIcon.gif" id="loaderIcon"/>
     </div>
-
-  	<table class="table table-secondary" v-if="alldata.length>0">
-  		<tr>
-	        <th>No</th>
-	        <th>Product</th>
-	        <th title="Purchase Quantity" style="text-align:center">Quantity</th>
-  			<th style="text-align:center">BP.</th>
-  			<th style="text-align:center">SP.</th>
-  		</tr>
-  		<tr v-for="(d,index) in alldata">
-  			<td>{{ index+1 }}</td> 
-        <td>{{ d.product_name }}</td>
-  			<td style="text-align:center">{{ d.stock_amount }}</td>
-  			<td style="text-align:right">{{ parseFloat(d.bulk_unit_buy_price).toFixed(2) }}</td>
-  			<td style="text-align:right">{{ parseFloat(d.general_unit_sale_price).toFixed(2) }}</td>
-  		</tr>
-  		<tr>
-  			<td colspan="2"><b>Total</b></td>
-  			<td colspan="1" style="text-align:center"><b>{{ stockqty }}</b> </td>
-  			<td colspan="1" style="text-align:right"><b>{{ parseFloat(amount).toFixed(2) }}</b></td>
-  			<td colspan="1" style="text-align:right"><b>{{ parseFloat(samount).toFixed(2) }}</b></td>
-  		</tr>
-  	</table>
+    
+    <div class="table-responsive">
+      	<table class="table table-secondary" v-if="alldata.length>0">
+      		<tr>
+    	        <th>No</th>
+    	        <th>Product</th>
+    	        <th title="Purchase Quantity" style="text-align:center">Quantity</th>
+      			<th style="text-align:center">BP.</th>
+      			<th style="text-align:center">SP.</th>
+      		</tr>
+      		<tr v-for="(d,index) in alldata">
+      			<td>{{ index+1 }}</td> 
+            <td>{{ d.product_name }}</td>
+      			<td style="text-align:center">{{ d.stock_amount }}</td>
+      			<td style="text-align:right">{{ parseFloat(d.bulk_unit_buy_price).toFixed(2) }}</td>
+      			<td style="text-align:right">{{ parseFloat(d.general_unit_sale_price).toFixed(2) }}</td>
+      		</tr>
+      		<tr>
+      			<td colspan="2"><b>Total</b></td>
+      			<td colspan="1" style="text-align:center"><b>{{ stockqty }}</b> </td>
+      			<td colspan="1" style="text-align:right"><b>{{ parseFloat(amount).toFixed(2) }}</b></td>
+      			<td colspan="1" style="text-align:right"><b>{{ parseFloat(samount).toFixed(2) }}</b></td>
+      		</tr>
+      	</table>
+  	</div> 
   	<h2 class="text-danger text-center" v-else>Result is Empty</h2>
   </section>
 </div>

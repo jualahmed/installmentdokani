@@ -115,7 +115,7 @@ class Report_model extends CI_model{
 	{
 		$start_date=$startdate;
 		$end_date=$enddate;
-		$this->db->select('sells_log.*,sells_log.id as sid ,all_installment.*,product_info.*,warranty_product_list.*,purchase_receipt_info.*,customer_info.*,users.*');
+		$this->db->select('sells_log.*,sells_log.id as sid ,all_installment.*,all_installment.date as dates,product_info.*,warranty_product_list.*,purchase_receipt_info.*,customer_info.*,users.*');
 		if (isset($start_date)) {
 			$this->db->where('all_installment.date >=', $start_date);
 			$this->db->where('all_installment.date <=', $end_date);
@@ -127,6 +127,7 @@ class Report_model extends CI_model{
 		$this->db->join('purchase_receipt_info', 'warranty_product_list.purchase_receipt_id = purchase_receipt_info.receipt_id');
 		$this->db->join('customer_info', 'sells_log.customar_id = customer_info.customer_id');
 		$this->db->join(' users', 'sells_log.creator = users.id');
+		$this->db->orderBy('all_installment.dates','desc');
 		return $this->db->get('all_installment')->result();
 	}
 

@@ -21,6 +21,7 @@
 
 		<div class="col-md-12">
 			<?php if (isset($installment)): ?>
+			    <div class="table-responsive">
 				<table class="table table-bordered">
 					<tr>
 						<td>Id</td>
@@ -41,6 +42,7 @@
 						</tr>
 					<?php endforeach ?>
 				</table>
+				</div>
 			<?php endif ?>
 		</div>
 	</div>

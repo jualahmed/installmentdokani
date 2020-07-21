@@ -1,4 +1,6 @@
-
+div.main{
+    background-size: cover!important;
+}
 .table th,td{
   white-space: nowrap!important;
 }
@@ -127,9 +129,7 @@
 .form-group{
   margin-bottom: 0px!important;
 }
-.content-wrapper{
-  overflow: hidden!important;
-}
+
 .main-header{
       max-height: 14vh!important;
 }

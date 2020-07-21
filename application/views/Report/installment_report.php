@@ -59,7 +59,7 @@
 						<td>{{ index+1 }}</td>
 						<td>{{ i.challan_no }}</td>
 						<td>{{ i.sid }}</td>
-						<td>{{ formatDate(i.created_at) }}</td>
+						<td>{{ formatDate(i.date) }}</td>
 						<td>{{ i.product_name }}</td>
 						<td>{{ i.customer_name }}</td>
 						<td>{{ i.customer_contact_no }}</td>

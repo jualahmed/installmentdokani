@@ -8,6 +8,8 @@
 
 div.main{
     background:url(<?php echo base_url();?>assets/2.jpg) no-repeat fixed;
+  
+    background-size: cover!important;
 ~background: -moz-radial-gradient(center, ellipse cover,  #0264d6 1%, #1c2b5a 100%); /* FF3.6+ */
 ~background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,#0264d6), color-stop(100%,#1c2b5a)); /* Chrome,Safari4+ */
 ~background: -webkit-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); /* Chrome10+,Safari5.1+ */
