@@ -65,9 +65,9 @@
 							<th><?php echo $var->engineno ?></th>
 							<th><?php echo $var->chassisno ?></th>
 							<th><?php echo $var->color ?></th>
-							<th class="text-right"><?php echo number_format($var->finalamount,2);$total+=$var->finalamount ?></th>
-							<th class="text-right"><?php echo number_format($var->finalamount-$var->totaldue,2);$totapp+=($var->finalamount-$var->totaldue) ?></th>
-							<th class="text-right"><?php echo number_format($var->totaldue,2);$totald+=$var->totaldue;  ?></th>
+							<th class="text-right"><?php echo number_format($var->finalamount+$var->advancepay,2);$total+=($var->finalamount+$var->advancepay) ?></th>
+							<th class="text-right"><?php echo number_format(($var->finalamount+$var->advancepay)-$var->totaldue,2);$totapp+=((($var->finalamount+$var->advancepay)-$var->totaldue)+($var->totalinterastlog-$var->totalinterest)) ?></th>
+							<th class="text-right"><?php echo number_format($var->totaldue+$var->totalinterest,2);$totald+=($var->totaldue+$var->totalinterest);  ?></th>
 							<th><?php echo $var->seconddate ?></th>
 						</tr>	
 					<?php endforeach ?>
