@@ -31,3 +31,21 @@ function sendsms(argument,ar2) {
 		console.log("error");
 	})	
 }
+
+function sendsmstest() {
+    	var msg='সম্মানিত গ্রাহক, সুপ্রভা ইন্টারন্যাশনাল এর পক্ষ থেকে অভিনন্দন। আপনার ক্রয়কৃত (product name) এর 1 তম কিস্তি প্রদানের শেষ তারিখ 01/01/2020  ইং ইঞ্জিন নং 121212   চেসিস নং 2121   টাকা 2121 ধন্যবাদ।'
+	
+		$.ajax({
+			url: 'http://sms.dhost247.net/index.php?number=8801720999022&text='+msg,
+		})
+		.done(function(re) {
+			console.log(re);
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+}
+

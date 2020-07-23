@@ -17,7 +17,8 @@
 	<div class="table-responsive">     
 		<table class="table table-bordered table-secondary">
 			<thead>
-				<tr>
+				<tr>    
+				        <th>SL.</th>
 						<th>Customer Name</th>
 						<th>Mobile No</th>
 						<th>Invoice ID</th>
@@ -35,6 +36,7 @@
 			<tbody>
 				<?php $total=0;$totapp=0;$totald=0; foreach ($allsale as $key => $var): ?>
 					<tr>
+					    <th><?php echo $key+1 ?></th>
 						<th><?php echo $var->customer_name ?></th>
 						<th><?php echo $var->customer_contact_no ?></th>
 						<th><?php echo $var->sid ?></th>

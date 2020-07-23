@@ -17,6 +17,7 @@ new Vue({
   methods:{
     stockreport(){
       var am=$("#lock77").val();
+      this.product_id=($("#product_id").val());
       if(am){
         this.amount=am;
       }

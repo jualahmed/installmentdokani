@@ -34,6 +34,7 @@ new Vue({
     purchase_report(){
       this.start_date=($("#datepickerrr").val());
       this.end_date=($("#datepickerr").val());
+      this.product=($("#product_id").val());
       var self=this;
       self.stockqty=0;
       self.amount=0;

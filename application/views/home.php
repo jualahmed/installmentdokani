@@ -32,6 +32,8 @@
 		<?php else: ?>
 			<?php echo "Do not have any installment today"; ?>
 		<?php endif ?>
+		
+		<a onclick="sendsmstest()" class="btn btn-sm btn-success" style="display:none">Send sms</a>
 
 	</section>
 </div>

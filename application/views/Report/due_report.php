@@ -4,7 +4,7 @@
 			<div class="col-md-12">
 				<div class="box">
 					<div class="box-header with-border">
-						<h3 class="box-title">Motorcycle Sale Report</h3>
+						<h3 class="box-title">Motorcycle Due Report</h3>
 					</div>
 					<div class="box-body">
 						<form action ="<?php echo base_url();?>Report/due_report" class="form-horizontal" method="post" enctype="multipart/form-data" id="salereport" autocomplete="off">
@@ -40,6 +40,7 @@
 			<table class="table">
 				<thead>
 					<tr>
+						<th>SL.</th>
 						<th>Customer Name</th>
 						<th>Mobile No</th>
 						<th>Invoice ID</th>
@@ -57,6 +58,7 @@
 				<tbody>
 					<?php $total=0;$totapp=0;$totald=0; foreach ($allsale as $key => $var): ?>
 						<tr>
+							<th><?php echo $key+1 ?></th>
 							<th><?php echo $var->customer_name ?></th>
 							<th><?php echo $var->customer_contact_no ?></th>
 							<th><?php echo $var->sid ?></th>

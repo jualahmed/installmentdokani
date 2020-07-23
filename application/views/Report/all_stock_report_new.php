@@ -13,7 +13,7 @@
 							<div class="form-group">
 							  <label for="inputEmail3" class="col-sm-1 control-label">Product</label>
 							  <div class="col-sm-2">
-									<select name="product_id" class="form-control" v-model="product_id">
+									<select name="product_id" class="form-control select2" id="product_id">
 										<option value="0">Select a Product</option>
 										<?php foreach ($product as $key => $value): ?>
 											<option value="<?php echo $value->product_id ?>"><?php echo $value->product_name ?></option>

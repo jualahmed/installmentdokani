@@ -5,7 +5,7 @@
 				<div class="box">
 					<div class="box-header with-border">
 						<h3 class="box-title">Motorcycle Stock Details</h3>
-						<h3 class="box-title"> ( Total Stock Amount: <?php echo sprintf("%.2f",$total_stock_price);?> )</h3>
+						<h3 class="box-title"> ( Total Stock Amount: <?php echo number_format($total_stock_price,2);?> )</h3>
 						<h3 class="box-title"> ( Stock Quantity: <?php echo $total_stock_quantity;?> )</h3>
 					</div>
 					<div class="box-body">
