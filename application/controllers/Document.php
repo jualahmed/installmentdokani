@@ -75,6 +75,31 @@ class Document extends MY_Controller {
 		$this->load->view('Document/salepaperforcustomerprint', $data);
 	}
 
+	public function deliverychallan()
+	{
+		$data['user_type'] = $this->tank_auth->get_usertype();
+		$bd_date = date('Y-m-d');
+		$data['bd_date'] = $bd_date;
+		$data['user_name'] = $this->tank_auth->get_username();
+
+		$invoice_id=$this->input->post('invoice_id');
+
+		if(isset($invoice_id)){
+			$this->db->where('id', $invoice_id);
+			$this->db->join('warranty_product_list', 'warranty_product_list.ip_id  = sells_log.w_product_id', 'left');
+			$this->db->join('customer_info', 'customer_info.customer_id   = sells_log.customar_id', 'left');
+			$this->db->join('product_info', 'product_info.product_id   = warranty_product_list.product_id', 'left');
+			$data['invoice'] = $this->db->get('sells_log')->row();
+		}
+		$this->__renderview('Document/deliverychallan',$data);
+	}
+
+	public function deliverychallanprint($id)
+	{
+    	$data['all']=$this->sale_model->find1($id);
+		$this->load->view('Document/deliverychallanprint', $data);
+	}
+
 }
 
 /* End of file Document.php */
