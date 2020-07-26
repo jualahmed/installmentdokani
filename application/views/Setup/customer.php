@@ -121,8 +121,8 @@
 				<td>{{ r.police_station }}</td>
 				<td>{{ r.district }}</td>
 				<td>
-					<?php if($user_type=='superadmin'){ ?>
 						<a data-toggle="modal" :customer_id="r.customer_id" data-target="#EditModel" class="btn edit btn-sm btn-success" ><i class="fa fa-edit"></i> Edit</a>
+					<?php if($user_type=='superadmin'){ ?>
 						<a onclick="return confirm('Are you sure your want to delete?')" :href="base_url+'customer/destroy/'+r.customer_id" class="btn btn-sm btn-danger" >
 							<i class="fa fa-trash"></i> Delete
 						</a>

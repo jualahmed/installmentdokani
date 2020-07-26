@@ -156,6 +156,21 @@
 				</a>
 		</li>
 
+		<li class="treeview <?php echo active_link_controller('document'); ?>">
+			<a href="#">
+				<i class="fa fa-bank"></i>
+				<span>Document</span>
+				<span class="pull-right-container">
+					<i class="fa fa-angle-left pull-right"></i>
+				</span>
+			</a>
+			<ul class="treeview-menu common">
+				<li class="<?php echo active_link_function('document','salereceipt') ?>">
+					<a href="<?php echo base_url();?>document/salereceipt"><i class="fa fa-bank"></i>Sale Receipt</a>
+				</li>
+			</ul>
+		</li>
+
 		<li class="treeview <?php echo active_link_function('sale','collection') ?>">
 				<a href="<?php echo base_url();?>sale/collection">
 					<i class="fa fa-shopping-cart"></i> <span>Collection</span>
