@@ -34,6 +34,7 @@
 				<div class="col-md-4" style="border: 1px solid #f1f1f1;">
 					<h4>BUYER'S</h4>
 					<?php echo $all->customer_name ?>
+					<p><?php echo $all->customer_contact_no ?></p>
 				</div>
 			</div> <!--end of shop_title_box-->
 
