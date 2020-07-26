@@ -26,38 +26,37 @@
 	?>
  	<div id ="main_invoice" style="width: 1000px; margin: auto;">
 		<div style="width: 1000px;">
-			<div id="shop_title_box" style="width: 1000px;">			
-				<div class="col-md-8">
+			<div style="padding: 20PX;display: flex;flex-wrap: wrap;">			
+				<div style="width: 66%;">
 					<img style="width: 100%;min-height: 200px" src="<?php echo base_url();?>images/common.jpg">
 				</div>
-				<div class="col-md-4" style="border: 1px solid #f1f1f1;min-height: 200px">
+				<div style="border: 1px solid #f1f1f1;min-height: 200px;width: 33%;">
 					<h4><b>BUYER'S</b></h4>
 					<h4><?php echo $all->customer_name ?></h4>
 					<h4><?php echo $all->customer_contact_no ?></h4>
 				</div>
 			</div> <!--end of shop_title_box-->
 		</div>
-		<br><br><br><br>
-		<div class="row text-center" style="margin-top: 10PX;">
-			<div class="col-md-4">
+		<div class="row" style="padding: 20PX;display: flex;flex-wrap: wrap;">
+			<div style="width: 33.33%">
 				<b>L/C NO:</b>
 			</div>
-			<div class="col-md-4">
+			<div style="width: 33.33%;text-align: center;">
 				<b>Vessel Name:</b>
 			</div>
-			<div class="col-md-4">
+			<div style="width: 33.33%" class="text-right">
 				<b>Sales Invoice:</b>
 			</div>
 		</div>
-		<div class="row text-center" style="padding: 20PX;">
-			<div class="col-md-4">
-				<b>Invoice NO:</b>
+		<div style="padding: 10PX 0px;display: flex;flex-wrap: wrap;">
+			<div style="width: 33.33%;">
+				<b>Invoice NO: <?php echo $all->sid ?></b>
 			</div>
-			<div class="col-md-4">
+			<div style="width: 33.33%;text-align: center;">
 				<b>B/E NO:</b>
 			</div>
-			<div class="col-md-4">
-				<b>DATE:</b>
+			<div style="width: 33.33%" class="text-right">
+				<b>DATE: <?php echo $all->date ?></b>
 			</div>
 		</div>
 		<div class="row">
@@ -70,20 +69,67 @@
 						<th>Colour.</th>
 						<th>Qnty.</th>
 						<th>Description.</th>
-						<th>Unit Price.</th>
-						<th>Amount.</th>
+						<th style="text-align: right;">Unit Price.</th>
+						<th style="text-align: right;">Amount.</th>
 					</tr>
 					<tr>
-						<td style="min-height: 500px;">SL NO.</td>
-						<td style="min-height: 500px;">Chassis No.</td>
-						<td>Engine No.</td>
-						<td>Colour.</td>
-						<td>Qnty.</td>
-						<td>Description.</td>
-						<td>Unit Price.</td>
-						<td>Amount.</td>
+						<td>
+							<div style="height: 200px"><?php echo 1 ?></div>
+						</td>
+						<td><?php echo $all->chassisno ?></td>
+						<td><?php echo $all->engineno ?></td>
+						<td><?php echo $all->color ?></td>
+						<td>1</td>
+						<td></td>
+						<td align="right"><?php echo number_format($all->price,2) ?></td>
+						<td align="right"><?php echo number_format($all->price,2) ?></td>
+					</tr>
+					<tr>
+						<td colspan="6" rowspan="3">
+							<div ></div>
+						</td>
+						<td align="right"><b>Total Amount:</b></td>
+						<td align="right"><?php echo number_format($all->price,2) ?></td>
+					</tr>
+					<tr>
+						<td align="right"><b>Less Advance:</b></td>
+						<td align="right"><?php echo number_format($all->price,2) ?></td>
+					</tr>
+					<tr>
+						<td align="right"><b>Balance:</b></td>
+						<td align="right"><?php echo number_format($all->price,2) ?></td>
 					</tr>
 				</table>
+				<div style="display: flex;">
+					<div style="width: 50%;border: 1px solid #f1f1f1;">
+						<b>Payment Reference :</b> 
+						<div style="padding-top: 10px;">
+							<div style="display: flex;">
+								<b style="width: 70%;padding: 2px 0px;">M.R.No. <span style="border-bottom: 1px solid red;width: 1000%;"></span></b>
+								<p style="width: 30%;padding: 2px 0px;"><b>Date:</b></p>
+							</div>
+							<div style="display: flex;">
+								<b style="width: 70%;padding: 2px 0px;">For TK <span style="border-bottom: 1px solid red;width: 1000%;"></span></b>
+								<p style="width: 30%;padding: 2px 0px;"><b>(Taka:)</b></p>
+							</div>
+							<div style="display: flex;">
+								<b style="width: 70%;padding: 2px 0px;">In Cash/by <span style="border-bottom: 1px solid red;width: 1000%;"></span></b>
+								<p style="width: 30%;padding: 2px 0px;"><b></b></p>
+							</div>
+						</div>
+					</div>
+					<div style="width: 50%;">
+						<h5 class="text-right"><P style="padding: 5px;">FOR: <b>SUPROVA INTERNATIONAL</b></P></h5>
+						<div style="display: flex;margin-top:20px;text-align: center;">
+							<div style="width: 50%;border-top: 1px dotted;margin: 5px;">
+								<p><b>ACCOUNT DEPTT</b></p>
+							</div>
+							<div style="width: 50%;text-align: center;border-top: 1px dotted;margin: 5px;">
+								<p>(Sales Department)</p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<img class="img" src="<?php echo base_url()?>images/suprobha-logo.jpg" alt="">
