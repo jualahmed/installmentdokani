@@ -26,8 +26,8 @@
 	?>
  	<div id ="main_invoice" style="width: 700px; margin: auto;">
 		<div id = "invoice"  style="width: 698px;">
-			<div id="shop_title_box"  style="width: 698px;">			
-					<img style="width: 698px;" src="<?php echo base_url();?>images/common.jpg" height="101px">
+			<div id="shop_title_box"  style="width: 698px;">
+						<img style="width: 698px;" src="<?php echo base_url();?>images/common.jpg" height="101px">
 					<table class="table" style="margin-bottom: 0px;">
 						<tr >
 							<td style="padding: 3px;" colspan="4" align="center"><b><span style="font-size: 20px;">প্রোপ্রাইটর : প্রদীপ কান্তি দে (নির্মল) </span> </b><br>ইমেইল : internationalsuprova2019pd@gmail.com </td>
@@ -38,7 +38,7 @@
 							<th align="center" style="padding: 0px;width: 33.333333333%;"><h4 style="text-align: center;    margin-top: 4px;
     margin-bottom: 4px;">তারিখ : <b><?php echo  $this->bangla_ntw->engToBn(date("d-m-Y", strtotime($all[0]->date))); ?></b></h4></th>
 							<th align="center" style="padding: 0px;width: 33.333333333%;"><h4 style="text-align: right;    margin-top: 4px;
-    margin-bottom: 4px;">প্রস্তুত কারক : <b><?php echo $all[0]->user_full_name; ?></b></h4></th>
+    margin-bottom: 4px;">রশিদ প্রস্তুত কারী : <b><?php echo $all[0]->user_full_name; ?></b></h4></th>
 						</tr>
 					</table>
 			</div> <!--end of shop_title_box-->
@@ -49,7 +49,7 @@
 					</tr>
 					<tr>
 						<td align="center" rowspan="5">
-							<?php if($all[0]->profile){ ?>
+							<?php if(isset($all[0]->profile) && $all[0]->profile!=''){ ?>
 								<img src="<?php echo $all[0]->profile; ?>" alt="" width="50px">
 							<?php }else{ ?>
 								<img src="<?php echo base_url() ?>/assets/img/user.jpg" alt="" width="50px">
@@ -91,13 +91,18 @@
 					</tr>
 					<tr>
 						<td style="padding: 1px 3px;">
-							ইঞ্জিন নং : <b> <?php echo $all[0]->engineno ?></b>
+							<div style="display: flex;">
+								<div style="width: 50%">ইঞ্জিন নং :</div> <div style="text-align: right;width: 50%"><b> <?php echo $all[0]->engineno ?></b></div>
+							</div>
 						</td>
 						<td style="padding: 1px 3px;">
-							চেসিস নং : <b> <?php echo $all[0]->chassisno ?></b>
+							<div style="display: flex;"><div style="width: 50%">চেসিস নং : </div><div style="text-align: right;width: 50%"><b> <?php echo $all[0]->chassisno ?></b></div></div>
 						</td>
 						<td style="padding: 1px 3px;">
-							ব্যাটারী নং : <b> <?php echo $all[0]->batteryno ?></b>
+							<div style="display: flex;">
+								<div style="width: 50%">ব্যাটারী নং :</div>
+								<div style="text-align: right;width: 50%"><b> <?php echo $all[0]->batteryno ?></b></div>
+							</div>
 						</td>
 					</tr>
 					<tr>
@@ -155,7 +160,7 @@
 					</tr>
 					
 					<tr>
-						<td colspan="3" style="text-align: right;font-size: 18px;"><b>
+						<td colspan="3" style="text-align: right;font-size: 18px;"><b>কথায় : 
 							<?php 
 							$v=$all[0]->totaldue+$all[0]->totalinterest;
 							$a= (int) $v; 
@@ -177,16 +182,20 @@
 			
 			<div id = "transaction_details">
 				<div id = "signature_area" style="width: 698px;display: flex;padding-top: 50px;">	
-					<div id = "signature_one"  style="width:250px;text-align: center;margin: auto;">
-						<div class = "customer_signature"> <b>ক্রেতার স্বাক্ষর </b>	</div>
-					</div>
-					<div id = "signature_one" style="width:250px;text-align: center;margin: -16px 0px;">
-						<img src="<?php echo base_url().'images/uttora.jpg' ?>" alt="" style="width: 64px;">
-					</div>
 					<div id = "signature_one" style="margin-right: auto;width:250px;    margin: auto;    text-align: center;"> 
 						<div class = "customer_signature2"> <b>বিক্রেতার স্বাক্ষর</b> </div>
 					</div>
+					<div id = "signature_one" style="width:250px;text-align: center;margin: -16px 0px;">
+						<img src="<?php echo base_url().'images/uttora.jpg' ?>" alt="" style="width: 64px;">
+						<img src="<?php echo base_url().'images/111.png' ?>" alt="" style="width: 64px;">
+						<img src="<?php echo base_url().'images/uttora1.jpg' ?>" alt="" style="width: 40px;">
+					</div>
+				
+					<div id = "signature_one"  style="width:250px;text-align: center;margin: auto;">
+						<div class = "customer_signature"> <b>ক্রেতার স্বাক্ষর </b>	</div>
+					</div>
 				</div>
+				<p class="text-center" style="padding-top:10px; ">আপনার মোটর সাইকেলটি রেজিস্ট্রেশন করুণ, ট্রাফিক আইন মেনে চলুন ও নিরাপদে থাকুন</p>
 				<div class ="pos_top_header_fotter" style="margin-top: 5px;line-height: 16px;width: 100%;float: left;text-align: center;font-size: 12px;"> Thank You For Being With Us.</div>
 				<div style="width: 100%; height: 1px; float:left;"> </div>
 			

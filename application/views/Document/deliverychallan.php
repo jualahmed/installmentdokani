@@ -5,7 +5,7 @@
 			<br>
 			<br>
 		</div>
-		<form action ="<?php echo base_url();?>document/salereceipt" method="post" class="form-horizontal" autocomplete="off" enctype="multipart/form-data" id="form_6">
+		<form action ="<?php echo base_url();?>document/deliverychallan" method="post" class="form-horizontal" autocomplete="off" enctype="multipart/form-data" id="form_6">
 			<div class="col-md-10">
 				<input type="text" placeholder="Invoice id" class="form-control" name="invoice_id">
 			</div>

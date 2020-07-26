@@ -41,7 +41,6 @@
         }
         p.name {
             width: 300px;
-            margin-left: 10px;
         }
         p.dynamicdata {
             margin-left: 5px;
@@ -58,101 +57,98 @@
  	<div id ="main_invoice" style="width: 1000px; margin: auto;">
 		<div style="width: 1000px;">
 			<div id="shop_title_box" style="width: 1000px;">			
-					<img style="width: 100%;min-height: 200px" src="<?php echo base_url();?>images/common.jpg">
+				<img style="width: 100%;min-height: 200px" src="<?php echo base_url();?>images/common.jpg">
 			</div> <!--end of shop_title_box-->
 		</div>
 		<br>
 
-        <div class="row">
-            <div class="col-lg-12" style="display:flex;">
-                <div style="width: 33.33%;">
-                    <div><span>Ref:</span></div><br>
-                    <div><span>To:</span></div>
-                </div>
-                <div style="width: 33.33%;">
-                    <div><h4 >To Whom It May Concern</h4></div>
-                </div>
-                <div style="width: 33.33%;text-align: right;">
-                    <div><span>Date:</span> <?php $old_date = strtotime($all->date); echo date('d-m-Y', $old_date); ?></div><br>
-                </div>
+        <div style="display:flex;">
+            <div style="width: 50%;">
+                <div><span>Ref : <?php echo $all->referencename ?></span></div><br>
+                <div><span>To : <?php echo $all->customer_name ?></span></div>
             </div>
-            <div class="col-lg-12" style="display:flex;">
-                <div><br>
-                    <p>This is certify that we have sold new vehicle to:</p>
-                    <span>Mob:</span><br>
-                    <span class="fs-i">On the following particulars</span>
-                    <div class="row" style="display: flex;width:100%;margin-top:15px;">
-                        <div style="width: 29%;"><p class="name">01.&nbsp; Model/Make of Vehicle </p></div>
-                        <div style="width: 75%;"><p class="dynamicdata">: </p></div><br>
-                    </div>
-                    <div class="row" style="display: flex;width:100%;margin-top:15px;">
-                        <div style="width: 29%;"><p class="name">02.&nbsp; Class of Vehicle </p></div>
-                        <div style="width: 75%;"><p class="dynamicdata">:</p></div><br>
-                    </div>
-                    <div class="row" style="display: flex;width:100%;margin-top:15px;">
-                        <div style="width: 29%;"><p class="name">03.&nbsp; Chassis No. </p></div>
-                        <div style="width: 75%;"><p class="dynamicdata">:</p></div><br>
-                    </div>
-                    <div class="row" style="display: flex;width:100%;margin-top:15px;">
-                        <div style="width: 29%;"><p class="name">04.&nbsp; Engin No. </p></div>
-                        <div style="width: 75%;"><p class="dynamicdata">:</p></div><br>
-                    </div>
-                    <div class="row" style="display: flex;width:100%;margin-top:15px;">
-                        <div style="width: 29%;"><p class="name">05.&nbsp; Number of Cylinder With CC </p></div>
-                        <div style="width: 75%;"><p class="dynamicdata">:</p></div><br>
-                    </div>
-                    <div class="row" style="display: flex;width:100%;margin-top:15px;">
-                        <div style="width: 29%;"><p class="name">06.&nbsp; Colour of Vehicle </p></div>
-                        <div style="width: 75%;"><p class="dynamicdata">:</p></div><br>
-                    </div>
-                    <div class="row" style="display: flex;width:100%;margin-top:15px;">
-                        <div style="width: 29%;"><p class="name">07.&nbsp; Size of Tyre </p></div>
-                        <div style="width: 75%;"><p class="dynamicdata">:</p></div><br>
-                    </div>
-                    <div class="row" style="display: flex;width:100%;margin-top:15px;">
-                        <div style="width: 29%;"><p class="name">08.&nbsp; Year of manufacture/Assemble </p></div>
-                        <div style="width: 75%;"><p class="dynamicdata">:</p></div><br>
-                    </div>
-                    <div class="row" style="display: flex;width:100%;margin-top:15px;">
-                        <div style="width: 29%;"><p class="name">09.&nbsp; Horse Power </p></div>
-                        <div style="width: 75%;"><p class="dynamicdata">:</p></div><br>
-                    </div>
-                    <div class="row" style="display: flex;width:100%;margin-top:15px;">
-                        <div style="width: 29%;"><p class="name">10.&nbsp; Laden Weight </p></div>
-                        <div style="width: 75%;"><p class="dynamicdata">:</p></div><br>
-                    </div>
-                    <div class="row" style="display: flex;width:100%;margin-top:15px;">
-                        <div style="width: 29%;"><p class="name">11.&nbsp; Whell Base </p></div>
-                        <div style="width: 75%;"><p class="dynamicdata">:</p></div><br>
-                    </div>
-                    <div class="row" style="display: flex;width:100%;margin-top:15px;">
-                        <div style="width: 29%;"><p class="name">12.&nbsp; Seating Capacity </p></div>
-                        <div style="width: 75%;"><p class="dynamicdata">:</p></div><br>
-                    </div>
-                    <div class="row" style="display: flex;width:100%;margin-top:15px;">
-                        <div style="width: 29%;"><p class="name">13.&nbsp; Maker's Name </p></div>
-                        <div style="width: 75%;"><p class="dynamicdata">:</p></div><br>
-                    </div>
 
-                    <div class="row" style="display: flex;width:100%;margin-top:15px;">
-                        <div style="width: 29%;"><p class="name">14.&nbsp; Unite Price. </p></div>
-                        <div style="width: 75%;"><p class="dynamicdata">:&nbsp; <p style="opacity:0;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi temporibus ad ullam Excepturi temporibus ad ullam temporibus.</p></p></div><br>
-                    </div>
-                </div>
+          
+            <div style="width: 50%;text-align: right;">
+                <div><span>Date:</span> <?php $old_date = strtotime($all->date); echo date('d-m-Y', $old_date); ?></div><br>
             </div>
         </div>
 
-        <div class="row">
-            <div style="width: 100%;">
-                <div style="float: right;">For: <b>SUPROVA INTERNATIONAL</b></div>
+        <div>
+            <div><h4 class="text-center">To Whom It May Concern</h4></div>
+        </div>
+
+        <div><br>
+            <p>This is certify that we have sold new vehicle to:</p>
+            <span>Mob:</span><br>
+            <span class="fs-i">On the following particulars</span>
+
+            <div style="display: flex;width:100%;margin-top:15px;">
+                <div style="width: 29%;"><p class="name">01.&nbsp; Model/Make of Vehicle </p></div>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"> </p></div><br>
+            </div>
+            <div style="display: flex;width:100%;margin-top:15px;">
+                <div style="width: 29%;"><p class="name">02.&nbsp; Class of Vehicle </p></div>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"></p></div><br>
+            </div>
+            <div style="display: flex;width:100%;margin-top:15px;">
+                <div style="width: 29%;"><p class="name">03.&nbsp; Chassis No. </p></div>
+                <div style="width: 75%;display: flex;" class="text-right">:<p class="dynamicdata" style="width: 100%"><?php echo $all->chassisno ?></p></div><br>
+            </div>
+            <div style="display: flex;width:100%;margin-top:15px;">
+                <div style="width: 29%;"><p class="name">04.&nbsp; Engin No. </p></div>
+                <div style="width: 75%;display: flex;" class="text-right">:<p class="dynamicdata" style="width: 100%"><?php echo $all->engineno ?></p></div><br>
+            </div>
+            <div style="display: flex;width:100%;margin-top:15px;">
+                <div style="width: 29%;"><p class="name">05.&nbsp; Number of Cylinder With CC </p></div>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"></p></div><br>
+            </div>
+            <div style="display: flex;width:100%;margin-top:15px;">
+                <div style="width: 29%;"><p class="name">06.&nbsp; Colour of Vehicle </p></div>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"></p></div><br>
+            </div>
+            <div style="display: flex;width:100%;margin-top:15px;">
+                <div style="width: 29%;"><p class="name">07.&nbsp; Size of Tyre </p></div>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"></p></div><br>
+            </div>
+            <div style="display: flex;width:100%;margin-top:15px;">
+                <div style="width: 29%;"><p class="name">08.&nbsp; Year of manufacture/Assemble </p></div>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"></p></div><br>
+            </div>
+            <div style="display: flex;width:100%;margin-top:15px;">
+                <div style="width: 29%;"><p class="name">09.&nbsp; Horse Power </p></div>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"></p></div><br>
+            </div>
+            <div style="display: flex;width:100%;margin-top:15px;">
+                <div style="width: 29%;"><p class="name">10.&nbsp; Laden Weight </p></div>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"></p></div><br>
+            </div>
+            <div style="display: flex;width:100%;margin-top:15px;">
+                <div style="width: 29%;"><p class="name">11.&nbsp; Whell Base </p></div>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"></p></div><br>
+            </div>
+            <div style="display: flex;width:100%;margin-top:15px;">
+                <div style="width: 29%;"><p class="name">12.&nbsp; Seating Capacity </p></div>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"></p></div><br>
+            </div>
+            <div style="display: flex;width:100%;margin-top:15px;">
+                <div style="width: 29%;"><p class="name">13.&nbsp; Maker's Name </p></div>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"></p></div><br>
+            </div>
+
+            <div style="display: flex;width:100%;margin-top:15px;">
+                <div style="width: 29%;"><p class="name">14.&nbsp; Unite Price. </p></div>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"></p></div><br>
             </div>
         </div>
 
-        <div class="row">
-            <div style="width: 100%;display:flex;">
-                <div style="width: 50%;">Owner's Signature</div>
-                <div style="width: 50%;width: fit-content;text-align: right;border-top: 1px solid;">(Sales Department)</div>
-            </div>
+        <div style="width: 100%;">
+            <div class="text-right">For: <b>SUPROVA INTERNATIONAL</b></div>
+        </div>
+
+        <div style="display:flex;margin-top:30px;">
+            <div style="width: 50%;">Owner's Signature</div>
+            <div class="text-right" style="width: 50%;"><span style="border-top: 1px dotted;">(Sales Department)</span></div>
         </div>
 		
 		<img class="img" src="<?php echo base_url()?>images/suprobha-logo.jpg" alt="">
