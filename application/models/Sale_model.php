@@ -158,6 +158,17 @@ class Sale_model extends CI_Model {
 		return $this->db->get('sells_log')->result();
 	}
 
+	public function find1($id='')
+	{	
+		$this->db->select('sells_log.*,product_info.*,warranty_product_list.*,customer_info.*,users.*, sells_log.id as sid');
+		$this->db->where('sells_log.id',$id);
+		$this->db->join('product_info','product_info.product_id = sells_log.product_id','left');
+		$this->db->join('customer_info','customer_info.customer_id = sells_log.customar_id','left');
+		$this->db->join('warranty_product_list','warranty_product_list.ip_id = sells_log.w_product_id','left');
+		$this->db->join('users','users.id = sells_log.creator','left');
+		return $this->db->get('sells_log')->row();
+	}
+
 	public function findinstallmentsinvoice($id='')
 	{	
 		$this->db->select('sells_log.*,product_info.*,warranty_product_list.*,customer_info.*,users.*,invoice_info.*, sells_log.id as sid,purchase_receipt_info.*');

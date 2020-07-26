@@ -46,7 +46,7 @@ class Document extends MY_Controller {
 
 	public function salereceiptprint($id)
 	{
-    	$data['all']=$this->sale_model->find($id);
+    	$data['all']=$this->sale_model->find1($id);
 		$this->load->view('Document/salereceiptprint', $data);
 	}
 
