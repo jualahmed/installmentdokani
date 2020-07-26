@@ -168,6 +168,9 @@
 				<li class="<?php echo active_link_function('document','salereceipt') ?>">
 					<a href="<?php echo base_url();?>document/salereceipt"><i class="fa fa-bank"></i>Sale Receipt</a>
 				</li>
+				<li class="<?php echo active_link_function('document','salepaperforcustomer') ?>">
+					<a href="<?php echo base_url();?>document/salepaperforcustomer"><i class="fa fa-bank"></i>Sale Receipt Customer</a>
+				</li>
 			</ul>
 		</li>
 
