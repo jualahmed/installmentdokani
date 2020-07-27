@@ -50,11 +50,34 @@
 				</table>
 
 
-				<div>
-					<?php if (($invoice->totaldue+$invoice->totalinterest)>($invoice->price+$invoice->installmentfee+$invoice->totalinterastlog)): ?>
-						<?php echo $invoice->totaldue+$invoice->totalinterest ?>
+				<div class="col-md-12">
+					<?php if ($invoice->totaldue+$invoice->totalinterest>0): ?>
+						<?php echo "Due: " ?><?php echo $invoice->totaldue+$invoice->totalinterest ?>
 					<?php else: ?>
-						<td><a href="<?php echo base_url().'document/salereceiptprint/'.$invoice->id ?>" target="_blank" class="btn btn-success">Sale Receipt Print</a></td>
+						<form action ="<?php echo base_url().'document/salereceiptprint/'.$invoice->id ?>" class="form-horizontal" method="post" enctype="multipart/form-data" formtarget="_blank" id="salereport" autocomplete="off">
+							<div class="form-group">
+								<label for="inputEmail3" class="col-sm-1 control-label">LC/NO:</label>
+								<div class="col-sm-3">
+									<input type="text" class="form-control" name="lcno" id="lock22" placeholder="LC/NO:">
+								</div>
+								<label for="inputEmail3" class="col-sm-1 control-label">VESSEL NAME:</label>
+								<div class="col-sm-3">
+									<input type="text" class="form-control" name="vesselname" id="lock22" placeholder="VESSEL NAME:">
+									<input type="hidden" name="product_id" id="pro_id">
+								</div>
+								<label for="inputEmail3" class="col-sm-1 control-label">B/E NO:</label>
+								<div class="col-sm-3">
+									<input type="text" class="form-control" name="beno" id="lock22" placeholder="B/E NO:">
+									<input type="hidden" name="product_id" id="pro_id">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-md-12 mt-2 text-right">
+									<button  type="submit" class="btn btn-success" name="search_random">Sale Receipt Print</button>
+								</div>
+							</div>
+							<br>
+						</form>	
 					<?php endif ?>
 				</div>
 			<?php endif ?>

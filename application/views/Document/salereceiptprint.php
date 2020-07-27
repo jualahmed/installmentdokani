@@ -32,6 +32,7 @@
 				</div>
 				<div style="border: 1px solid #f1f1f1;min-height: 200px;width: 33%;">
 					<h4><b>BUYER'S</b></h4>
+					<?php var_dump( $all->id) ?>
 					<h4><?php echo $all->customer_name ?></h4>
 					<h4><?php echo $all->customer_contact_no ?></h4>
 				</div>
@@ -39,10 +40,10 @@
 		</div>
 		<div class="row" style="padding: 20PX;display: flex;flex-wrap: wrap;">
 			<div style="width: 33.33%">
-				<b>L/C NO:</b>
+				<b>L/C NO: <?php echo $all->lcno ?></b>
 			</div>
 			<div style="width: 33.33%;text-align: center;">
-				<b>Vessel Name:</b>
+				<b>Vessel Name: <?php echo $all->vesselname ?></b>
 			</div>
 			<div style="width: 33.33%" class="text-right">
 				<b>Sales Invoice:</b>
@@ -53,7 +54,7 @@
 				<b>Invoice NO: <?php echo $all->sid ?></b>
 			</div>
 			<div style="width: 33.33%;text-align: center;">
-				<b>B/E NO:</b>
+				<b>B/E NO: <?php echo $all->beno ?></b>
 			</div>
 			<div style="width: 33.33%" class="text-right">
 				<b>DATE: <?php echo $all->date ?></b>

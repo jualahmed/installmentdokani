@@ -109,6 +109,7 @@ class ComposerStaticInita058764811403734de0559fcc2dde391
         'Damageproduct_model' => __DIR__ . '/../..' . '/application/models/Damageproduct_model.php',
         'Distributor_model' => __DIR__ . '/../..' . '/application/models/Distributor_model.php',
         'Distributorm' => __DIR__ . '/../..' . '/application/models/Distributorm.php',
+        'Documentm' => __DIR__ . '/../..' . '/application/models/Documentm.php',
         'Employee_model' => __DIR__ . '/../..' . '/application/models/Employee_model.php',
         'Excel_model' => __DIR__ . '/../..' . '/application/models/Excel_model.php',
         'Exchange_model' => __DIR__ . '/../..' . '/application/models/Exchange_model.php',

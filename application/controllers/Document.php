@@ -46,6 +46,26 @@ class Document extends MY_Controller {
 
 	public function salereceiptprint($id)
 	{
+
+		$lcno=$this->input->post('lcno');
+		$vesselname=$this->input->post('vesselname');
+		$beno=$this->input->post('beno');
+
+		$daa = Documentm::where('salelogid',$id)->where('type','salereceiptprint')->get();
+
+		if(count($daa)==0){
+			$daa = new Documentm();
+		}else{
+			$daa=Documentm::find($daa[0]->id);
+		}
+
+		$daa->lcno=$lcno;
+		$daa->vesselname=$vesselname;
+		$daa->beno=$beno;
+		$daa->type='salereceiptprint';
+		$daa->salelogid=$id;
+		$daa->save();
+
     	$data['all']=$this->sale_model->find1($id);
 		$this->load->view('Document/salereceiptprint', $data);
 	}

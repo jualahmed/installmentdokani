@@ -21,6 +21,7 @@ return array(
     'Damageproduct_model' => $baseDir . '/application/models/Damageproduct_model.php',
     'Distributor_model' => $baseDir . '/application/models/Distributor_model.php',
     'Distributorm' => $baseDir . '/application/models/Distributorm.php',
+    'Documentm' => $baseDir . '/application/models/Documentm.php',
     'Employee_model' => $baseDir . '/application/models/Employee_model.php',
     'Excel_model' => $baseDir . '/application/models/Excel_model.php',
     'Exchange_model' => $baseDir . '/application/models/Exchange_model.php',

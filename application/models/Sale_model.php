@@ -160,8 +160,9 @@ class Sale_model extends CI_Model {
 
 	public function find1($id='')
 	{	
-		$this->db->select('sells_log.*,product_info.*,warranty_product_list.*,customer_info.*,users.*, sells_log.id as sid');
+		$this->db->select('sells_log.*,product_info.*,warranty_product_list.*,customer_info.*,users.*, sells_log.id as sid,documents.*');
 		$this->db->where('sells_log.id',$id);
+		$this->db->join('documents','documents.salelogid = sells_log.id');
 		$this->db->join('product_info','product_info.product_id = sells_log.product_id','left');
 		$this->db->join('customer_info','customer_info.customer_id = sells_log.customar_id','left');
 		$this->db->join('warranty_product_list','warranty_product_list.ip_id = sells_log.w_product_id','left');

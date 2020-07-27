@@ -51,8 +51,8 @@
 
 
 				<div>
-					<?php if (($invoice->totaldue+$invoice->totalinterest)>($invoice->price+$invoice->installmentfee+$invoice->totalinterastlog)): ?>
-						<?php echo $invoice->totaldue+$invoice->totalinterest ?>
+					<?php if ($invoice->totaldue+$invoice->totalinterest>0): ?>
+						<?php echo "Due: " ?><?php echo $invoice->totaldue+$invoice->totalinterest ?>
 					<?php else: ?>
 						<td><a href="<?php echo base_url().'document/salepaperforcustomerprint/'.$invoice->id ?>" target="_blank" class="btn btn-success">Sale Receipt Print</a></td>
 					<?php endif ?>
