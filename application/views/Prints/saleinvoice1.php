@@ -29,9 +29,6 @@
 			<div id="shop_title_box"  style="width: 698px;">
 						<img style="width: 698px;" src="<?php echo base_url();?>images/common.jpg" height="101px">
 					<table class="table" style="margin-bottom: 0px;">
-						<tr >
-							<td style="padding: 3px;" colspan="4" align="center"><b><span style="font-size: 20px;">প্রোপ্রাইটর : প্রদীপ কান্তি দে (নির্মল) </span> </b><br>ইমেইল : internationalsuprova2019pd@gmail.com </td>
-						</tr>
 						<tr align="center" style="padding: 0px;margin: 0px;">
 							<th align="center" style="padding: 0px;width: 33.333333333%;"><h4 style="text-align: left;    margin-top: 4px;
     margin-bottom: 4px;">বিক্রয় রশিদ নং : <b><?php echo  $this->bangla_ntw->engToBn($all[0]->sid); ?></b></h4></th>
@@ -172,7 +169,7 @@
 							} ?> টাকা মাত্র</b></td>
 					</tr>
 					<tr>
-						<td colspan="3"><p style="margin: -1px;">উক্ত মোটরসাইকেল এর সাথে টুলস বক্স, চাবি <b><?php echo $this->bangla_ntw->engToBn($all[0]->key) ?></b> টি, আটটি কুপন সহ একটি সার্ভিস ওয়ারেন্টি বই, একটি ডকুমেন্ট কভার সহ মোটরসাইকেল ক্রেতার নিকট বুঝাইয়া দেওয়া হইলো। </p></td>
+						<td colspan="3"><p style="margin: -1px;">উক্ত মোটরসাইকেল এর সাথে টুলস বক্স, চাবি ....... টি, আটটি কুপন সহ একটি সার্ভিস ওয়ারেন্টি বই, একটি ডকুমেন্টকাভার সহ মোটরসাইকেলটি ক্রেতার নিকট বুঝাইয়া দেওয়া হইল</p></td>
 					</tr>
 					<tr>
 						<td colspan="3"> <b>বি : দ্র : </b> বকেয়া টাকা পরিশোধ হওয়ার পর বিক্রয় রশিদ বুঝে নিন, অন্যথায় কর্তৃপক্ষ দায়ী নয়।</td>
@@ -187,8 +184,7 @@
 					</div>
 					<div id = "signature_one" style="width:250px;text-align: center;margin: -16px 0px;">
 						<img src="<?php echo base_url().'images/uttora.jpg' ?>" alt="" style="width: 64px;">
-						<img src="<?php echo base_url().'images/111.png' ?>" alt="" style="width: 64px;">
-						<img src="<?php echo base_url().'images/uttora1.jpg' ?>" alt="" style="width: 40px;">
+						<img src="<?php echo base_url().'images/uttora1.jpg' ?>" alt="" style="width: 64px;margin-left: 15px;">
 					</div>
 				
 					<div id = "signature_one"  style="width:250px;text-align: center;margin: auto;">

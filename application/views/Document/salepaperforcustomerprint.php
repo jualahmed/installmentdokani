@@ -79,17 +79,17 @@
         </div>
 
         <div><br>
-            <p>This is certify that we have sold new vehicle to:</p>
-            <span>Mob:</span><br>
+            <p>This is to certify that we have sold new vehicle to: <?php echo $all->customer_name  ?></p>
+            <span>Mob: <?php echo $all->customer_contact_no  ?></span><br>
             <span class="fs-i">On the following particulars</span>
 
             <div style="display: flex;width:100%;margin-top:15px;">
                 <div style="width: 29%;"><p class="name">01.&nbsp; Model/Make of Vehicle </p></div>
-                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"> </p></div><br>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"><?php if(isset($documents)) echo $documents->model ?> </p></div><br>
             </div>
             <div style="display: flex;width:100%;margin-top:15px;">
                 <div style="width: 29%;"><p class="name">02.&nbsp; Class of Vehicle </p></div>
-                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"></p></div><br>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"><?php if(isset($documents)) echo$documents->class ?></p></div><br>
             </div>
             <div style="display: flex;width:100%;margin-top:15px;">
                 <div style="width: 29%;"><p class="name">03.&nbsp; Chassis No. </p></div>
@@ -101,44 +101,44 @@
             </div>
             <div style="display: flex;width:100%;margin-top:15px;">
                 <div style="width: 29%;"><p class="name">05.&nbsp; Number of Cylinder With CC </p></div>
-                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"></p></div><br>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"> <?php if(isset($documents))  echo $documents->cylinder  ?></p></div><br>
             </div>
             <div style="display: flex;width:100%;margin-top:15px;">
                 <div style="width: 29%;"><p class="name">06.&nbsp; Colour of Vehicle </p></div>
-                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"></p></div><br>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"> <?php if(isset($documents))  echo $documents->vehicle  ?></p></div><br>
             </div>
             <div style="display: flex;width:100%;margin-top:15px;">
                 <div style="width: 29%;"><p class="name">07.&nbsp; Size of Tyre </p></div>
-                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"></p></div><br>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"> <?php if(isset($documents))  echo $documents->typesize  ?></p></div><br>
             </div>
             <div style="display: flex;width:100%;margin-top:15px;">
                 <div style="width: 29%;"><p class="name">08.&nbsp; Year of manufacture/Assemble </p></div>
-                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"></p></div><br>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"> <?php if(isset($documents))  echo $documents->manufactureyear  ?></p></div><br>
             </div>
             <div style="display: flex;width:100%;margin-top:15px;">
                 <div style="width: 29%;"><p class="name">09.&nbsp; Horse Power </p></div>
-                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"></p></div><br>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"> <?php if(isset($documents))  echo $documents->horsepower  ?></p></div><br>
             </div>
             <div style="display: flex;width:100%;margin-top:15px;">
                 <div style="width: 29%;"><p class="name">10.&nbsp; Laden Weight </p></div>
-                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"></p></div><br>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"> <?php if(isset($documents))  echo $documents->ladenweight  ?></p></div><br>
             </div>
             <div style="display: flex;width:100%;margin-top:15px;">
                 <div style="width: 29%;"><p class="name">11.&nbsp; Whell Base </p></div>
-                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"></p></div><br>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"> <?php if(isset($documents))  echo $documents->whellbase  ?></p></div><br>
             </div>
             <div style="display: flex;width:100%;margin-top:15px;">
                 <div style="width: 29%;"><p class="name">12.&nbsp; Seating Capacity </p></div>
-                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"></p></div><br>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"> <?php if(isset($documents))  echo $documents->seatingcapacity  ?></p></div><br>
             </div>
             <div style="display: flex;width:100%;margin-top:15px;">
                 <div style="width: 29%;"><p class="name">13.&nbsp; Maker's Name </p></div>
-                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"></p></div><br>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"> <?php if(isset($documents))  echo $documents->makersname  ?></p></div><br>
             </div>
 
             <div style="display: flex;width:100%;margin-top:15px;">
                 <div style="width: 29%;"><p class="name">14.&nbsp; Unite Price. </p></div>
-                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"></p></div><br>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"><?php echo $all->price ?></p></div><br>
             </div>
         </div>
 
@@ -147,7 +147,7 @@
         </div>
 
         <div style="display:flex;margin-top:30px;">
-            <div style="width: 50%;">Owner's Signature</div>
+            <div style="width: 50%;"><b>Owner's Signature</b></div>
             <div class="text-right" style="width: 50%;"><span style="border-top: 1px dotted;">(Sales Department)</span></div>
         </div>
 		

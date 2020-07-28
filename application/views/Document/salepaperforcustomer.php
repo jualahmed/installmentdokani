@@ -54,7 +54,94 @@
 					<?php if ($invoice->totaldue+$invoice->totalinterest>0): ?>
 						<?php echo "Due: " ?><?php echo $invoice->totaldue+$invoice->totalinterest ?>
 					<?php else: ?>
-						<td><a href="<?php echo base_url().'document/salepaperforcustomerprint/'.$invoice->id ?>" target="_blank" class="btn btn-success">Sale Receipt Print</a></td>
+						<form action ="<?php echo base_url().'document/salepaperforcustomerprint/'.$invoice->sid ?>" class="form-horizontal" method="post" enctype="multipart/form-data" formtarget="_blank" id="salereport" autocomplete="off">
+							<div>
+								<div class="form-group">
+									<div class="col-sm-4">
+										<label for="inputEmail3" class="control-label">Model/Make of Vehicle:</label>
+										<div>
+											<input type="text" class="form-control" name="model" id="lock22" placeholder="Model/Make of Vehicle" value="<?php if(isset($documents)) echo $documents->model ?>">
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<label for="inputEmail3" class="control-label">Class of Vehicle</label>
+										<div>
+											<input type="text" class="form-control" name="class" id="lock22" placeholder="Class of Vehicle" value="<?php if(isset($documents)) echo $documents->class ?>">
+											<input type="hidden" name="product_id" id="pro_id">
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<label for="inputEmail3" class="control-label">Number of Cylinder With CC</label>
+										<div>
+											<input type="text" class="form-control" name="cylinder" id="lock22" placeholder="Number of Cylinder With CC" value="<?php if(isset($documents)) echo $documents->cylinder ?>">
+											<input type="hidden" name="product_id" id="pro_id">
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<label for="inputEmail3" class="control-label">Colour of Vehicle</label>
+										<div class="">
+											<input type="text" class="form-control" name="vehicle" id="lock22" placeholder="Colour of Vehicle" value="<?php if(isset($documents)) echo $documents->vehicle ?>">
+											<input type="hidden" name="product_id" id="pro_id">
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<label for="inputEmail3" class="control-label">Size of Tyre</label>
+										<div>
+											<input type="text" class="form-control" name="typesize" id="lock22" placeholder="Size of Tyre" value="<?php if(isset($documents)) echo $documents->typesize ?>">
+											<input type="hidden" name="product_id" id="pro_id">
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<label for="inputEmail3" class="control-label">Year of manufacture/Assemble</label>
+										<div>
+											<input type="text" class="form-control" name="manufactureyear" id="lock22" placeholder="Year of manufacture/Assemble" value="<?php if(isset($documents)) echo $documents->manufactureyear ?>">
+											<input type="hidden" name="product_id" id="pro_id">
+										</div>
+									</div>
+									<div class="col-md-4">
+										<label for="inputEmail3" class="control-label">Horse Power</label>
+										<div>
+											<input type="text" class="form-control" name="horsepower" id="lock22" placeholder="Horse Power" value="<?php if(isset($documents)) echo $documents->horsepower ?>">
+											<input type="hidden" name="product_id" id="pro_id">
+										</div>
+									</div>
+									<div class="col-md-4">
+										<label for="inputEmail3" class="control-label">Laden Weight</label>
+										<div>
+											<input type="text" class="form-control" name="ladenweight" id="lock22" placeholder="Laden Weight" value="<?php if(isset($documents)) echo $documents->ladenweight ?>">
+											<input type="hidden" name="product_id" id="pro_id">
+										</div>
+									</div>
+									<div class="col-md-4">
+										<label for="inputEmail3" class="control-label">Whell Base</label>
+										<div>
+											<input type="text" class="form-control" name="whellbase" id="lock22" placeholder="Whell Base" value="<?php if(isset($documents)) echo $documents->whellbase ?>">
+											<input type="hidden" name="product_id" id="pro_id">
+										</div>
+									</div>
+									<div class="col-md-4">
+										<label for="inputEmail3" class="control-label">Seating Capacity</label>
+										<div>
+											<input type="text" class="form-control" name="seatingcapacity" id="lock22" placeholder="Seating Capacity" value="<?php if(isset($documents)) echo $documents->seatingcapacity ?>">
+											<input type="hidden" name="product_id" id="pro_id">
+										</div>
+									</div>
+									<div class="col-md-4">
+										<label for="inputEmail3" class="control-label">Maker's Name</label>
+										<div>
+											<input type="text" class="form-control" name="makersname" id="lock22" placeholder="Maker's Name" value="<?php if(isset($documents)) echo $documents->makersname ?>">
+											<input type="hidden" name="product_id" id="pro_id">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-md-12 mt-2 text-right">
+										<button  type="submit" class="btn btn-success" name="search_random">Sale Receipt Print</button>
+									</div>
+								</div>
+								<br>
+							</div>
+						</form>	
 					<?php endif ?>
 				</div>
 			<?php endif ?>

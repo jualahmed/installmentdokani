@@ -30,9 +30,8 @@
 				<div style="width: 66%;">
 					<img style="width: 100%;min-height: 200px" src="<?php echo base_url();?>images/common.jpg">
 				</div>
-				<div style="border: 1px solid #f1f1f1;min-height: 200px;width: 33%;">
+				<div style="border: 1px solid #f1f1f1;min-height: 200px;width: 33%;padding: 10px;">
 					<h4><b>BUYER'S</b></h4>
-					<?php var_dump( $all->id) ?>
 					<h4><?php echo $all->customer_name ?></h4>
 					<h4><?php echo $all->customer_contact_no ?></h4>
 				</div>
@@ -40,10 +39,10 @@
 		</div>
 		<div class="row" style="padding: 20PX;display: flex;flex-wrap: wrap;">
 			<div style="width: 33.33%">
-				<b>L/C NO: <?php echo $all->lcno ?></b>
+				<b>L/C NO: <?php if(isset($documents)) echo $documents->lcno ?></b>
 			</div>
 			<div style="width: 33.33%;text-align: center;">
-				<b>Vessel Name: <?php echo $all->vesselname ?></b>
+				<b>Vessel Name: <?php if(isset($documents)) echo $documents->vesselname ?></b>
 			</div>
 			<div style="width: 33.33%" class="text-right">
 				<b>Sales Invoice:</b>
@@ -54,7 +53,7 @@
 				<b>Invoice NO: <?php echo $all->sid ?></b>
 			</div>
 			<div style="width: 33.33%;text-align: center;">
-				<b>B/E NO: <?php echo $all->beno ?></b>
+				<b>B/E NO: <?php if(isset($documents)) echo $documents->beno ?></b>
 			</div>
 			<div style="width: 33.33%" class="text-right">
 				<b>DATE: <?php echo $all->date ?></b>
@@ -98,7 +97,7 @@
 					</tr>
 					<tr>
 						<td align="right"><b>Balance:</b></td>
-						<td align="right"><?php echo number_format($all->price,2) ?></td>
+						<td align="right"><?php echo number_format(0,2) ?></td>
 					</tr>
 				</table>
 				<div style="display: flex;">
@@ -126,7 +125,7 @@
 								<p><b>ACCOUNT DEPTT</b></p>
 							</div>
 							<div style="width: 50%;text-align: center;border-top: 1px dotted;margin: 5px;">
-								<p>(Sales Department)</p>
+								<p><b>(Sales Department)</b></p>
 							</div>
 						</div>
 					</div>
