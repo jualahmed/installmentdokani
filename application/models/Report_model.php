@@ -15,13 +15,11 @@ class Report_model extends CI_model{
 		$this->db->join('warranty_product_list', 'sells_log.w_product_id = warranty_product_list.ip_id');
 		$this->db->join('purchase_receipt_info', 'warranty_product_list.purchase_receipt_id = purchase_receipt_info.receipt_id');
 		$this->db->join(' users', 'sells_log.creator = users.id');
-		$this->db->order_by('sells_log.customar_id', 'desc');
+		$this->db->order_by('sells_log.date','asc'); 
 		$this->db->where('sells_log.totaldue > ',0);
 		if($invoice_id!=0){$this->db->where('sells_log.id',$invoice_id);} 
 		if($customer_id!=0){$this->db->where('sells_log.customar_id',$customer_id);} 
-		$this->db->order_by('sells_log.date','asc'); 
 		$query = $this->db->get('sells_log')->result();
-
 		return $query;
 	}
 		
@@ -105,7 +103,6 @@ class Report_model extends CI_model{
 		if($distributor_id!=0){$this->db->where(' distributor_info.distributor_id',$distributor_id);}
 		if($start_date!=0){$this->db->where('purchase_receipt_info.receipt_date >= "'.$start_date.'"');}
 		if($end_date!=0){$this->db->where('purchase_receipt_info.receipt_date <= "'.$end_date.'"');}
-		if($start_date!=''){$this->db->where('purchase_receipt_info.receipt_date <= "'.$start_date.'"');}
 		$query = $this->db->get('product_info');
 		return $query;	
 	} 
@@ -146,7 +143,7 @@ class Report_model extends CI_model{
 		$this->db->join('purchase_receipt_info', 'warranty_product_list.purchase_receipt_id = purchase_receipt_info.receipt_id');
 		$this->db->join('customer_info', 'sells_log.customar_id = customer_info.customer_id');
 		$this->db->join(' users', 'sells_log.creator = users.id');
-		$this->db->orderBy('all_installment.dates','desc');
+		$this->db->order_by('all_installment.date','asc');
 		return $this->db->get('all_installment')->result();
 	}
 
@@ -160,7 +157,8 @@ class Report_model extends CI_model{
 		$this->db->join('warranty_product_list', 'sells_log.w_product_id = warranty_product_list.ip_id');
 		$this->db->join('purchase_receipt_info', 'warranty_product_list.purchase_receipt_id = purchase_receipt_info.receipt_id');
 		$this->db->join('customer_info', 'sells_log.customar_id = customer_info.customer_id');
-		$this->db->join(' users', 'sells_log.creator = users.id');
+		$this->db->join('users', 'sells_log.creator = users.id');
+		$this->db->order_by('all_installment.date','asc');
 		return $this->db->get('all_installment')->result();
 	}
 

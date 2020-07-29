@@ -74,7 +74,7 @@
 						</tr>	
 					<?php endforeach ?>
 					<tr>
-						<th class="text-right" colspan="8">Total</th>
+						<th class="text-right" colspan="9">Total</th>
 						<th class="text-right"><?php echo number_format($total,2); ?></th>
 						<th class="text-right"><?php echo number_format($totapp,2) ?></th>
 						<th class="text-right"><?php echo number_format($totald,2) ?></th>

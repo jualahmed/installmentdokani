@@ -63,13 +63,7 @@
 		<br>
 
         <div style="display:flex;">
-            <div style="width: 50%;">
-                <div><span>Ref : <?php echo $all->referencename ?></span></div><br>
-                <div><span>To : <?php echo $all->customer_name ?></span></div>
-            </div>
-
-          
-            <div style="width: 50%;text-align: right;">
+            <div style="width: 100%;text-align: right;">
                 <div><span>Date:</span> <?php $old_date = strtotime($all->date); echo date('d-m-Y', $old_date); ?></div><br>
             </div>
         </div>
@@ -79,8 +73,17 @@
         </div>
 
         <div><br>
-            <p>This is to certify that we have sold new vehicle to: <?php echo $all->customer_name  ?></p>
-            <span>Mob: <?php echo $all->customer_contact_no  ?></span><br>
+            <p>This is to certify that we have sold new vehicle to: <br>
+            
+                নাম : <?php echo $all->customer_name ?>,
+				পিতার নাম : <?php echo $all->father_name ?>	,		
+				গ্রাম : <?php echo $all->village ?>,
+				থানা : <?php echo $all->police_station ?>,
+				ডাক : <?php echo $all->postoffice ?>,
+				জেলা : <?php echo $all->district ?>
+            
+            </p>
+            <span>Mob: <?php echo $all->customer_contact_no  ?></span><br><br>
             <span class="fs-i">On the following particulars</span>
 
             <div style="display: flex;width:100%;margin-top:15px;">
@@ -93,11 +96,11 @@
             </div>
             <div style="display: flex;width:100%;margin-top:15px;">
                 <div style="width: 29%;"><p class="name">03.&nbsp; Chassis No. </p></div>
-                <div style="width: 75%;display: flex;" class="text-right">:<p class="dynamicdata" style="width: 100%"><?php echo $all->chassisno ?></p></div><br>
+                <div style="width: 75%;display: flex;" >:<p class="dynamicdata" style="width: 100%"><?php echo $documents->chassisno ?></p></div><br>
             </div>
             <div style="display: flex;width:100%;margin-top:15px;">
                 <div style="width: 29%;"><p class="name">04.&nbsp; Engin No. </p></div>
-                <div style="width: 75%;display: flex;" class="text-right">:<p class="dynamicdata" style="width: 100%"><?php echo $all->engineno ?></p></div><br>
+                <div style="width: 75%;display: flex;" >:<p class="dynamicdata" style="width: 100%"><?php echo $documents->engineno ?></p></div><br>
             </div>
             <div style="display: flex;width:100%;margin-top:15px;">
                 <div style="width: 29%;"><p class="name">05.&nbsp; Number of Cylinder With CC </p></div>
@@ -138,7 +141,7 @@
 
             <div style="display: flex;width:100%;margin-top:15px;">
                 <div style="width: 29%;"><p class="name">14.&nbsp; Unite Price. </p></div>
-                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"><?php echo $all->price ?></p></div><br>
+                <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"><?php echo $documents->price ?></p></div><br>
             </div>
         </div>
 
@@ -147,7 +150,7 @@
         </div>
 
         <div style="display:flex;margin-top:30px;">
-            <div style="width: 50%;"><b>Owner's Signature</b></div>
+            <div style="width: 50%;"><b><span style="border-top: 1px dotted;">Owner's Signature</span></b></div>
             <div class="text-right" style="width: 50%;"><span style="border-top: 1px dotted;">(Sales Department)</span></div>
         </div>
 		

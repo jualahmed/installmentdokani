@@ -51,22 +51,17 @@ foreach ($ddin as $key => $value) {
 	 	<div id ="main_invoice" style="width: 700px; margin: auto;">
 			<div id = "invoice"  style="width: 698px;">
 				<div id="shop_title_box"  style="width: 698px;">			
-						<img style="width: 698px;" src="<?php echo base_url();?>images/common.jpg" height="101px">
-						<table class="table table-secondary">
-								<tr>
-							<td colspan="4" align="center"><b><span style="font-size: 20px;">প্রোপ্রাইটর : প্রদীপ কান্তি দে (নির্মল) </span> </b><br>ইমেইল : internationalsuprova2019pd@gmail.com </td>
-						</tr>
+						<img style="width: 698px;" src="<?php echo base_url();?>images/common.jpg" height="180px">
+						<table class="table table-secondary" style="margin-bottom: 0px;">
 							<tr align="center">
-								<th align="center" style="width: 33.33%;"><h4 style="text-align: left;">রশিদ নং : <b><?php echo $this->bangla_ntw->engToBn($all->invoice_id); ?></b></h4></th>
+								<th align="center" style="width: 33.33%;"><h4 style="text-align: left;">নং : <b><?php echo $this->bangla_ntw->engToBn($all->invoice_id); ?></b></h4></th>
 								
 								<th align="center" style="width: 33.33%;"><h4 style="text-align: center;">তারিখ : <b><?php echo $this->bangla_ntw->engToBn(date("d-m-Y", strtotime($all->date_time))); ?></b></h4></th>
-								<th align="center" style="width: 33.33%;"><h4 style="text-align: right;">প্রস্তুত কারক : <b><?php echo $all->user_full_name; ?></b></h4>
-										
-										<h4 style="text-align: right;">বিক্রয় রশিদ নং : <b><?php if(10>$all->sid) echo "০"; echo $this->bangla_ntw->engToBn($all->sid); ?></b></h4>
-
+								<th align="center" style="width: 33.33%;"><h4 style="text-align: right;">রশিদ প্রস্তুত কারী: <b><?php echo $all->user_full_name; ?></b></h4>
 								</th>
 							</tr>
 						</table>
+					<div>বিক্রয় রশিদ নং : <b><?php if(10>$all->sid) echo "০"; echo $this->bangla_ntw->engToBn($all->sid); ?></b></div>
 				</div> <!--end of shop_title_box-->
 				<div id = "invoice_details_header" style="width: 699px;">	
 					<table class="customers" style="width: 100%;">	
@@ -96,6 +91,7 @@ foreach ($ddin as $key => $value) {
 							<td ><b>থানা :</b> <?php echo $all->police_station; ?></td>
 							<td ><b>জেলা :</b> <?php echo $all->district; ?></td>
 						</tr>
+						
 					</table>	
 				</div> <!--end of invoice_details_header-->
 				
@@ -112,7 +108,7 @@ foreach ($ddin as $key => $value) {
 								?>
 							</td>
 							<td>
-								<b>ইঞ্জিন নং : </b><?php echo $all->engineno; ?>
+								<b>ইঞ্জিন নং : </b> <b style="border: 2px solid #ecdfdf;padding: 2px 4px;"><? echo ' '. $all->engineno ?></b>
 							</td>
 							<td>
 								<b>ব্যাটারী নং : </b><?php echo $all->batteryno; ?>
@@ -121,7 +117,7 @@ foreach ($ddin as $key => $value) {
 						</tr>
 						<tr>
 							<td colspan="2">
-								<b>চেসিস নং : </b><?php echo $all->chassisno; ?>
+								<b>চেসিস নং : </b> <b style="border: 2px solid #ecdfdf;padding: 2px 4px;"><?php echo $all->chassisno; ?></b>
 							</td>
 							<td>
 								<b>কালার : </b><?php echo $all->color;?>
@@ -158,6 +154,12 @@ foreach ($ddin as $key => $value) {
 								</table>
 							</th>
 						</tr>
+							<tr>
+						<td colspan="4"><p style="margin: -1px;">উক্ত মোটরসাইকেল এর সাথে টুলস বক্স, চাবি ....... টি, আটটি কুপন সহ একটি সার্ভিস ওয়ারেন্টি বই, একটি ডকুমেন্টকাভার সহ মোটরসাইকেলটি ক্রেতার নিকট বুঝাইয়া দেওয়া হইল।</p></td>
+					</tr>
+					<tr>
+						<td colspan="4"> <b>বি : দ্র : </b> বকেয়া টাকা পরিশোধ হওয়ার পর বিক্রয় রশিদ বুঝে নিন, অন্যথায় কর্তৃপক্ষ দায়ী নয়।</td>
+					</tr>
 					</table>	
 				</div>
 			
@@ -167,12 +169,16 @@ foreach ($ddin as $key => $value) {
 						<div id = "signature_one"  style="width:250px;text-align: center;margin: auto;">
 						<div class = "customer_signature"> <b>ক্রেতার স্বাক্ষর </b>	</div>
 					</div>
-					<div id = "signature_one" style="width:250px;text-align: center;margin: auto;"></div>
+					<div id = "signature_one" style="width:250px;text-align: center;margin: -16px 0px;">
+						<img src="<?php echo base_url().'images/uttora.jpg' ?>" alt="" style="width: 64px;">
+						<img src="<?php echo base_url().'images/uttora1.jpg' ?>" alt="" style="width: 64px;margin-left: 15px;">
+					</div>
 					<div id = "signature_one" style="margin-right: auto;width:250px;    margin: auto;    text-align: center;"> 
 						<div class = "customer_signature2"> <b>বিক্রেতার স্বাক্ষর</b> </div>
 					</div>
 					</div>
-
+                    
+				<p class="text-center" style="padding-top:10px; ">আপনার মোটর সাইকেলটি রেজিস্ট্রেশন করুণ, ট্রাফিক আইন মেনে চলুন ও নিরাপদে থাকুন।</p>
 					<div class ="pos_top_header_fotter" style="margin-top:5px;line-height: 16px;width: 100%;float: left;text-align: center;font-size: 12px;"> Thank You For Being With Us.</div>
 					<div style="width: 100%; height: 1px; float:left;"> </div>
 				

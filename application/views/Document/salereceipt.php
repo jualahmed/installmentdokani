@@ -16,7 +16,7 @@
 	</section>
 	<br><br>
 	<section class="content">
-		<div class="wrap">
+		<div class="wrap table-responsive">
 			<?php if (isset($invoice)): ?>
 				<table class="table table-bordered">
 						<tr>
@@ -51,26 +51,43 @@
 
 				<div class="col-md-12">
 					<?php if ($invoice->totaldue+$invoice->totalinterest>0): ?>
-						<?php echo "Due: " ?><?php echo number_format($invoice->totaldue+$invoice->totalinterest) ?>
+						<h2>Please Pay Your Outstanding Amount: <?php echo number_format($invoice->totaldue+$invoice->totalinterest) ?></h2>
 					<?php else: ?>
 						<form action ="<?php echo base_url().'document/salereceiptprint/'.$invoice->sid ?>" class="form-horizontal" method="post" enctype="multipart/form-data" formtarget="_blank" id="salereport" autocomplete="off">
 							<div>
 								<div class="form-group">
-									<label for="inputEmail3" class="col-sm-1 control-label">LC/NO:</label>
-									<div class="col-sm-3">
+									<label for="inputEmail3" class="col-sm-2 control-label">LC/NO:</label>
+									<div class="col-sm-2">
 										<input type="text" class="form-control" name="lcno" id="lock22" placeholder="LC/NO:" value="<?php if(isset($documents)) echo $documents->lcno ?>">
 									</div>
-									<label for="inputEmail3" class="col-sm-1 control-label">VESSEL NAME:</label>
-									<div class="col-sm-3">
+									<label for="inputEmail3" class="col-sm-2 control-label">VESSEL NAME:</label>
+									<div class="col-sm-2">
 										<input type="text" class="form-control" name="vesselname" id="lock22" placeholder="VESSEL NAME:" value="<?php if(isset($documents)) echo $documents->vesselname ?>">
 										<input type="hidden" name="product_id" id="pro_id">
 									</div>
 									<label for="inputEmail3" class="col-sm-1 control-label">B/E NO:</label>
-									<div class="col-sm-3">
+									<div class="col-sm-2">
 										<input type="text" class="form-control" name="beno" id="lock22" placeholder="B/E NO:" value="<?php if(isset($documents)) echo $documents->beno ?>">
 										<input type="hidden" name="product_id" id="pro_id">
 									</div>
 								</div>
+								<br/>
+							
+								<div class="form-group">
+								       <label for="inputEmail3" class="col-sm-2 control-label">Engine No:</label>
+									<div class="col-sm-2">
+										<input type="text" class="form-control" name="engineno" id="lock22" placeholder="Engine No:" value="<?php if(isset($documents)) echo $documents->engineno; else echo $invoice->engineno ?>">
+									</div>
+									<label for="inputEmail3" class="col-sm-2 control-label">Chassis No:</label>
+									<div class="col-sm-2">
+										<input type="text" class="form-control" name="chassisno" id="lock22" placeholder="Chassis No:" value="<?php if(isset($documents)) echo $documents->chassisno;else echo $invoice->chassisno ?>">
+									</div>
+									<label for="inputEmail3" class="col-sm-1 control-label">Price:</label>
+									<div class="col-sm-2">
+										<input type="text" class="form-control" name="price" id="lock22" placeholder="Price" value="<?php if(isset($documents)) echo $documents->price;else echo $invoice->price+$invoice->installmentfee+$invoice->totalinterastlog ?>">
+									</div>
+								</div>
+								
 								<div class="form-group">
 									<div class="col-md-12 mt-2 text-right">
 										<button  type="submit" class="btn btn-success" name="search_random">Sale Receipt Print</button>

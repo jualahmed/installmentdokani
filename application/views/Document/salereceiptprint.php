@@ -32,8 +32,13 @@
 				</div>
 				<div style="border: 1px solid #f1f1f1;min-height: 200px;width: 33%;padding: 10px;">
 					<h4><b>BUYER'S</b></h4>
-					<h4><?php echo $all->customer_name ?></h4>
-					<h4><?php echo $all->customer_contact_no ?></h4>
+					<h4>নাম : <?php echo $all->customer_name ?></h4>
+					<h4>পিতার নাম : <?php echo $all->father_name ?></h4>
+					<h4>মোবাইল নং : <?php echo $all->customer_contact_no ?></h4>
+					<h4>গ্রাম : <?php echo $all->village ?></h4>
+					<h4>থানা : <?php echo $all->police_station ?></h4>
+					<h4>ডাক : <?php echo $all->postoffice ?></h4>
+					<h4>জেলা : <?php echo $all->district ?></h4>
 				</div>
 			</div> <!--end of shop_title_box-->
 		</div>
@@ -69,31 +74,31 @@
 						<th>Colour.</th>
 						<th>Qnty.</th>
 						<th>Description.</th>
-						<th style="text-align: right;">Unit Price.</th>
-						<th style="text-align: right;">Amount.</th>
+						<th style="text-align: center;">Unit Price.</th>
+						<th style="text-align: center;">Amount.</th>
 					</tr>
 					<tr>
 						<td>
 							<div style="height: 200px"><?php echo 1 ?></div>
 						</td>
-						<td><?php echo $all->chassisno ?></td>
-						<td><?php echo $all->engineno ?></td>
+						<td><?php echo $documents->chassisno ?></td>
+						<td><?php echo $documents->engineno ?></td>
 						<td><?php echo $all->color ?></td>
-						<td>1</td>
+						<td align="center">1</td>
 						<td></td>
-						<td align="right"><?php echo number_format($all->price,2) ?></td>
-						<td align="right"><?php echo number_format($all->price,2) ?></td>
+						<td align="right"><?php echo number_format($documents->price,2) ?></td>
+						<td align="right"><?php echo number_format($documents->price,2) ?></td>
 					</tr>
 					<tr>
 						<td colspan="6" rowspan="3">
 							<div ></div>
 						</td>
 						<td align="right"><b>Total Amount:</b></td>
-						<td align="right"><?php echo number_format($all->price,2) ?></td>
+						<td align="right"><?php echo number_format($documents->price,2) ?></td>
 					</tr>
 					<tr>
 						<td align="right"><b>Less Advance:</b></td>
-						<td align="right"><?php echo number_format($all->price,2) ?></td>
+						<td align="right"><?php echo number_format(0,2) ?></td>
 					</tr>
 					<tr>
 						<td align="right"><b>Balance:</b></td>
@@ -122,7 +127,7 @@
 						<h5 class="text-right"><P style="padding: 5px;">FOR: <b>SUPROVA INTERNATIONAL</b></P></h5>
 						<div style="display: flex;margin-top:20px;text-align: center;">
 							<div style="width: 50%;border-top: 1px dotted;margin: 5px;">
-								<p><b>ACCOUNT DEPTT</b></p>
+								<p><b>ACCOUNTS DEPTT</b></p>
 							</div>
 							<div style="width: 50%;text-align: center;border-top: 1px dotted;margin: 5px;">
 								<p><b>(Sales Department)</b></p>

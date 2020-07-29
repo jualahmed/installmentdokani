@@ -27,7 +27,7 @@
  	<div id ="main_invoice" style="width: 700px; margin: auto;">
 		<div id = "invoice"  style="width: 698px;">
 			<div id="shop_title_box"  style="width: 698px;">
-						<img style="width: 698px;" src="<?php echo base_url();?>images/common.jpg" height="101px">
+						<img style="width: 698px;" src="<?php echo base_url();?>images/common.jpg" height="180px">
 					<table class="table" style="margin-bottom: 0px;">
 						<tr align="center" style="padding: 0px;margin: 0px;">
 							<th align="center" style="padding: 0px;width: 33.333333333%;"><h4 style="text-align: left;    margin-top: 4px;
@@ -88,12 +88,10 @@
 					</tr>
 					<tr>
 						<td style="padding: 1px 3px;">
-							<div style="display: flex;">
-								<div style="width: 50%">ইঞ্জিন নং :</div> <div style="text-align: right;width: 50%"><b> <?php echo $all[0]->engineno ?></b></div>
-							</div>
+						    ইঞ্জিন নং : <b style="border: 2px solid #ecdfdf;padding: 2px 4px;"><? echo ' '. $all[0]->engineno ?></b>
 						</td>
 						<td style="padding: 1px 3px;">
-							<div style="display: flex;"><div style="width: 50%">চেসিস নং : </div><div style="text-align: right;width: 50%"><b> <?php echo $all[0]->chassisno ?></b></div></div>
+							চেসিস নং : <b style="border: 2px solid #ecdfdf;padding: 2px 4px;"><?php echo $all[0]->chassisno ?></b>
 						</td>
 						<td style="padding: 1px 3px;">
 							<div style="display: flex;">
@@ -105,7 +103,7 @@
 					<tr>
 						<th colspan="4" style="text-align: center;padding: 5px;"><h4 style="padding: 0px;margin: 4px;"><b>লেনদেনের বিবরণ</b></h4></th>
 					</tr>
-					<tr style="height: 300px;">
+					<tr style="height: 220px;">
 						<th width="30%"><?php echo $all[0]->remarks ?></th>
 						<th width="40%" style="padding: 3px 3px;">
 							<b><p style="text-align: center;">মোট কিস্তি : <?php echo  $this->bangla_ntw->engToBn($all[0]->totalkisti); ?> টি</p></b>
@@ -169,7 +167,7 @@
 							} ?> টাকা মাত্র</b></td>
 					</tr>
 					<tr>
-						<td colspan="3"><p style="margin: -1px;">উক্ত মোটরসাইকেল এর সাথে টুলস বক্স, চাবি ....... টি, আটটি কুপন সহ একটি সার্ভিস ওয়ারেন্টি বই, একটি ডকুমেন্টকাভার সহ মোটরসাইকেলটি ক্রেতার নিকট বুঝাইয়া দেওয়া হইল</p></td>
+						<td colspan="3"><p style="margin: -1px;">উক্ত মোটরসাইকেল এর সাথে টুলস বক্স, চাবি ....... টি, আটটি কুপন সহ একটি সার্ভিস ওয়ারেন্টি বই, একটি ডকুমেন্টকাভার সহ মোটরসাইকেলটি ক্রেতার নিকট বুঝাইয়া দেওয়া হইল।</p></td>
 					</tr>
 					<tr>
 						<td colspan="3"> <b>বি : দ্র : </b> বকেয়া টাকা পরিশোধ হওয়ার পর বিক্রয় রশিদ বুঝে নিন, অন্যথায় কর্তৃপক্ষ দায়ী নয়।</td>
@@ -191,7 +189,7 @@
 						<div class = "customer_signature"> <b>ক্রেতার স্বাক্ষর </b>	</div>
 					</div>
 				</div>
-				<p class="text-center" style="padding-top:10px; ">আপনার মোটর সাইকেলটি রেজিস্ট্রেশন করুণ, ট্রাফিক আইন মেনে চলুন ও নিরাপদে থাকুন</p>
+				<p class="text-center" style="padding-top:10px; ">আপনার মোটর সাইকেলটি রেজিস্ট্রেশন করুণ, ট্রাফিক আইন মেনে চলুন ও নিরাপদে থাকুন।</p>
 				<div class ="pos_top_header_fotter" style="margin-top: 5px;line-height: 16px;width: 100%;float: left;text-align: center;font-size: 12px;"> Thank You For Being With Us.</div>
 				<div style="width: 100%; height: 1px; float:left;"> </div>
 			

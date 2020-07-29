@@ -5,9 +5,13 @@ new Vue({
 		alldata:[],
 		startdate:'',
 		enddate:'',
+		amount:0,
+        samount:0,
 	},
 	methods:{
 		result(){
+		    this.amount=0;
+            this.samount=0;
 			this.startdate=($("#datepickerrr").val());
 			this.enddate=($("#datepicker").val());
 			var self=this;
@@ -19,6 +23,10 @@ new Vue({
 			data: $('#salereport').serialize(),
 			success: function(result) {
 				self.alldata=result;
+				result.forEach( function(element, index) {
+                    self.amount=parseFloat(self.amount)+parseFloat(parseInt(element.price)+parseInt(element.installmentfee)+parseInt(element.totalinterastlog));
+                    self.samount=parseFloat(self.samount)+parseFloat(element.totaldue);
+                });
 			}
 		});
 		},
@@ -35,13 +43,19 @@ new Vue({
 	created(){
 		var self=this;
 		alldata:[];
+		self.amount=0;
+        self.samount=0;
 		$.ajax({
 			url: base_url+'/Report/overdueinstallment',
 		})
 		.done(function(re) {
 			var re= JSON.parse(re);
 			self.alldata=re;
-
+			console.log(re)
+            re.forEach( function(element, index) {
+                self.amount=parseFloat(self.amount)+parseFloat(parseInt(element.price)+parseInt(element.installmentfee)+parseInt(element.totalinterastlog));
+                self.samount=parseFloat(self.samount)+parseFloat(element.totaldue);
+            });
 		})
 		.fail(function() {
 			console.log("error");

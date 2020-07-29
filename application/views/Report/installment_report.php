@@ -76,6 +76,11 @@
 						<!-- <th>{{ i.price+i.totalinterest+i.installmentfee }}</th> -->
 						<!-- <th>{{ i.totaldue+i.screchcard+i.discount }}</th> -->
 					</tr>
+					<tr>
+					    <td colspan="7"></td>
+					    <td>{{ amount }}</td>
+					    <td>{{ samount }}</td>
+					</tr>
 				</tbody>
 			</table>
 		</div>

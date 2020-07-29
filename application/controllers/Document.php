@@ -54,6 +54,9 @@ class Document extends MY_Controller {
 		$lcno=$this->input->post('lcno');
 		$vesselname=$this->input->post('vesselname');
 		$beno=$this->input->post('beno');
+		$engineno=$this->input->post('engineno');
+		$chassisno=$this->input->post('chassisno');
+		$price=$this->input->post('price');
 
 		$daa = Documentm::where('salelogid',$id)->where('type','salereceiptprint')->get();
 
@@ -66,6 +69,9 @@ class Document extends MY_Controller {
 		$daa->lcno=$lcno;
 		$daa->vesselname=$vesselname;
 		$daa->beno=$beno;
+		$daa->engineno=$engineno;
+		$daa->chassisno=$chassisno;
+		$daa->price=$price;
 		$daa->type='salereceiptprint';
 		$daa->salelogid=$id;
 		$daa->save();
@@ -117,6 +123,9 @@ class Document extends MY_Controller {
 		$whellbase=$this->input->post('whellbase');
 		$seatingcapacity=$this->input->post('seatingcapacity');
 		$makersname=$this->input->post('makersname');
+			$engineno=$this->input->post('engineno');
+		$chassisno=$this->input->post('chassisno');
+		$price=$this->input->post('price');
 
 		$daa = Documentm::where('salelogid',$id)->where('type','salepaperforcustomer')->get();
 
@@ -131,6 +140,9 @@ class Document extends MY_Controller {
 		$daa->cylinder=$cylinder;
 		$daa->vehicle=$vehicle;
 		$daa->typesize=$typesize;
+			$daa->engineno=$engineno;
+		$daa->chassisno=$chassisno;
+		$daa->price=$price;
 		$daa->manufactureyear=$manufactureyear;
 		$daa->horsepower=$horsepower;
 		$daa->ladenweight=$ladenweight;
@@ -184,6 +196,9 @@ class Document extends MY_Controller {
 		$manufactureyear=$this->input->post('manufactureyear');
 		$seatingcapacity=$this->input->post('seatingcapacity');
 		$remarks=$this->input->post('remarks');
+			$engineno=$this->input->post('engineno');
+		$chassisno=$this->input->post('chassisno');
+		$price=$this->input->post('price');
 
 		$daa = Documentm::where('salelogid',$id)->where('type','deliverychallan')->get();
 
@@ -197,6 +212,9 @@ class Document extends MY_Controller {
 		$daa->class=$class;
 		$daa->cylinder=$cylinder;
 		$daa->vehicle=$vehicle;
+	    $daa->engineno=$engineno;
+		$daa->chassisno=$chassisno;
+		$daa->price=$price;
 		$daa->typesize=$typesize;
 		$daa->manufactureyear=$manufactureyear;
 		$daa->seatingcapacity=$seatingcapacity;
