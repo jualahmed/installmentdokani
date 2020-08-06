@@ -8,7 +8,7 @@
 	<link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
 	<style>
 		*{
-			font-family: 'SolaimanLipi', Arial, sans-serif !important;
+			font-size:12px!important;
 		}
 		.img{
 			position: absolute;
@@ -57,7 +57,7 @@ foreach ($ddin as $key => $value) {
 								<th align="center" style="width: 33.33%;"><h4 style="text-align: left;">নং : <b><?php echo $this->bangla_ntw->engToBn($all->invoice_id); ?></b></h4></th>
 								
 								<th align="center" style="width: 33.33%;"><h4 style="text-align: center;">তারিখ : <b><?php echo $this->bangla_ntw->engToBn(date("d-m-Y", strtotime($all->date_time))); ?></b></h4></th>
-								<th align="center" style="width: 33.33%;"><h4 style="text-align: right;">রশিদ প্রস্তুত কারী: <b><?php echo $all->user_full_name; ?></b></h4>
+								<th align="center" style="width: 33.33%;"><h4 style="text-align: right;">রশিদ প্রস্তুতকারী: <b><?php echo $all->user_full_name; ?></b></h4>
 								</th>
 							</tr>
 						</table>
@@ -76,8 +76,7 @@ foreach ($ddin as $key => $value) {
 									<img src="<?php echo base_url() ?>/assets/img/user.jpg" alt="" width="50px">
 								<?php } ?>
 							</td>
-							<td ><b>নাম :</b> <?php echo $all->customer_name; ?></td>
-							<td ><b>আইডি :</b> <?php echo $this->bangla_ntw->engToBn($all->customer_id); ?></td>	
+							<td  colspan="2"><b>নাম :</b> <?php echo $all->customer_name; ?></td>
 						</tr>
 						<tr >
 							<td style="width: 55%;"><b>পিতার নাম :</b> <?php echo $all->father_name; ?></td>
@@ -167,14 +166,14 @@ foreach ($ddin as $key => $value) {
 					
 					<div id = "signature_area" style="width: 698px;display: flex;padding-top: 50px;">	
 						<div id = "signature_one"  style="width:250px;text-align: center;margin: auto;">
-						<div class = "customer_signature"> <b>ক্রেতার স্বাক্ষর </b>	</div>
+						<div class = "customer_signature">  <b>বিক্রেতার স্বাক্ষর</b>	</div>
 					</div>
 					<div id = "signature_one" style="width:250px;text-align: center;margin: -16px 0px;">
 						<img src="<?php echo base_url().'images/uttora.jpg' ?>" alt="" style="width: 64px;">
 						<img src="<?php echo base_url().'images/uttora1.jpg' ?>" alt="" style="width: 64px;margin-left: 15px;">
 					</div>
 					<div id = "signature_one" style="margin-right: auto;width:250px;    margin: auto;    text-align: center;"> 
-						<div class = "customer_signature2"> <b>বিক্রেতার স্বাক্ষর</b> </div>
+						<div class = "customer_signature2"> <b>ক্রেতার স্বাক্ষর</b> </div>
 					</div>
 					</div>
                     

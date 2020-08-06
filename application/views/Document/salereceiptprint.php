@@ -9,13 +9,14 @@
 	<style>
 		*{
 			font-family: 'SolaimanLipi', Arial, sans-serif !important;
+				font-weight: 700!important;
 		}
 		.img{
-			position: absolute;
-		    left: -2%;
-		    opacity: .15;
-		    top: 12%;
-		    width: 100%;
+		    position: absolute;
+            left: 19%;
+            opacity: .15;
+            top: 30%;
+            width: 57%;
 		}
 	</style>
 </head>
@@ -26,30 +27,30 @@
 	?>
  	<div id ="main_invoice" style="width: 1000px; margin: auto;">
 		<div style="width: 1000px;">
-			<div style="padding: 20PX;display: flex;flex-wrap: wrap;">			
+			<div style="display: flex;flex-wrap: wrap;">			
 				<div style="width: 66%;">
 					<img style="width: 100%;min-height: 200px" src="<?php echo base_url();?>images/common.jpg">
 				</div>
-				<div style="border: 1px solid #f1f1f1;min-height: 200px;width: 33%;padding: 10px;">
-					<h4><b>BUYER'S</b></h4>
-					<h4>নাম : <?php echo $all->customer_name ?></h4>
-					<h4>পিতার নাম : <?php echo $all->father_name ?></h4>
-					<h4>মোবাইল নং : <?php echo $all->customer_contact_no ?></h4>
-					<h4>গ্রাম : <?php echo $all->village ?></h4>
-					<h4>থানা : <?php echo $all->police_station ?></h4>
-					<h4>ডাক : <?php echo $all->postoffice ?></h4>
-					<h4>জেলা : <?php echo $all->district ?></h4>
+				<div style="border: 1px solid #f1f1f1;min-height: 200px;width: 33%;padding: 0px 5px;">
+					<h5><b>BUYER'S</b></h5>
+					<h5>Name : <?php echo $documents->customer_name ?></h5>
+					<h5>S/O: : <?php echo $documents->father_name ?></h5>
+					<h5>Mob : <?php echo $documents->mobile_no ?></h5>
+					<h5>VILL : <?php echo $documents->village ?></h5>
+					<h5>P/S : <?php echo $documents->thana ?></h5>
+					<h5>P/O : <?php echo $documents->postoffice ?></h5>
+					<h5>DIST : <?php echo $documents->district ?></h5>
 				</div>
 			</div> <!--end of shop_title_box-->
 		</div>
-		<div class="row" style="padding: 20PX;display: flex;flex-wrap: wrap;">
+		<div class="row" style="padding: 5px 13px;display: flex;flex-wrap: wrap;">
 			<div style="width: 33.33%">
 				<b>L/C NO: <?php if(isset($documents)) echo $documents->lcno ?></b>
 			</div>
 			<div style="width: 33.33%;text-align: center;">
 				<b>Vessel Name: <?php if(isset($documents)) echo $documents->vesselname ?></b>
 			</div>
-			<div style="width: 33.33%" class="text-right">
+			<div style="width: 33.33%" class="text-center">
 				<b>Sales Invoice:</b>
 			</div>
 		</div>
@@ -61,7 +62,7 @@
 				<b>B/E NO: <?php if(isset($documents)) echo $documents->beno ?></b>
 			</div>
 			<div style="width: 33.33%" class="text-right">
-				<b>DATE: <?php echo $all->date ?></b>
+				<b>DATE: <?php echo date("d-m-Y",strtotime($all->date)) ?></b>
 			</div>
 		</div>
 		<div class="row">
@@ -71,19 +72,19 @@
 						<th>SL NO.</th>
 						<th>Chassis No.</th>
 						<th>Engine No.</th>
-						<th>Colour.</th>
+						<th>Colour</th>
 						<th>Qnty.</th>
-						<th>Description.</th>
-						<th style="text-align: center;">Unit Price.</th>
-						<th style="text-align: center;">Amount.</th>
+						<th>Description</th>
+						<th style="text-align: center;">Unit Price</th>
+						<th style="text-align: center;">Amount</th>
 					</tr>
 					<tr>
 						<td>
-							<div style="height: 200px"><?php echo 1 ?></div>
+							<div style="height: 80px"><?php echo 1 ?></div>
 						</td>
 						<td><?php echo $documents->chassisno ?></td>
 						<td><?php echo $documents->engineno ?></td>
-						<td><?php echo $all->color ?></td>
+						<td><?php echo $documents->color ?></td>
 						<td align="center">1</td>
 						<td></td>
 						<td align="right"><?php echo number_format($documents->price,2) ?></td>
@@ -137,7 +138,7 @@
 				</div>
 			</div>
 		</div>
-		<img class="img" src="<?php echo base_url()?>images/suprobha-logo.jpg" alt="">
+	    <div style=""><img class="img" src="<?php echo base_url()?>images/suprobha-logo.jpg" alt=""></div>
 	</div>
 </body>
 </html>	

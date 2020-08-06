@@ -9,6 +9,7 @@
 	<style>
 		*{
 			font-family: 'SolaimanLipi', Arial, sans-serif !important;
+			font-weight: 700!important;
 		}
 		.img{
 			position: absolute;
@@ -69,18 +70,21 @@
         </div>
 
         <div>
+            <div><b>Ref.</b></div>
             <div><h4 class="text-center">To Whom It May Concern</h4></div>
+             <div><b>To:</b> </div>
         </div>
 
         <div><br>
-            <p>This is to certify that we have sold new vehicle to: <br>
+            <p>This is to certify that we have sold new vehicle to: <br><br>
             
-                নাম : <?php echo $all->customer_name ?>,
-				পিতার নাম : <?php echo $all->father_name ?>	,		
-				গ্রাম : <?php echo $all->village ?>,
-				থানা : <?php echo $all->police_station ?>,
-				ডাক : <?php echo $all->postoffice ?>,
-				জেলা : <?php echo $all->district ?>
+              	   Name : <?php echo $documents->customer_name ?>
+				S/O: : <?php echo $documents->father_name ?>
+				Mob : <?php echo $documents->mobile_no ?>
+				VILL : <?php echo $documents->village ?>
+				P/S : <?php echo $documents->thana ?>
+				P/O : <?php echo $documents->postoffice ?>
+					DIST : <?php echo $documents->district ?>
             
             </p>
             <span>Mob: <?php echo $all->customer_contact_no  ?></span><br><br>
@@ -99,7 +103,7 @@
                 <div style="width: 75%;display: flex;" >:<p class="dynamicdata" style="width: 100%"><?php echo $documents->chassisno ?></p></div><br>
             </div>
             <div style="display: flex;width:100%;margin-top:15px;">
-                <div style="width: 29%;"><p class="name">04.&nbsp; Engin No. </p></div>
+                <div style="width: 29%;"><p class="name">04.&nbsp; Engine No. </p></div>
                 <div style="width: 75%;display: flex;" >:<p class="dynamicdata" style="width: 100%"><?php echo $documents->engineno ?></p></div><br>
             </div>
             <div style="display: flex;width:100%;margin-top:15px;">
@@ -115,7 +119,7 @@
                 <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"> <?php if(isset($documents))  echo $documents->typesize  ?></p></div><br>
             </div>
             <div style="display: flex;width:100%;margin-top:15px;">
-                <div style="width: 29%;"><p class="name">08.&nbsp; Year of manufacture/Assemble </p></div>
+                <div style="width: 29%;"><p class="name">08.&nbsp; Year of Manufacture/Assemble </p></div>
                 <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%"> <?php if(isset($documents))  echo $documents->manufactureyear  ?></p></div><br>
             </div>
             <div style="display: flex;width:100%;margin-top:15px;">
