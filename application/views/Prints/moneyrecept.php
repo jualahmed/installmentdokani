@@ -61,7 +61,7 @@ foreach ($ddin as $key => $value) {
 								</th>
 							</tr>
 						</table>
-					<div>বিক্রয় রশিদ নং : <b><?php if(10>$all->sid) echo "০"; echo $this->bangla_ntw->engToBn($all->sid); ?></b></div>
+					<div style="font-size: 22px;font-weight: 700;">বিক্রয় রশিদ নং : <b><?php if(10>$all->sid) echo "০"; echo $this->bangla_ntw->engToBn($all->sid); ?></b></div>
 				</div> <!--end of shop_title_box-->
 				<div id = "invoice_details_header" style="width: 699px;">	
 					<table class="customers" style="width: 100%;">	

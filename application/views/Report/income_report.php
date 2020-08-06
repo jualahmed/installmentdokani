@@ -70,7 +70,7 @@
 						<td align="center">{{ formatDate(i.dddddd) }}</td>
 						<td align="center">{{ i.customer_id }}</td>
 						<td>{{ i.customer_name }}</td>
-						<th>Collection</th>
+						<th>Cache Collection</th>
 						<th style="text-align: right;">{{ parseFloat(i.amount).toFixed(2) }}</th>
 					</tr>
 					<tr>
