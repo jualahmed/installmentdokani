@@ -29,14 +29,14 @@ $(document).ready(function() {
 							</tr>
 							<tr>
 							  	<th style="width:4%;" colspan="4">Opening Balance</th>
-							  	<th style="width: 4%;text-align:right;">${ result[0].balance }</th>
+							  	<th style="width: 4%;text-align:right;">${ parseFloat(result[0].balance).toFixed(2) }</th>
 							</tr>`
 				total_amount1 = 0.00;
 				var balance=result[0].balance;
 				result[0].alldata.forEach(i=>{
 					
-					if(i.transaction_type=='in' && isNaN(i.amount))balance+=parseFloat(i.amount)
-					if(i.transaction_type=='out' && isNaN(i.amount))balance-=parseFloat(i.amount)
+					if(i.transaction_type=='in' && i.date!=null){console.log(balance);balance+=parseFloat(i.amount)}
+					if(i.transaction_type=='out' && i.date!=null){console.log(balance);balance-=parseFloat(i.amount)}
 
 					all+=`<tr>
 							  	<td style="width:4%;">${ i.date }</td>

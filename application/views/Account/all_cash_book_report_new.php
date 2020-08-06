@@ -11,7 +11,7 @@
 					<div class="box-body">
 						<form action ="<?php echo base_url();?>account/all_cash_book_report_find" method="post" class="form-horizontal" autocomplete="off" enctype="multipart/form-data" id="form_6">
 							<div class="form-group">
-								<label for="inputEmail3" class="col-sm-1 control-label">Date</label>
+								<label for="inputEmail3" class="col-sm-2 control-label">Start Date</label>
 								<div class="col-sm-3">
 									<?php echo form_input(array('type' => 'text','placeholder' => $bd_date , 'name' => "start_date",'class' => "form-control",'id' => "datepickerrr",'value' => $bd_date, 'tabindex' => 3));?>
 								</div>

@@ -9,6 +9,7 @@
 	<style>
 		*{
 			font-family: 'SolaimanLipi', Arial, sans-serif !important;
+				font-weight: 700!important;
 		}
 		.img{
 			position: absolute;
@@ -52,6 +53,8 @@
 		$pre_blance_show_invoice = $this->config->item('pre_blance_show_invoice');
 	?>
  	<div id ="main_invoice" style="width: 1000px; margin: auto;">
+ 	        
+ 	<div style="min-height: 80vh;">
 		<div style="width: 1000px;">
 			<div id="shop_title_box" style="width: 1000px;">			
 				<img style="width: 100%;min-height: 200px" src="<?php echo base_url();?>images/common.jpg">
@@ -72,12 +75,15 @@
 
         <div>
            <div><p class="dynamicdata" ><b>M/S</b>
-               <?php echo $all->customer_name ?>,
-				পিতার নাম : <?php echo $all->father_name ?>	,		
-				গ্রাম : <?php echo $all->village ?>,
-				থানা : <?php echo $all->police_station ?>,
-				ডাক : <?php echo $all->postoffice ?>,
-				জেলা : <?php echo $all->district ?>
+              <br>
+            
+              	   Name : <?php echo $documents->customer_name ?>
+				S/O: : <?php echo $documents->father_name ?>
+				Mob : <?php echo $documents->mobile_no ?>
+				VILL : <?php echo $documents->village ?>
+				P/S : <?php echo $documents->thana ?>
+				P/O : <?php echo $documents->postoffice ?>
+					DIST : <?php echo $documents->district ?>
            </p></div>
            <div><p class="dynamicdata" style="margin-top: 30px;"></p></div>
         </div>
@@ -104,7 +110,7 @@
             </div>
 
             <div style="display: flex;width:100%;margin-top:15px;">
-                <div style="width: 29%;"><p class="name">08.&nbsp; Year of manufacture </p></div>
+                <div style="width: 29%;"><p class="name">04.&nbsp; Year of manufacture </p></div>
                 <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%;"><span style="margin-left: 10px;"><?php if(isset($documents))  echo ' '.$documents->manufactureyear  ?></span></p></div><br>
             </div>
             <div style="display: flex;width:100%;margin-top:15px;">
@@ -113,23 +119,23 @@
             </div>
 
            <div style="display: flex;width:100%;margin-top:15px;">
-                <div style="width: 29%;"><p class="name">12.&nbsp; Seating Capacity </p></div>
+                <div style="width: 29%;"><p class="name">06.&nbsp; Seating Capacity </p></div>
                 <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%;"><span style="margin-left: 10px;"><?php if(isset($documents))  echo ' '.$documents->seatingcapacity  ?></span></p></div><br>
             </div>
 
             <div style="display: flex;width:100%;margin-top:15px;">
-                <div style="width: 29%;"><p class="name">06.&nbsp; Class of Vehicle </p></div>
+                <div style="width: 29%;"><p class="name">07.&nbsp; Class of Vehicle </p></div>
                 <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%;"><span style="margin-left: 10px;"><?php if(isset($documents))  echo ' '.$documents->class  ?></span></p></div><br>
             </div>
 
 
             <div style="display: flex;width:100%;margin-top:15px;">
-                <div style="width: 29%;"><p class="name">06.&nbsp; Colour of Vehicle </p></div>
+                <div style="width: 29%;"><p class="name">08.&nbsp; Colour of Vehicle </p></div>
                 <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%;"><span style="margin-left: 10px;"><?php if(isset($documents))  echo $documents->vehicle  ?></span></p></div><br>
             </div>
 
             <div style="display: flex;width:100%;margin-top:15px;">
-                <div style="width: 29%;"><p class="name">07.&nbsp; Tyre Size. </p></div>
+                <div style="width: 29%;"><p class="name">09.&nbsp; Tyre Size. </p></div>
                 <div style="width: 75%;display: flex;">:<p class="dynamicdata" style="width: 100%;"><span style="margin-left: 10px;"><?php if(isset($documents))  echo $documents->typesize  ?></span></p></div><br>
             </div>
         </div>
@@ -145,6 +151,7 @@
         <div style="width: 100%;">
             <div class="text-right">For: <b>SUPROVA INTERNATIONAL</b></div>
         </div>
+    </div>
 
         <div style="display:flex;margin-top: 30px;">
             <div style="width: 50%;"><span style="border-top: 1px dotted;">( Buyer's Signature )</span></div>

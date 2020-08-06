@@ -55,37 +55,91 @@
 					<?php else: ?>
 						<form action ="<?php echo base_url().'document/salereceiptprint/'.$invoice->sid ?>" class="form-horizontal" method="post" enctype="multipart/form-data" formtarget="_blank" id="salereport" autocomplete="off">
 							<div>
-								<div class="form-group">
-									<label for="inputEmail3" class="col-sm-2 control-label">LC/NO:</label>
+							    
+							    <div class="form-group">
+								    <label for="inputEmail3" class="col-sm-2 control-label">Custome name</label>
 									<div class="col-sm-2">
-										<input type="text" class="form-control" name="lcno" id="lock22" placeholder="LC/NO:" value="<?php if(isset($documents)) echo $documents->lcno ?>">
+										<input type="text" class="form-control" name="customer_name" id="lock22" placeholder="Custome name" value="">
 									</div>
-									<label for="inputEmail3" class="col-sm-2 control-label">VESSEL NAME:</label>
+									<label for="inputEmail3" class="col-sm-2 control-label">Father's Name</label>
 									<div class="col-sm-2">
-										<input type="text" class="form-control" name="vesselname" id="lock22" placeholder="VESSEL NAME:" value="<?php if(isset($documents)) echo $documents->vesselname ?>">
+										<input type="text" class="form-control" name="father_name" id="lock22" placeholder="Father's Name" value="">
+									</div>
+									<label for="inputEmail3" class="col-sm-1 control-label">Mobile No</label>
+									<div class="col-sm-2">
+										<input type="text" class="form-control" name="mobile_no" id="lock22" placeholder="Mobile No" value="">
+									</div>
+								</div>
+								
+								
+								<div class="form-group">
+								    <label for="inputEmail3" class="col-sm-2 control-label">Village</label>
+									<div class="col-sm-2">
+										<input type="text" class="form-control" name="village" id="lock22" placeholder="Village" value="">
+									</div>
+									<label for="inputEmail3" class="col-sm-2 control-label">Thana</label>
+									<div class="col-sm-2">
+										<input type="text" class="form-control" name="thana" id="lock22" placeholder="Thana" value="">
+									</div>
+									<label for="inputEmail3" class="col-sm-1 control-label">District</label>
+									<div class="col-sm-2">
+										<input type="text" class="form-control" name="district" id="lock22" placeholder="District" value="">
+									</div>
+								</div>
+							    <br>
+								<div class="form-group">
+								    
+								    <label for="inputEmail3" class="col-sm-2 control-label">Post office</label>
+									<div class="col-sm-2">
+										<input type="text" class="form-control" name="postoffice" id="lock22" placeholder="Post office" value="">
+									</div>
+									
+									<label for="inputEmail3" class="col-sm-2 control-label">VESSEL NAME</label>
+									<div class="col-sm-2">
+										<input type="text" class="form-control" name="vesselname" id="lock22" placeholder="VESSEL NAME" value="">
 										<input type="hidden" name="product_id" id="pro_id">
 									</div>
-									<label for="inputEmail3" class="col-sm-1 control-label">B/E NO:</label>
+									<label for="inputEmail3" class="col-sm-1 control-label">B/E NO</label>
 									<div class="col-sm-2">
-										<input type="text" class="form-control" name="beno" id="lock22" placeholder="B/E NO:" value="<?php if(isset($documents)) echo $documents->beno ?>">
+										<input type="text" class="form-control" name="beno" id="lock22" placeholder="B/E NO" value="">
 										<input type="hidden" name="product_id" id="pro_id">
 									</div>
 								</div>
 								<br/>
 							
 								<div class="form-group">
-								       <label for="inputEmail3" class="col-sm-2 control-label">Engine No:</label>
+								       <label for="inputEmail3" class="col-sm-2 control-label">Engine No</label>
 									<div class="col-sm-2">
-										<input type="text" class="form-control" name="engineno" id="lock22" placeholder="Engine No:" value="<?php if(isset($documents)) echo $documents->engineno; else echo $invoice->engineno ?>">
+										<input type="text" class="form-control" name="engineno" id="lock22" placeholder="Engine No" value="<?php if(isset($documents)) echo $documents->engineno; else echo $invoice->engineno ?>">
 									</div>
-									<label for="inputEmail3" class="col-sm-2 control-label">Chassis No:</label>
+									<label for="inputEmail3" class="col-sm-2 control-label">Chassis No</label>
 									<div class="col-sm-2">
-										<input type="text" class="form-control" name="chassisno" id="lock22" placeholder="Chassis No:" value="<?php if(isset($documents)) echo $documents->chassisno;else echo $invoice->chassisno ?>">
+										<input type="text" class="form-control" name="chassisno" id="lock22" placeholder="Chassis No" value="<?php if(isset($documents)) echo $documents->chassisno;else echo $invoice->chassisno ?>">
 									</div>
-									<label for="inputEmail3" class="col-sm-1 control-label">Price:</label>
+									<label for="inputEmail3" class="col-sm-1 control-label">Price</label>
 									<div class="col-sm-2">
 										<input type="text" class="form-control" name="price" id="lock22" placeholder="Price" value="<?php if(isset($documents)) echo $documents->price;else echo $invoice->price+$invoice->installmentfee+$invoice->totalinterastlog ?>">
 									</div>
+								</div>
+								    
+							<br>
+								
+								<div class="form-group">
+								    
+								    <label for="inputEmail3" class="col-sm-2 control-label">LC/NO</label>
+									<div class="col-sm-2">
+										<input type="text" class="form-control" name="lcno" id="lock22" placeholder="LC/NO" value="">
+									</div>
+									
+								    <label for="inputEmail3" class="col-sm-2 control-label">Color</label>
+									<div class="col-sm-2">
+										<input type="text" class="form-control" name="color" id="lock22" placeholder="color" value="">
+									</div>
+									<label for="inputEmail3" class="col-sm-1 control-label">Description</label>
+									<div class="col-sm-2">
+										<input type="text" class="form-control" name="desc" id="lock22" placeholder="Description" value="">
+									</div>
+									
 								</div>
 								
 								<div class="form-group">

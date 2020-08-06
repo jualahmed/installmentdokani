@@ -56,59 +56,107 @@
 					<?php else: ?>
 						<form action ="<?php echo base_url().'document/deliverychallanprint/'.$invoice->sid ?>" class="form-horizontal" method="post" enctype="multipart/form-data" formtarget="_blank" id="salereport" autocomplete="off">
 							<div>
+							        
+							    
 								<div class="form-group">
+								    
+								    <div class="col-md-4">
+								    <label for="inputEmail3" class="control-label">Customer name</label>
+									<div>
+										<input type="text" class="form-control" name="customer_name" id="lock22" placeholder="Customer name" value="">
+									</div>
+								</div>
+								<div class="col-md-4">
+									<label for="inputEmail3" class="control-label">Father's Name</label>
+									<div>
+										<input type="text" class="form-control" name="father_name" id="lock22" placeholder="Father's Name" value="">
+									</div>
+								</div>
+								<div class="col-md-4">
+									<label for="inputEmail3" class="control-label">Mobile No</label>
+									<div>
+										<input type="text" class="form-control" name="mobile_no" id="lock22" placeholder="Mobile No" value="">
+									</div>
+								</div>
+
+								<div class="col-md-4">
+								    <label for="inputEmail3" class="control-label">Village</label>
+									<div class="">
+										<input type="text" class="form-control" name="village" id="lock22" placeholder="Village" value="">
+									</div>
+								</div>
+								<div class="col-md-4">
+									<label for="inputEmail3" class="control-label">Thana</label>
+									<div class="">
+										<input type="text" class="form-control" name="thana" id="lock22" placeholder="Thana" value="">
+									</div>
+								</div>
+								<div class="col-md-4">
+									<label for="inputEmail3" class="control-label">District</label>
+									<div class="">
+										<input type="text" class="form-control" name="district" id="lock22" placeholder="District" value="">
+									</div>
+								</div>
+								
+								<div class="col-md-4">
+								     <label for="inputEmail3" class="control-label">Post office</label>
+									<div>
+										<input type="text" class="form-control" name="postoffice" id="lock22" placeholder="Post office" value="">
+									</div>
+								</div>
+								    
 									<div class="col-sm-4">
 										<label for="inputEmail3" class="control-label">Model/Make of Vehicle:</label>
 										<div>
-											<input type="text" class="form-control" name="model" id="lock22" placeholder="Model/Make of Vehicle" value="<?php if(isset($documents)) echo $documents->model ?>">
+											<input type="text" class="form-control" name="model" id="lock22" placeholder="Model/Make of Vehicle" value="">
 										</div>
 									</div>
 									<div class="col-sm-4">
 										<label for="inputEmail3" class="control-label">Class of Vehicle</label>
 										<div>
-											<input type="text" class="form-control" name="class" id="lock22" placeholder="Class of Vehicle" value="<?php if(isset($documents)) echo $documents->class ?>">
+											<input type="text" class="form-control" name="class" id="lock22" placeholder="Class of Vehicle" value="">
 											<input type="hidden" name="product_id" id="pro_id">
 										</div>
 									</div>
 									<div class="col-sm-4">
 										<label for="inputEmail3" class="control-label">Number of Cylinder With CC</label>
 										<div>
-											<input type="text" class="form-control" name="cylinder" id="lock22" placeholder="Number of Cylinder With CC" value="<?php if(isset($documents)) echo $documents->cylinder ?>">
+											<input type="text" class="form-control" name="cylinder" id="lock22" placeholder="Number of Cylinder With CC" value="">
 											<input type="hidden" name="product_id" id="pro_id">
 										</div>
 									</div>
 								    <div class="col-sm-4">
 										<label for="inputEmail3" class="control-label">Colour of Vehicle</label>
 										<div class="">
-											<input type="text" class="form-control" name="vehicle" id="lock22" placeholder="Colour of Vehicle" value="<?php if(isset($documents)) echo $documents->vehicle;else echo $invoice->color ?> ">
+											<input type="text" class="form-control" name="vehicle" id="lock22" placeholder="Colour of Vehicle" value=" ">
 											<input type="hidden" name="product_id" id="pro_id">
 										</div>
 									</div>
 									<div class="col-sm-4">
 										<label for="inputEmail3" class="control-label">Size of Tyre</label>
 										<div>
-											<input type="text" class="form-control" name="typesize" id="lock22" placeholder="Size of Tyre" value="<?php if(isset($documents)) echo $documents->typesize ?>">
+											<input type="text" class="form-control" name="typesize" id="lock22" placeholder="Size of Tyre" value="">
 											<input type="hidden" name="product_id" id="pro_id">
 										</div>
 									</div>
 									<div class="col-sm-4">
 										<label for="inputEmail3" class="control-label">Year of manufacture/Assemble</label>
 										<div>
-											<input type="text" class="form-control" name="manufactureyear" id="lock22" placeholder="Year of manufacture/Assemble" value="<?php if(isset($documents)) echo $documents->manufactureyear ?>">
+											<input type="text" class="form-control" name="manufactureyear" id="lock22" placeholder="Year of manufacture/Assemble" value="">
 											<input type="hidden" name="product_id" id="pro_id">
 										</div>
 									</div>
 									<div class="col-md-4">
 										<label for="inputEmail3" class="control-label">Seating Capacity</label>
 										<div>
-											<input type="text" class="form-control" name="seatingcapacity" id="lock22" placeholder="Seating Capacity" value="<?php if(isset($documents)) echo $documents->seatingcapacity ?>">
+											<input type="text" class="form-control" name="seatingcapacity" id="lock22" placeholder="Seating Capacity" value="">
 											<input type="hidden" name="product_id" id="pro_id">
 										</div>
 									</div>
 									<div class="col-md-12">
 										<label for="inputEmail3" class="control-label">Remarks</label>
 										<div>
-											<textarea type="text" class="form-control" name="remarks" id="lock22" placeholder="Seating Capacity"><?php if(isset($documents)) echo $documents->remarks ?></textarea> 
+											<textarea type="text" class="form-control" name="remarks" id="lock22" placeholder="Seating Capacity"></textarea> 
 										</div>
 									</div>
 									<div class="col-md-4">

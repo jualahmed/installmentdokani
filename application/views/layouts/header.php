@@ -156,6 +156,12 @@
 				</a>
 		</li>
 
+		<li class="treeview <?php echo active_link_function('sale','collection') ?>">
+				<a href="<?php echo base_url();?>sale/collection">
+					<i class="fa fa-shopping-cart"></i> <span>Collection</span>
+				</a>
+		</li>
+		
 		<li class="treeview <?php echo active_link_controller('document'); ?>">
 			<a href="#">
 				<i class="fa fa-bank"></i>
@@ -177,11 +183,6 @@
 			</ul>
 		</li>
 
-		<li class="treeview <?php echo active_link_function('sale','collection') ?>">
-				<a href="<?php echo base_url();?>sale/collection">
-					<i class="fa fa-shopping-cart"></i> <span>Collection</span>
-				</a>
-		</li>
 		<li class="treeview <?php echo active_link_controller('salereturn'); ?>" style="display: none;">
 	      <a href="<?php echo base_url();?>salereturn/cash_salereturn"><i class="fa fa-shopping-cart"></i><span>Sale Return</span></a>
 	    </li>

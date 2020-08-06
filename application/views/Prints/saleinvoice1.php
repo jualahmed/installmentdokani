@@ -8,7 +8,7 @@
 	<link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
 	<style>
 		*{
-			font-family: 'SolaimanLipi', Arial, sans-serif !important;
+			font-size:12px!important;
 		}
 		.img{
 			position: absolute;
@@ -35,7 +35,7 @@
 							<th align="center" style="padding: 0px;width: 33.333333333%;"><h4 style="text-align: center;    margin-top: 4px;
     margin-bottom: 4px;">তারিখ : <b><?php echo  $this->bangla_ntw->engToBn(date("d-m-Y", strtotime($all[0]->date))); ?></b></h4></th>
 							<th align="center" style="padding: 0px;width: 33.333333333%;"><h4 style="text-align: right;    margin-top: 4px;
-    margin-bottom: 4px;">রশিদ প্রস্তুত কারী : <b><?php echo $all[0]->user_full_name; ?></b></h4></th>
+    margin-bottom: 4px;">রশিদ প্রস্তুতকারী: <b><?php echo $all[0]->user_full_name; ?></b></h4></th>
 						</tr>
 					</table>
 			</div> <!--end of shop_title_box-->
@@ -52,8 +52,7 @@
 								<img src="<?php echo base_url() ?>/assets/img/user.jpg" alt="" width="50px">
 							<?php } ?>
 						</td>
-						<td colspan="2" style="padding: 1px 3px;"><b>নাম :</b> <?php echo $all[0]->customer_name; ?></td>
-						<td colspan="2" style="padding: 1px 3px;"><b>আইডি</b> : <?php echo $this->bangla_ntw->engToBn($all[0]->customer_id); ?></td>	
+						<td colspan="4" style="padding: 1px 3px;"><b>নাম :</b> <?php echo $all[0]->customer_name; ?></td>	
 					</tr>
 					<tr>
 						<td colspan="2" style="padding: 1px 3px;"><b>পিতার নাম : </b><?php echo $all[0]->father_name; ?></td>
@@ -122,8 +121,8 @@
 								<?php endforeach ?>
 							</table>
 						</th>
-						<th width="30%" style="position: relative;">
-							<table class="table" style="padding: 0px;margin:0px;border: none;">
+						<th width="30%" style="position: relative;padding: 0px 0px;">
+							<table class="table" style="padding: 0px;margin:0px;margin-top: -48px;border: none;">
 								<tr>
 									<td>
 										<p><b>বিক্রয় মূল্য :</b></p>
@@ -145,10 +144,10 @@
 							
 							</table>
 
-							<table class="table" style="padding: 0px;margin:0px;border: none;position: absolute; bottom: 0px; width: 98%;">
+							<table class="" style="padding: 0px;margin:0px;border: none;position: absolute; bottom: 0px; width: 100%;">
 								<tr>
-									<td style="font-size: 20px;text-align: center;"> <p><b>মোট :</b> </p></td>
-									<td align="right" style="font-size: 20px;"><p><b><?php echo $this->bangla_ntw->engToBn(sprintf('%0.2f',($all[0]->totaldue+$all[0]->totalinterest))); ?></b></p></td>
+									<td style="font-size: 20px;text-align: center;padding: 4px;width: 57%;    border-top: none;"> <p><b>মোট :</b> </p></td>
+									<td align="right" style="font-size: 20px;    border-top: none;"><p><b><?php echo $this->bangla_ntw->engToBn(sprintf('%0.2f',($all[0]->totaldue+$all[0]->totalinterest))); ?></b></p></td>
 								</tr>
 							</table>
 						</th>
@@ -158,7 +157,10 @@
 						<td colspan="3" style="text-align: right;font-size: 18px;"><b>কথায় : 
 							<?php 
 							$v=$all[0]->totaldue+$all[0]->totalinterest;
-							$a= (int) $v; 
+							$a= (int) $v;
+							if($a==0){
+							    echo "শূন্য";
+							}
 							if($a==$v) 
 							{ 
 								echo $this->bangla_ntw->numToWord(sprintf('%0.2f',$a));

@@ -57,7 +57,17 @@ class Document extends MY_Controller {
 		$engineno=$this->input->post('engineno');
 		$chassisno=$this->input->post('chassisno');
 		$price=$this->input->post('price');
-
+        $customer_name=$this->input->post('customer_name');
+        $father_name=$this->input->post('father_name');
+        $mobile_no=$this->input->post('mobile_no');
+        $village=$this->input->post('village');
+        $thana=$this->input->post('thana');
+        $district=$this->input->post('district');
+        $color=$this->input->post('color');
+        $desc=$this->input->post('desc');
+        $postoffice=$this->input->post('postoffice');
+        
+        
 		$daa = Documentm::where('salelogid',$id)->where('type','salereceiptprint')->get();
 
 		if(count($daa)==0){
@@ -72,6 +82,14 @@ class Document extends MY_Controller {
 		$daa->engineno=$engineno;
 		$daa->chassisno=$chassisno;
 		$daa->price=$price;
+		$daa->customer_name=$customer_name;
+		$daa->father_name=$father_name;
+		$daa->mobile_no=$mobile_no;
+		$daa->village=$village;
+		$daa->thana=$thana;
+		$daa->district=$district;
+		$daa->color=$color;
+		$daa->postoffice=$postoffice;
 		$daa->type='salereceiptprint';
 		$daa->salelogid=$id;
 		$daa->save();
@@ -123,9 +141,18 @@ class Document extends MY_Controller {
 		$whellbase=$this->input->post('whellbase');
 		$seatingcapacity=$this->input->post('seatingcapacity');
 		$makersname=$this->input->post('makersname');
-			$engineno=$this->input->post('engineno');
+		$engineno=$this->input->post('engineno');
 		$chassisno=$this->input->post('chassisno');
 		$price=$this->input->post('price');
+		$customer_name=$this->input->post('customer_name');
+        $father_name=$this->input->post('father_name');
+        $mobile_no=$this->input->post('mobile_no');
+        $village=$this->input->post('village');
+        $thana=$this->input->post('thana');
+        $district=$this->input->post('district');
+        $color=$this->input->post('color');
+        $desc=$this->input->post('desc');
+        $postoffice=$this->input->post('postoffice');
 
 		$daa = Documentm::where('salelogid',$id)->where('type','salepaperforcustomer')->get();
 
@@ -140,7 +167,7 @@ class Document extends MY_Controller {
 		$daa->cylinder=$cylinder;
 		$daa->vehicle=$vehicle;
 		$daa->typesize=$typesize;
-			$daa->engineno=$engineno;
+		$daa->engineno=$engineno;
 		$daa->chassisno=$chassisno;
 		$daa->price=$price;
 		$daa->manufactureyear=$manufactureyear;
@@ -149,6 +176,14 @@ class Document extends MY_Controller {
 		$daa->whellbase=$whellbase;
 		$daa->seatingcapacity=$seatingcapacity;
 		$daa->makersname=$makersname;
+		$daa->customer_name=$customer_name;
+		$daa->father_name=$father_name;
+		$daa->mobile_no=$mobile_no;
+		$daa->village=$village;
+		$daa->thana=$thana;
+		$daa->district=$district;
+		$daa->color=$color;
+		$daa->postoffice=$postoffice;
 		$daa->type='salepaperforcustomer';
 		$daa->salelogid=$id;
 		$daa->save();
@@ -196,9 +231,19 @@ class Document extends MY_Controller {
 		$manufactureyear=$this->input->post('manufactureyear');
 		$seatingcapacity=$this->input->post('seatingcapacity');
 		$remarks=$this->input->post('remarks');
-			$engineno=$this->input->post('engineno');
+		$engineno=$this->input->post('engineno');
 		$chassisno=$this->input->post('chassisno');
 		$price=$this->input->post('price');
+		
+		$customer_name=$this->input->post('customer_name');
+        $father_name=$this->input->post('father_name');
+        $mobile_no=$this->input->post('mobile_no');
+        $village=$this->input->post('village');
+        $thana=$this->input->post('thana');
+        $district=$this->input->post('district');
+        $color=$this->input->post('color');
+        $desc=$this->input->post('desc');
+        $postoffice=$this->input->post('postoffice');
 
 		$daa = Documentm::where('salelogid',$id)->where('type','deliverychallan')->get();
 
@@ -219,6 +264,14 @@ class Document extends MY_Controller {
 		$daa->manufactureyear=$manufactureyear;
 		$daa->seatingcapacity=$seatingcapacity;
 		$daa->remarks=$remarks;
+		$daa->customer_name=$customer_name;
+		$daa->father_name=$father_name;
+		$daa->mobile_no=$mobile_no;
+		$daa->village=$village;
+		$daa->thana=$thana;
+		$daa->district=$district;
+		$daa->color=$color;
+		$daa->postoffice=$postoffice;
 		$daa->type='deliverychallan';
 		$daa->salelogid=$id;
 		$daa->save();
