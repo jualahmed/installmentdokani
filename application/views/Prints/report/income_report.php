@@ -43,7 +43,7 @@
 						<th style="text-align: center;"><?php echo $var->dddddd ?></th>
 						<th style="text-align: center;"><?php echo $var->customer_id ?></th>
 						<th><?php echo $var->customer_name ?></th>
-						<th><?php echo "Cache Collection" ?></th>
+						<th><?php echo "Cash Collection" ?></th>
 						<th style="text-align: right;"><?php echo sprintf('%0.2f',$var->amount) ?></th>
 					</tr>
 				<?php endforeach ?>

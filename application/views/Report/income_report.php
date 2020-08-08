@@ -22,7 +22,7 @@
 									<select class="form-control" id="type" name="type">
 										<option>Select </option>
 										<option value="duecollection">Due Collection</option>
-										<option value="collection">Collection</option>
+										<option value="collection">Cash Collection</option>
 									</select>
 								</div>
 								<div class="col-sm-4 mt-2">
@@ -70,7 +70,7 @@
 						<td align="center">{{ formatDate(i.dddddd) }}</td>
 						<td align="center">{{ i.customer_id }}</td>
 						<td>{{ i.customer_name }}</td>
-						<th>Cache Collection</th>
+						<th>Cash Collection</th>
 						<th style="text-align: right;">{{ parseFloat(i.amount).toFixed(2) }}</th>
 					</tr>
 					<tr>
