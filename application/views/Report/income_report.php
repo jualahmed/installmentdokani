@@ -50,7 +50,7 @@
 					<tr>
 						<th style="text-align: center;">NO</th>
 						<th style="text-align: center;">Date</th>
-						<th style="text-align: center;">Customer ID</th>
+						<th style="text-align: center;">Invoice ID</th>
 						<th>Customer Name</th>
 						<th>Income Type</th>
 						<th style="text-align: right;">Amount</th>
@@ -60,7 +60,7 @@
 					<tr v-for="(i,index) in alldata">
 						<td align="center">{{ index+1 }}</td>
 						<td align="center">{{ formatDate(i.dddddd) }}</td>
-						<td align="center">{{ i.customer_id }}</td>
+						<td align="center">{{ i.id }}</td>
 						<td>{{ i.customer_name }}</td>
 						<th>Due Collection</th>
 						<th style="text-align: right;">{{ parseFloat(i.amount).toFixed(2) }}</th>

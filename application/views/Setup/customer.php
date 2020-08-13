@@ -94,7 +94,7 @@
 			            </div>
 
 		<br>
-		<table class="table table-bordred table-striped" align="left">
+		<table class="table table-bordred table-striped text-capitalize" align="left">
 			<tr align="left">
 				<th>No.</th>
 				<th style="text-align: center;">Profile</th>
