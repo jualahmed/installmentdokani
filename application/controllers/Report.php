@@ -36,9 +36,11 @@ class Report extends MY_controller
 		$data['customer_name'] = $this->customer_model->all();
 		$invoice_id= $this->input->post('invoice_id');
 		$customer_id= $this->input->post('customer_id');
+		$chasisno= $this->input->post('chasisno');
 		$data['invoice_id']=$invoice_id ? $invoice_id : 0;
 		$data['customer_id']=$customer_id ? $customer_id : 0;
-		$data['allsale'] = $this->report_model->due_report($invoice_id,$customer_id);
+		$data['chasisno']=$chasisno ? $chasisno : 0;
+		$data['allsale'] = $this->report_model->due_report($invoice_id,$customer_id,$chasisno);
 		$this->__renderview('Report/due_report', $data);
 	}
 

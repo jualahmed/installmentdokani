@@ -7,7 +7,7 @@ class Report_model extends CI_model{
 		$this->shop_id = $this->tank_auth->get_shop_id();
 	}
 
-	public function due_report($invoice_id='',$customer_id='')
+	public function due_report($invoice_id='',$customer_id='',$chasisno='')
 	{
 		$this->db->select('customer_info.*,product_info.*,warranty_product_list.*,purchase_receipt_info.*,users.*,sells_log.*, sells_log.id as sid');
 		$this->db->join('customer_info', 'sells_log.customar_id = customer_info.customer_id');
@@ -19,6 +19,7 @@ class Report_model extends CI_model{
 		$this->db->where('sells_log.totaldue > ',0);
 		if($invoice_id!=0){$this->db->where('sells_log.id',$invoice_id);} 
 		if($customer_id!=0){$this->db->where('sells_log.customar_id',$customer_id);} 
+		if($chasisno!=0){$this->db->where('warranty_product_list.chassisno',$chasisno);} 
 		$query = $this->db->get('sells_log')->result();
 		return $query;
 	}

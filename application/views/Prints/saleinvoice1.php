@@ -30,12 +30,9 @@
 						<img style="width: 698px;" src="<?php echo base_url();?>images/common.jpg" height="180px">
 					<table class="table" style="margin-bottom: 0px;">
 						<tr align="center" style="padding: 0px;margin: 0px;">
-							<th align="center" style="padding: 0px;width: 33.333333333%;"><h4 style="text-align: left; margin-top: 4px;
-    margin-bottom: 4px;font-size: 22px;font-weight: 700;">বিক্রয় রশিদ নং : <b><?php echo  $this->bangla_ntw->engToBn($all[0]->sid); ?></b></h4></th>
-							<th align="center" style="padding: 0px;width: 33.333333333%;"><h4 style="text-align: center;    margin-top: 4px;
-    margin-bottom: 4px;">তারিখ : <b><?php echo  $this->bangla_ntw->engToBn(date("d-m-Y", strtotime($all[0]->date))); ?></b></h4></th>
-							<th align="center" style="padding: 0px;width: 33.333333333%;"><h4 style="text-align: right;    margin-top: 4px;
-    margin-bottom: 4px;">রশিদ প্রস্তুতকারী: <b><?php echo $all[0]->user_full_name; ?></b></h4></th>
+							<th align="center" style="padding: 0px;width: 33.333333333%;"><h4 style="text-align: left; margin-top: 4px;margin-bottom: 4px;font-size: 22px;font-weight: 700;">বিক্রয় রশিদ নং : <b><?php echo  $this->bangla_ntw->engToBn($all[0]->sid); ?></b></h4></th>
+							<th align="center" style="padding: 0px;width: 33.333333333%;"><h4 style="text-align: center;    margin-top: 4px;margin-bottom: 4px;">তারিখ : <b><?php echo  $this->bangla_ntw->engToBn(date("d-m-Y", strtotime($all[0]->date))); ?></b></h4></th>
+							<th align="center" style="padding: 0px;width: 33.333333333%;"><h4 style="text-align: right;    margin-top: 4px;margin-bottom: 4px;">রশিদ প্রস্তুতকারী: <b><?php echo $all[0]->user_full_name; ?></b></h4></th>
 						</tr>
 					</table>
 			</div> <!--end of shop_title_box-->
@@ -169,7 +166,7 @@
 							} ?> টাকা মাত্র</b></td>
 					</tr>
 					<tr>
-						<td colspan="3"><p style="margin: -1px;">উক্ত মোটরসাইকেল এর সাথে টুলস বক্স, চাবি ....... টি, আটটি কুপন সহ একটি সার্ভিস ওয়ারেন্টি বই, একটি ডকুমেন্টকাভার সহ মোটরসাইকেলটি ক্রেতার নিকট বুঝাইয়া দেওয়া হইল।</p></td>
+						<td colspan="3"><p style="margin: -1px;">উক্ত মোটরসাইকেল এর সাথে টুলস বক্স, চাবি <?php echo $all[0]->key ?> টি, আটটি কুপন সহ একটি সার্ভিস ওয়ারেন্টি বই, একটি ডকুমেন্টকাভার সহ মোটরসাইকেলটি ক্রেতার নিকট বুঝাইয়া দেওয়া হইল।</p></td>
 					</tr>
 					<tr>
 						<td colspan="3"> <b>বি : দ্র : </b> বকেয়া টাকা পরিশোধ হওয়ার পর বিক্রয় রশিদ বুঝে নিন, অন্যথায় কর্তৃপক্ষ দায়ী নয়।</td>

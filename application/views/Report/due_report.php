@@ -1,4 +1,4 @@
-<div class="content-wrapper" id="vue_app">
+ <div class="content-wrapper" id="vue_app">
 	<section class="content">
 		<div class="row">
 			<div class="col-md-12">
@@ -11,7 +11,7 @@
 							<div class="form-group">
 								<label for="inputEmail3" class="col-sm-1 control-label">Invoice</label>
 								<div class="col-sm-2">
-									<input type="text" name="invoice_id" class ="form-control one" id="lock" placeholder="Inovice ID" title="Inovice ID" autocomplete="off" autofocus="on">
+									<input type="text" name="invoice_id" class ="form-control one" id="lock" placeholder="Inovice ID" autocomplete="off" autofocus="on">
 								</div>
 								<label for="inputEmail3" class="col-sm-1 control-label">Customer</label>
 								<div class="col-sm-2">
@@ -21,6 +21,10 @@
 											<option value="<?php echo $value->customer_id ?>"><?php echo $value->customer_name ?></option>
 										<?php endforeach ?>
 									</select>
+								</div>
+								<label for="inputEmail3" class="col-sm-1 control-label">Chassis No</label>
+								<div class="col-sm-2">
+									<input type="text" name="invoice_id" class ="form-control one" id="lock" placeholder="Chassis No" autocomplete="off" autofocus="on">
 								</div>
 								<div class="col-sm-12 mt-2 text-right">
 									<button @click.prevent="result" type="submit" class="btn btn-success btn-sm" name="search_random" style="width:100px;"><i class="fa fa-fw fa-search"></i> Search</button>
