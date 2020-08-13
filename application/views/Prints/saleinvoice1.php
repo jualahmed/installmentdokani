@@ -30,15 +30,14 @@
 						<img style="width: 698px;" src="<?php echo base_url();?>images/common.jpg" height="180px">
 					<table class="table" style="margin-bottom: 0px;">
 						<tr align="center" style="padding: 0px;margin: 0px;">
-							<th align="center" style="padding: 0px;width: 33.333333333%;"><h4 style="text-align: left; margin-top: 4px;margin-bottom: 4px;font-size: 22px;font-weight: 700;">বিক্রয় রশিদ নং : <b><?php echo  $this->bangla_ntw->engToBn($all[0]->sid); ?></b></h4></th>
-							<th align="center" style="padding: 0px;width: 33.333333333%;"><h4 style="text-align: center;    margin-top: 4px;margin-bottom: 4px;">তারিখ : <b><?php echo  $this->bangla_ntw->engToBn(date("d-m-Y", strtotime($all[0]->date))); ?></b></h4></th>
-							<th align="center" style="padding: 0px;width: 33.333333333%;"><h4 style="text-align: right;    margin-top: 4px;margin-bottom: 4px;">রশিদ প্রস্তুতকারী: <b><?php echo $all[0]->user_full_name; ?></b></h4></th>
+
 							<th align="center" style="padding: 0px;width: 33.333333333%;"><h4 style="text-align: left; margin-top: 4px;
     margin-bottom: 4px;font-size: 22px;font-weight: 700;"> <span style="font-size: 16px!important;"> বিক্রয় রশিদ নং :  <?php echo  $this->bangla_ntw->engToBn($all[0]->sid); ?></span></h4></th>
 							<th align="center" style="padding: 0px;width: 33.333333333%;"><h4 style="text-align: center;    margin-top: 4px;
     margin-bottom: 4px;">তারিখ : <b><?php echo  $this->bangla_ntw->engToBn(date("d-m-Y", strtotime($all[0]->date))); ?></b></h4></th>
 							<th align="center" style="padding: 0px;width: 33.333333333%;"><h4 style="text-align: right;    margin-top: 4px;
     margin-bottom: 4px;">রশিদ প্রস্তুতকারী: <b><?php echo $all[0]->user_full_name; ?></b></h4></th>
+    
 						</tr>
 					</table>
 			</div> <!--end of shop_title_box-->
