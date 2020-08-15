@@ -19,12 +19,11 @@ class Report_model extends CI_model{
 		$this->db->where('sells_log.totaldue > ',0);
 		if($invoice_id!=0){$this->db->where('sells_log.id',$invoice_id);} 
 		if($customer_id!=0){$this->db->where('sells_log.customar_id',$customer_id);} 
-		if($chasisno!=0){$this->db->where('warranty_product_list.chassisno',$chasisno);} 
+		if($chasisno!=0){$this->db->like('warranty_product_list.chassisno',$chasisno);} 
 		$query = $this->db->get('sells_log')->result();
 		return $query;
 	}
 		
-
 	public function get_stock_info_by_multi($category1='',$product_id='',$company1='',$type_wise='',$product_amount='')
 	{
 		if(isset($type_wise))

@@ -24,7 +24,7 @@
 								</div>
 								<label for="inputEmail3" class="col-sm-1 control-label">Chassis No</label>
 								<div class="col-sm-2">
-									<input type="text" name="invoice_id" class ="form-control one" id="lock" placeholder="Chassis No" autocomplete="off" autofocus="on">
+									<input type="text" name="chasisno" class ="form-control one" id="lock" placeholder="Chassis No" autocomplete="off" autofocus="on">
 								</div>
 								<div class="col-sm-12 mt-2 text-right">
 									<button @click.prevent="result" type="submit" class="btn btn-success btn-sm" name="search_random" style="width:100px;"><i class="fa fa-fw fa-search"></i> Search</button>
