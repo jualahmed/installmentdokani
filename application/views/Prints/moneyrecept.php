@@ -107,7 +107,7 @@ foreach ($ddin as $key => $value) {
 								?>
 							</td>
 							<td>
-								<b>ইঞ্জিন নং : </b> <b style="border: 2px solid #ecdfdf;padding: 2px 4px;"><? echo ' '. $all->engineno ?></b>
+								<b>ইঞ্জিন নং : </b> <b style="border: 2px solid #ecdfdf;padding: 2px 4px;"><?php echo ' '.$all->engineno ?></b>
 							</td>
 							<td>
 								<b>ব্যাটারী নং : </b><?php echo $all->batteryno; ?>

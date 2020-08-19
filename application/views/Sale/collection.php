@@ -210,7 +210,7 @@
 													<?php } ?>
 													Late fee :
 													<?php if ($i==0){ ?>
-														<input id="latef" onblur="latefeecalculate()" style="width: 70px;" name="munisefee" type="text" value="<?php echo number_format((float)$am, 2, '.', '') ?>">
+														<input id="latef" style="width: 70px;" name="munisefee" type="text" value="<?php echo number_format((float)$am, 2, '.', '') ?>">
 													<?php }else{ ?>
 														<input style="width: 70px;" name="munisefee" type="text" value="<?php echo number_format((float)$am, 2, '.', '') ?>" disabled>
 													<?php } ?>

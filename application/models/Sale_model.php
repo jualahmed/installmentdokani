@@ -192,7 +192,7 @@ class Sale_model extends CI_Model {
 		$payment_date=$this->input->get('payment_date');
 		$finaldiscount=$this->input->get('finaldiscount');
 		if($munisefee>0){
-			$amount=$amount-$munisefee;
+			$amount=$amount;
 		}
 		$this->db->where('id',$id);
 		$data=$this->db->get('sells_log')->row();
