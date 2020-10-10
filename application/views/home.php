@@ -25,7 +25,7 @@
 						<td><?php echo $var->customer_contact_no ?></td>
 						<td><?php echo ($var->month-$var->totalkisti)+1 ?></td>
 						<td><?php echo $var->amount ?></td>
-						<td><a onclick="sendsms('<?php echo $var->all_installment_id; ?>' , '<?php echo ($var->month-$var->totalkisti)+1; ?>')" class="btn btn-sm btn-success">Send sms</a></td>
+						<td><a onclick="sendsms('<?php echo $var->all_installment_id; ?>' , '<?php echo ($var->month-$var->totalkisti)+1; ?>')" class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal">Send sms</a></td>
 					</tr>
 				<?php endforeach ?>
 			</table>
@@ -34,6 +34,32 @@
 		<?php endif ?>
 		
 		<a onclick="sendsmstest()" class="btn btn-sm btn-success" style="display:none">Send sms</a>
+
+
+
+		<!-- Modal -->
+		<div id="myModal" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">Message Model</h4>
+		      </div>
+		      <div class="modal-body">
+		      	<input type="hidden" id="number">
+		        <p id="contant">Some text in the modal.</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="sendfinalmessage()">Send</button>
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+
+		  </div>
+		</div>
+
 
 	</section>
 </div>
